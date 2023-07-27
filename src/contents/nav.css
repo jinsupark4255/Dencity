@@ -8,6 +8,7 @@ body {
   
 .mapscale {
     position: relative;
+    z-index: 0;
     width: 390px;
     height: 844px;
     flex-shrink: 0;
@@ -17,10 +18,15 @@ body {
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
+    background-image: url('./kakao_map.png');
+    background-position: center; /* 배경 이미지를 중앙에 위치시킴 */
+    background-repeat: no-repeat; /* 배경 이미지를 반복하지 않음 */
+    background-size: cover; /* 배경 이미지가 div를 완전히 커버하도록 크기 조절 */
   }
   
   .t_nav {
-    position: relative;
+    position: absolute;
+    z-index: 1;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -32,15 +38,14 @@ body {
     border-radius: 9px;
     background: #FFF;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    z-index: 1;
   }
     
   .b_nav {
-    position: relative;
+    position: absolute;
+    z-index: 1;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    margin-bottom: 41px;
     margin-right: 21px;
     margin-left: 21px;
     width: 348px;
@@ -48,7 +53,7 @@ body {
     border-radius: 9px;
     background: #FFF;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
-    z-index: 1;
+    bottom: 41px;
   }
   
   #map {

@@ -4,6 +4,7 @@ import { ReactComponent as Image1 } from './Chaos.svg';
 import { ReactComponent as Image2 } from './Weather.svg';
 import { ReactComponent as Image3 } from './Dust.svg';
 import { ReactComponent as Image4 } from './Community.svg';
+import backgroundImage from './kakao_map.png';
 
 function Map() {
   const [color, setColor] = useState({n: 'white', n2: 'white', n3: 'white', n4: 'white'});
@@ -20,6 +21,7 @@ function Map() {
 
   return (
     <div className='mapscale'>
+        <img src = {backgroundImage} alt = "background" style={{width:"100%",height:"100%"}}/>
       <div className = 't_nav'>
         <div className='t1'>벡터</div>
         <div className='t2'>고궁/문화유산</div>
