@@ -9,6 +9,8 @@ import backgroundImage from './kakao_map.png';
 function Map() {
   const [color, setColor] = useState({n: 'white', n2: 'white', n3: 'white', n4: 'white'});
   const [fillColor, setFillColor] = useState({n: 'white', n2: 'white', n3: 'white', n4: 'white'});
+  const [dropdownOpen1, setDropdownOpen1] = useState(false);
+  const [dropdownOpen2, setDropdownOpen2] = useState(false);
 
   const handleClick = (box) => {
     setColor({...color, [box]: 'orange'});
@@ -19,13 +21,39 @@ function Map() {
     }, 200);
   };
 
+  const handleDropdownClick1 = () => {
+    setDropdownOpen1(!dropdownOpen1);
+  }
+
+  const handleDropdownClick2 = () => {
+    setDropdownOpen2(!dropdownOpen2);
+  }
+
   return (
     <div className='mapscale'>
         <img src = {backgroundImage} alt = "background" style={{width:"100%",height:"100%"}}/>
       <div className = 't_nav'>
         <div className='t1'>벡터</div>
-        <div className='t2'>고궁/문화유산</div>
-        <div className='t3'>경복궁</div>
+        <div className='t2' onClick={handleDropdownClick1}>
+          고궁/문화유산
+          {dropdownOpen1 && (
+            <div className="dropdown-menu">
+              <div className="dropdown-item">1-ㄴㅇㄹㄴㅇㄹㄴㄹㄴㅇㄹㄴㅇㄹ1</div>
+              <div className="dropdown-item">1-ㄴㅇㄹㅇㄹ2</div>
+              <div className="dropdown-item">1-3ㄴㅇㄹㄴㅇㄹㄴㅇ</div>
+            </div>
+          )}
+        </div>
+        <div className='t3' onClick={handleDropdownClick2}>
+          경복궁
+          {dropdownOpen2 && (
+            <div className="dropdown-menu">
+              <div className="dropdown-item">2ㄴㅇㄹㄴㅇㄹ-1</div>
+              <div className="dropdown-item">2-ㄴㅇㄹㄴㅇㄹㄹ2</div>
+              <div className="dropdown-item">2-ㄹㄹㄹㄹㄹㄹㄹ3</div>
+            </div>
+          )}
+        </div>
         <div className='t4'>이미지</div>
         <div className='t5'>혼잡!</div>
       </div>
