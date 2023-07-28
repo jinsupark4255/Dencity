@@ -12,24 +12,20 @@ body {
     width: 390px;
     height: 844px;
     flex-shrink: 0;
-    background-color: beige;
+
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
     box-sizing: border-box;
-    background-image: url('./kakao_map.png');
-    background-position: center; /* 배경 이미지를 중앙에 위치시킴 */
-    background-repeat: no-repeat; /* 배경 이미지를 반복하지 않음 */
-    background-size: cover; /* 배경 이미지가 div를 완전히 커버하도록 크기 조절 */
+    
   }
   
   .t_nav {
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     display: flex;
     flex-direction: row;
-    justify-content: space-between;
     margin-top: 48px;
     margin-right: 21px;
     margin-left: 21px;
@@ -39,10 +35,52 @@ body {
     background: #FFF;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
   }
+
+  .t1{
+    border-radius: 9px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .t2{
+    width: 82px;
+    height: 19px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top: 14px;    
+    margin-left: 11px;
+    background-color: #EEE;
+  }
+  .t2_1{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    margin-top: 4px;
+    margin-bottom: 4px;
+    width: 64px;
+    height: 11px;
+    font-size: 10px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+  .t4{
+    margin-top: 13px;
+    margin-left: 33px;
+  }
+  .t5{
+    width: 67px;
+    height: 25px;
+    margin-top: 14px;
+    margin-right: 3px;
+  }
+  
     
   .b_nav {
     position: absolute;
-    z-index: 1;
+    z-index: 2;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -56,21 +94,13 @@ body {
     bottom: 41px;
   }
   
-  #map {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-  }
-  
   .dropdown-menu {
     position: absolute;
     z-index: 1;
-    /* Other styles... */
+    margin-top: 60px;
+
   }
-  
+
 
 .n{
     display: flex;
@@ -138,6 +168,17 @@ body {
     width: 23px;
     height: 23px;
 }
+.img-size5 {
+    margin-left: 11px;
+    margin-right: 11px;
+    width: 22px;
+    height: 15px;
+}
+.img-down{
+    width: 13px;
+    height: 13px;
+    margin-top: 5px;
+}
 
 .icon_name{
     margin-left: 1px; /* to account for the extra pixel */
@@ -163,4 +204,3 @@ body {
 .n4 > * {
     margin: 0;
 }
-
