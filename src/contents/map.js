@@ -3,6 +3,7 @@ import './nav.css'
 import { ReactComponent as Image1 } from './mypage.svg';
 import { ReactComponent as Image2 } from './commu.svg';
 import { ReactComponent as DButton } from './dropbutton.svg';
+import { ReactComponent as DButton2 } from './dropbutton2.svg'; // Second dropdown image
 
 function Map() {
   useEffect(() => {
@@ -25,14 +26,31 @@ function Map() {
     marker.setMap(map);
   }, [])
 
+  const [selected, setSelected] = useState('chaos');
+  const [selectedDropdown1, setSelectedDropdown1] = useState("고궁/문화유산");
+  const [selectedDropdown2, setSelectedDropdown2] = useState("경복궁");
+
   const [dropdownOpen1, setDropdownOpen1] = useState(false);
   const [dropdownOpen2, setDropdownOpen2] = useState(false);
+  
   const handleDropdownClick1 = () => {
     setDropdownOpen1(!dropdownOpen1);
   }
+  
   const handleDropdownClick2 = () => {
     setDropdownOpen2(!dropdownOpen2);
   }
+  
+  const handleDropdown1Item = (item) => {
+    setSelectedDropdown1(item);
+    setDropdownOpen1(false);
+  };
+
+  const handleDropdown2Item = (item) => {
+    setSelectedDropdown2(item);
+    setDropdownOpen2(false);
+  };
+
   return (
     <div className='view'>
       <div className='top-view'>
@@ -43,34 +61,41 @@ function Map() {
       <div className='main-view'>
         <div className='top-main-view'>
           <div className='dropdown'>
-            <div className='d1'>고궁/문화유산</div>
-            {dropdownOpen1 && (
+            <div className='d1' onClick={handleDropdownClick1}>
+              {selectedDropdown1}
+              {dropdownOpen1 ? <DButton2 className="img-down" /> : <DButton className="img-down" />}
+              {/* Dropdown menu code */}
+              {dropdownOpen1 && (
                 <div className="dropdown-menu">
-                  <div className="dropdown-item">고궁/문화유산</div>
-                  <div className="dropdown-item">공원</div>
-                  <div className="dropdown-item">관광특구</div>
-                  <div className="dropdown-item">발달상권</div>
-                  <div className="dropdown-item">인구밀집지역</div>
+                  <div className="dropdown-item1" onClick={() => handleDropdown1Item("고궁/문화유산")}>고궁/문화유산</div>
+                  <div className="dropdown-item" onClick={() => handleDropdown1Item("공원")}>공원</div>
+                  <div className="dropdown-item" onClick={() => handleDropdown1Item("관광특구")}>관광특구</div>
+                  <div className="dropdown-item" onClick={() => handleDropdown1Item("발달상권")}>발달상권</div>
+                  <div className="dropdown-item" onClick={() => handleDropdown1Item("인구밀집지역")}>인구밀집지역</div>
                 </div>
               )}
-            <div className='d2' onClick={handleDropdownClick1}><DButton className="img-down"/></div>
+            </div>
           </div>
           <div className='dropdown2'>
-            <div className='d1'>경복궁</div>
-            {dropdownOpen2 && (
-              <div className="dropdown-menu">
-                <div className="dropdown-item">1-ㄴㅇsss</div>
-                <div className="dropdown-item">aa</div>
-                <div className="dropdown-item">1bbㄴㅇ</div>
-              </div>
-            )}
-            <div className='d2' onClick={handleDropdownClick2}><DButton className="img-down" /></div>
+            <div className='d1' onClick={handleDropdownClick2}>
+              {selectedDropdown2}
+              {dropdownOpen2 ? <DButton2 className="img-down2" /> : <DButton className="img-down2" />}
+              {/* Dropdown menu code */}
+              {dropdownOpen2 && (
+                <div className="dropdown-menu">
+                  <div className="dropdown-item1" onClick={() => handleDropdown2Item("경복궁")}>경복궁</div>
+                  <div className="dropdown-item" onClick={() => handleDropdown2Item("떡볶이")}>떡볶이</div>
+                  <div className="dropdown-item" onClick={() => handleDropdown2Item("남산타워")}>남산타워</div>
+                </div>
+              )}
+            </div>
           </div>
         </div>
-
         <div className="mapscale" id="map" style={{ width: '364px', height: '246px' }} />
-        <div>
-          <p>혼잡도 날씨 미세먼지</p>
+        <div className='mid-main-view'>
+          <div className={`chaos ${selected === 'chaos' ? 'selected' : ''}`} onClick={() => setSelected('chaos')}></div>
+          <div className={`weather ${selected === 'weather' ? 'selected' : ''}`} onClick={() => setSelected('weather')}></div>
+          <div className={`dust ${selected === 'dust' ? 'selected' : ''}`} onClick={() => setSelected('dust')}></div>
         </div>
         <div className='detail-view'>
 
