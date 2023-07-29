@@ -37,7 +37,7 @@ function Map() {
     if (helpButtonRef.current) {
       const rect = helpButtonRef.current.getBoundingClientRect();
       setFloatingBoxPosition({
-        top: rect.top + window.scrollY-45,
+        top: rect.top + window.scrollY-46,
         left: rect.left + rect.width - 112
       });
     }
