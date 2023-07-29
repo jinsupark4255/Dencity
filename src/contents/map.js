@@ -1,9 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './nav.css'
 import { ReactComponent as Image1 } from './mypage.svg';
 import { ReactComponent as Image2 } from './commu.svg';
 import { ReactComponent as DButton } from './dropbutton.svg';
-import { ReactComponent as DButton2 } from './dropbutton2.svg'; // Second dropdown image
+import { ReactComponent as DButton2 } from './dropbutton2.svg';
+import { ReactComponent as ChaosButton1 } from './chaos_icon_1.svg';
+import { ReactComponent as WeatherButton2 } from './weather_icon_2.svg';
+import { ReactComponent as DustButton2 } from './dust_icon_2.svg';
+import { ReactComponent as HelpButton } from './Help.svg';
+import { ReactComponent as DizzyEmoji } from './Dizzy.svg';
+import { ReactComponent as CommunityFloat } from './commu_float.svg';
 
 function Map() {
   useEffect(() => {
@@ -12,7 +18,7 @@ function Map() {
       center: new window.kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표.
       level: 3 // 지도의 레벨(확대, 축소 정도)
     };
-
+    
     const map = new window.kakao.maps.Map(container, options); // 지도 생성 및 객체 리턴
     // 마커가 표시될 위치를 지도의 중심으로 설정
     const markerPosition = new window.kakao.maps.LatLng(33.450701, 126.570667);
@@ -25,22 +31,49 @@ function Map() {
     // 마커가 지도 위에 표시되도록 설정합니다
     marker.setMap(map);
   }, [])
-
+  const helpButtonRef = useRef(null);
+  const [floatingBoxPosition, setFloatingBoxPosition] = useState({ top: 0, left: 0 });
+  const updateFloatingBoxPosition = () => {
+    if (helpButtonRef.current) {
+      const rect = helpButtonRef.current.getBoundingClientRect();
+      setFloatingBoxPosition({
+        top: rect.top + window.scrollY-45,
+        left: rect.left + rect.width - 112
+      });
+    }
+  };
+  const showFloatingHelpBox = () => {
+    updateFloatingBoxPosition();
+    setShowHelpBox(true);
+  };
+  const [showHelpBox, setShowHelpBox] = useState(false);
+    
+    const hideFloatingHelpBox = () => {
+      setShowHelpBox(false);
+    }
   const [selected, setSelected] = useState('chaos');
   const [selectedDropdown1, setSelectedDropdown1] = useState("고궁/문화유산");
   const [selectedDropdown2, setSelectedDropdown2] = useState("경복궁");
 
   const [dropdownOpen1, setDropdownOpen1] = useState(false);
   const [dropdownOpen2, setDropdownOpen2] = useState(false);
-  
+  useEffect(() => {
+    if (showHelpBox) {
+      window.addEventListener('scroll', updateFloatingBoxPosition);
+    }
+
+    return () => {
+      window.removeEventListener('scroll', updateFloatingBoxPosition);
+    };
+  }, [showHelpBox]);
   const handleDropdownClick1 = () => {
     setDropdownOpen1(!dropdownOpen1);
   }
-  
+
   const handleDropdownClick2 = () => {
     setDropdownOpen2(!dropdownOpen2);
   }
-  
+
   const handleDropdown1Item = (item) => {
     setSelectedDropdown1(item);
     setDropdownOpen1(false);
@@ -53,6 +86,7 @@ function Map() {
 
   return (
     <div className='view'>
+      <CommunityFloat className="community-float" />
       <div className='top-view'>
         <div className='top-image'><Image1 /></div>
         <div className='logo'>로고</div>
@@ -93,14 +127,49 @@ function Map() {
         </div>
         <div className="mapscale" id="map" style={{ width: '364px', height: '246px' }} />
         <div className='mid-main-view'>
-          <div className={`chaos ${selected === 'chaos' ? 'selected' : ''}`} onClick={() => setSelected('chaos')}></div>
-          <div className={`weather ${selected === 'weather' ? 'selected' : ''}`} onClick={() => setSelected('weather')}></div>
-          <div className={`dust ${selected === 'dust' ? 'selected' : ''}`} onClick={() => setSelected('dust')}></div>
+          <div className={`chaos ${selected === 'chaos' ? 'selected' : ''}`} onClick={() => setSelected('chaos')}>
+            <ChaosButton1 className="chaos_icon" />
+            <span className='mid_text_1'>혼잡도</span>
+          </div>
+          <div className={`weather ${selected === 'weather' ? 'selected' : ''}`} onClick={() => setSelected('weather')}>
+            <WeatherButton2 className="weather_icon" />
+            <span className='mid_text_2'>날씨</span>
+          </div>
+          <div className={`dust ${selected === 'dust' ? 'selected' : ''}`} onClick={() => setSelected('dust')}>
+            <DustButton2 className="dust_icon" />
+            <span className='mid_text_3'>미세먼지</span>
+          </div>
         </div>
         <div className='detail-view'>
+          <div className='population'>
+            <div className='population_top'>
+            <HelpButton
+          ref={helpButtonRef} // 참조 연결
+          className='help_button'
+          onMouseEnter={showFloatingHelpBox}
+          onClick={showFloatingHelpBox}
+          onMouseLeave={hideFloatingHelpBox}
+        />
+              <div className='pop_text'>실시간 인구</div>
+            </div>
+            <div className='population_2'>
+              <div className='population_bottom'>
+                <div className='emoji'><DizzyEmoji /></div>
+                <div className='dizzyness'>혼잡</div>
+              </div>
+              <div className='diz_text'>사람이 몰려있을 가능성이 매우 크고 많이 붐빈다고 느낄 수 있어요.<br /> 인구밀도가 높은 구간에서는 도보 이동시 부딪힘이 발생할 수 있어요.</div>
+            </div>
 
+          </div>
+          <div className='age'></div>
+          <div className='gender'></div>
         </div>
       </div>
+      {showHelpBox && (
+        <div className="floating-help-box" style={floatingBoxPosition}>
+          <div className='text-box'>해당 장소에 사람이 얼마나 붐비는지 <br/>나타내는 지표로, 과거 평균 실시간 인<br/>구와 면적 대비 인구 수 등을 고려하여<br/> 산출합니다.</div>
+        </div>
+      )}
     </div>
   );
 }
