@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './nav.css'
 import AgePieChart from './AgePieChart';
+import GenderPieChart from './GenderPieChart';
 import { ReactComponent as Image1 } from './mypage.svg';
 import { ReactComponent as Image2 } from './commu.svg';
 import { ReactComponent as DButton } from './dropbutton.svg';
@@ -45,6 +46,10 @@ function Map() {
     { ageGroup: '11.0%', value: 11 },
     { ageGroup: '9.1%', value: 9.1 },
     { ageGroup: '11.3%', value: 11.3 },
+  ];
+  const genderData = [
+    { gender: '40.6%', value: 40.6 },
+    { gender: '59.4', value: 59.4 },
   ];
   const helpButtonRef = useRef(null);
   const [floatingBoxPosition, setFloatingBoxPosition] = useState({ top: 0, left: 0 });
@@ -177,21 +182,25 @@ function Map() {
           </div>
           <div className='age'>
             <div className='age_top'></div>
-              <div className='age_text'>연령대별 비율</div>
+            <div className='age_text'>연령대별 비율</div>
             <div className='age_bottom'>
               <AgePieChart data={ageData} width={200} height={200} />
               <div className='age_detail'>
-                <First/><span className='a_text'>10대 이하</span>
-                <Second/><span className='a_text'>20대</span>
-                <Third/><span className='a_text'>30대</span>
-                <Fourth/><span className='a_text'>40대</span>
-                <Fifth/><span className='a_text'>50대</span>
-                <Sixth/><span className='a_text'>60대 이상</span>
+                <First /><span className='a_text'>10대 이하</span>
+                <Second /><span className='a_text'>20대</span>
+                <Third /><span className='a_text'>30대</span>
+                <Fourth /><span className='a_text'>40대</span>
+                <Fifth /><span className='a_text'>50대</span>
+                <Sixth /><span className='a_text'>60대 이상</span>
               </div>
-              
             </div>
           </div>
-          <div className='gender'></div>
+          <div className='gender'>
+            <div className='gender_text'>성별 비율</div>
+            <div className='genderbutton'><GenderPieChart  data={genderData} width={200} height={200} /></div>
+          </div>
+
+
         </div>
       </div>
       {showHelpBox && (
