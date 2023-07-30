@@ -1,0 +1,518 @@
+* {
+  user-select: none;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  background-color: beige;
+}
+
+.view {
+  width: 390px;
+  height: 844px;
+  display: flex;
+  flex-direction: column;
+  background-color: #FFF;
+}
+
+.top-view {
+  display: flex;
+  flex-direction: row;
+  width: 390px;
+  height: 89px;
+  position: sticky;
+  box-shadow: 0 4px 6px -6px black;
+  overflow: hidden;
+}
+
+
+.top-image {
+  width: 22px;
+  height: 15px;
+  margin-top: 59px;
+  margin-left: 16px;
+}
+
+.logo {
+  margin-left: 134px;
+  margin-top: 52px;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.community {
+  width: 16px;
+  height: 17px;
+  margin-left: 143px;
+  margin-top: 58px;
+}
+
+.main-view {
+  position: relative;
+  margin-top: 1px;
+  height: calc(844px - 89px);
+  overflow-y: auto;
+}
+
+.top-main-view {
+  display: flex;
+  flex-direction: row;
+  margin-top: 8px;
+}
+
+.dropdown {
+  display: flex;
+  flex-direction: row;
+  margin-top: 11px;
+  margin-left: 14px;
+  width: 95px;
+  height: 22px;
+  font-size: 10px;
+  border: 1px solid #DC143C;
+  position: relative;
+
+}
+
+.dropdown-menu {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  top: 100%;
+  /* dropdown 컴포넌트의 바로 밑에 위치 */
+  left: 0;
+  /* dropdown 컴포넌트의 왼쪽 경계와 정렬 */
+  width: 96px;
+  z-index: 1000;
+  margin-left: -5px;
+  margin-top: -5.411px;
+}
+
+.dropdown-item1 {
+  margin-left: -1px;
+  width: 91px;
+  height: 22px;
+  padding-left: 6px;
+  padding-top: 4px;
+  margin-bottom: -3px;
+  background-color: #FBE7EB;
+}
+
+.dropdown-item1:hover {
+  margin-left: -1px;
+  width: 91px;
+  height: 22px;
+  padding-left: 6px;
+  padding-top: 4px;
+  margin-bottom: -3px;
+  background-color: #F1A1B1;
+}
+
+.dropdown-item {
+  margin-left: -1px;
+  width: 91px;
+  height: 22px;
+  padding-left: 6px;
+  padding-top: 4px;
+  margin-bottom: -3px;
+  background-color: #FBE7EB;
+}
+
+.dropdown-item:hover {
+  margin-left: -1px;
+  width: 91px;
+  height: 22px;
+  padding-left: 6px;
+  padding-top: 4px;
+  margin-bottom: -3px;
+  background-color: #F1A1B1;
+}
+
+.d1 {
+  width: 59px;
+  height: 11px;
+  margin-left: 5px;
+  font-size: 10px;
+  margin-top: 5px;
+  white-space: nowrap;
+}
+
+.dropdown2 {
+  display: flex;
+  flex-direction: row;
+  margin-top: 11px;
+  margin-left: 14px;
+  width: 95px;
+  height: 22px;
+  font-size: 10px;
+  border: 1px solid #DC143C;
+  position: relative;
+}
+
+.img-down {
+  margin-top: 9.01px;
+  margin-right: 7.5px;
+  margin-left: 11.5px;
+  position: absolute;
+  right: 0.5px;
+  top: 15%;
+  transform: translateY(-50%);
+}
+
+.img-down2 {
+  margin-top: 9.01px;
+  margin-right: 7.5px;
+  margin-left: 11.5px;
+  position: absolute;
+  right: 0.5px;
+  top: 15%;
+  transform: translateY(-50%);
+}
+
+.mid-main-view {
+  display: flex;
+  flex-direction: row;
+  margin-left: 13px;
+  width: 364px;
+  height: 66px;
+}
+
+.chaos {
+  width: 66px;
+  height: 25px;
+  border-radius: 29px;
+  border: 1px solid #FBE7EB;
+  background: #FFF;
+  margin-top: 24px;
+  margin-right: 5px;
+  display: flex;
+  flex-direction: row;
+}
+
+.chaos:hover {
+  border: 1px solid #DC143C;
+}
+
+.weather {
+  width: 66px;
+  height: 25px;
+  border-radius: 29px;
+  border: 1px solid #FBE7EB;
+  background: #FFF;
+  margin-top: 24px;
+  margin-right: 5px;
+  display: flex;
+  flex-direction: row;
+}
+
+.weather:hover {
+  border: 1px solid #DC143C;
+}
+
+.dust {
+  width: 66px;
+  height: 25px;
+  border-radius: 29px;
+  border: 1px solid #FBE7EB;
+  background: #FFF;
+  margin-top: 24px;
+  margin-right: 5px;
+  display: flex;
+  flex-direction: row;
+}
+
+.dust:hover {
+  border: 1px solid #DC143C;
+}
+
+/* Chrome, Edge */
+.main-view::-webkit-scrollbar {
+  display: none;
+}
+
+/* Firefox */
+.main-view {
+  scrollbar-width: none;
+}
+
+/* IE and Edge */
+.main-view {
+  -ms-overflow-style: none;
+}
+
+
+.mapscale {
+  margin-left: 13px;
+  margin-top: 13px;
+  width: 364px;
+  height: 246px;
+  flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-sizing: border-box;
+}
+
+.selected {
+  border: 1px solid #DC143C;
+  display: flex;
+  flex-direction: row;
+  width: 66px;
+  height: 25px;
+}
+
+.mid_text_1 {
+  font-size: 9px;
+  font-weight: 400;
+  margin-top: 6px;
+  margin-left: 10px;
+  width: 34px;
+  height: 11px;
+  white-space: nowrap;
+}
+
+.mid_text_2 {
+  font-size: 9px;
+  font-weight: 400;
+  margin-top: 6px;
+  margin-left: 12px;
+  width: 17px;
+  height: 11px;
+  white-space: nowrap;
+}
+
+.mid_text_3 {
+  font-size: 9px;
+  font-weight: 400;
+  margin-top: 6px;
+  margin-left: 5px;
+  width: 34px;
+  height: 11px;
+  white-space: nowrap;
+}
+
+.chaos_icon {
+  margin-left: 8px;
+  margin-top: 8px;
+  width: 15px;
+  height: 9px;
+}
+
+.weather_icon {
+  margin-left: 10px;
+  margin-top: 8px;
+  width: 16px;
+  height: 10px;
+}
+
+.dust_icon {
+  margin-left: 8px;
+  margin-top: 7px;
+  width: 11px;
+  height: 11px;
+}
+
+.detail-view {
+  width: 364px;
+  height: 596px;
+  border-radius: 11px;
+  border: 1px solid #E0E0E0;
+  background: #FFF;
+  margin-left: 13px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+}
+
+.population {
+  height: 146px;
+  width: 100%;
+}
+
+.population_top {
+  height: 56px;
+  width: 100%;
+  margin-top: -6px;
+}
+
+.population_bottom {
+  margin-top: 6px;
+  height: 94px;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.pop_text {
+  margin-left: 18px;
+  color: #000;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.help_button {
+  margin-left: 328px;
+  margin-top: 10px;
+  width: 22px;
+  height: 22px;
+}
+
+.emoji {
+  margin-top: 18px;
+  margin-left: 134px;
+  width: 34px;
+  height: 34px;
+}
+
+.dizzyness {
+  margin-left: 17px;
+  margin-top: 18px;
+  color: #E80000;
+  font-family: Inter;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.diz_text {
+  display: flex;
+  flex-direction: row;
+  margin-top: -20px;
+  justify-content: center;
+  color: #000;
+  font-family: Inter;
+  font-size: 9px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+
+.floating-help-box {
+  position: fixed;
+  top: 418px;
+  right: 777px;
+  z-index: 9999;
+  border-radius: 3px;
+  background: rgba(0, 0, 0, 0.60);
+  width: 122px;
+  height: 42px;
+  padding-top: 3px;
+  padding-left: 5px;
+  padding-bottom: 1px;
+
+}
+.text-box{
+  width: 112px;
+  height: 32px;
+  color: #FFF;
+  font-size: 7px;
+  font-weight: 400;
+  white-space: nowrap;
+  text-align: center;
+}
+.age_top{
+  margin-top: 5px;
+  height: 35px;
+  width: 100%;
+}
+.age_bottom{
+  height: 150px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-top: 25px;
+  align-items: center;
+}
+.age_text{
+  width: 117px;
+  height: 24px;
+  margin-top: 5px;
+  margin-left: 18px;
+  color: #000;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  white-space: nowrap;
+}
+.age_detail{
+  margin-top: -80px;
+  width: 310px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+.a_text{
+  margin-left: -6px;
+  padding-bottom: 1px;
+}
+.gender{
+  height: 206px;
+  width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+.gender{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.gender_text{
+  width: 117px;
+  margin-left: 18px;
+  margin-top: 30px;
+  color: #000;
+  font-family: Inter;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  white-space: nowrap;
+}
+.genderbutton{
+  height: 120px;
+  width: 200px;
+  margin-top: 20px;
+  margin-left: 82px;
+  
+}
+.community-float {
+  position: fixed; /* 상대적인 위치를 지정하고 싶을 경우 'absolute'를 사용 */
+  top: 90%; /* 페이지 상단에서 0px 떨어진 위치에 배치 */
+  right: 36%; /* 페이지의 중앙에서 정렬하기 위해 */
+  transform: translateX(-50%); /* 왼쪽으로 50% 이동하여 중앙 정렬 보정 */
+  z-index: 999; /* 다른 요소 위에 표시되도록 z-index 설정 */
+  width: 46px;
+  height: 46px;
+}
+
+@media (max-width: 844px) {
+  .community-float {
+    position: fixed; /* 상대적인 위치를 지정하고 싶을 경우 'absolute'를 사용 */
+    top: 90%; /* 페이지 상단에서 0px 떨어진 위치에 배치 */
+    right: -20px; /* 페이지의 중앙에서 정렬하기 위해 */
+    z-index: 999; /* 다른 요소 위에 표시되도록 z-index 설정 */
+    width: 46px;
+    height: 46px;
+  }
+  .dropdown-item:hover {
+    margin-left: -1px;
+    width: 91px;
+    height: 22px;
+    padding-left: 6px;
+    padding-top: 4px;
+    margin-bottom: -3px;
+    background-color: #F1A1B1;
+  }
+}
