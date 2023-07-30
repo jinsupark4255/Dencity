@@ -1,12 +1,12 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Map from './contents/map';  // Map 컴포넌트를 가져옵니다.
+import MainPage from './contents/mainpage';
 
 function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/map" element={<Map />} />
+        <Route path="/main" element={<MainPage />} />
       </Routes>
     </Router>
   );

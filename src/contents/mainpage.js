@@ -19,7 +19,7 @@ import { ReactComponent as Fourth } from './40대.svg';
 import { ReactComponent as Fifth } from './50대.svg';
 import { ReactComponent as Sixth } from './60대.svg';
 
-function Map() {
+function MainPage() {
   useEffect(() => {
     const container = document.getElementById('map'); // 지도를 담을 영역의 DOM 레퍼런스
     const options = { // 지도를 생성할 때 필요한 기본 옵션
@@ -243,4 +243,4 @@ function Map() {
   );
 }
 
-export default Map;
+export default MainPage;
