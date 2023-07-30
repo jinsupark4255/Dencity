@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './nav.css'
+import AgePieChart from './AgePieChart';
 import { ReactComponent as Image1 } from './mypage.svg';
 import { ReactComponent as Image2 } from './commu.svg';
 import { ReactComponent as DButton } from './dropbutton.svg';
@@ -10,6 +11,12 @@ import { ReactComponent as DustButton2 } from './dust_icon_2.svg';
 import { ReactComponent as HelpButton } from './Help.svg';
 import { ReactComponent as DizzyEmoji } from './Dizzy.svg';
 import { ReactComponent as CommunityFloat } from './commu_float.svg';
+import { ReactComponent as First } from './10대.svg';
+import { ReactComponent as Second } from './20대.svg';
+import { ReactComponent as Third } from './30대.svg';
+import { ReactComponent as Fourth } from './40대.svg';
+import { ReactComponent as Fifth } from './50대.svg';
+import { ReactComponent as Sixth } from './60대.svg';
 
 function Map() {
   useEffect(() => {
@@ -18,7 +25,7 @@ function Map() {
       center: new window.kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표.
       level: 3 // 지도의 레벨(확대, 축소 정도)
     };
-    
+
     const map = new window.kakao.maps.Map(container, options); // 지도 생성 및 객체 리턴
     // 마커가 표시될 위치를 지도의 중심으로 설정
     const markerPosition = new window.kakao.maps.LatLng(33.450701, 126.570667);
@@ -31,13 +38,21 @@ function Map() {
     // 마커가 지도 위에 표시되도록 설정합니다
     marker.setMap(map);
   }, [])
+  const ageData = [
+    { ageGroup: '8.6%', value: 8.6 },
+    { ageGroup: '43.4%', value: 43.4 },
+    { ageGroup: '16.6%', value: 16.6 },
+    { ageGroup: '11.0%', value: 11 },
+    { ageGroup: '9.1%', value: 9.1 },
+    { ageGroup: '11.3%', value: 11.3 },
+  ];
   const helpButtonRef = useRef(null);
   const [floatingBoxPosition, setFloatingBoxPosition] = useState({ top: 0, left: 0 });
   const updateFloatingBoxPosition = () => {
     if (helpButtonRef.current) {
       const rect = helpButtonRef.current.getBoundingClientRect();
       setFloatingBoxPosition({
-        top: rect.top + window.scrollY-46,
+        top: rect.top + window.scrollY - 46,
         left: rect.left + rect.width - 112
       });
     }
@@ -47,10 +62,10 @@ function Map() {
     setShowHelpBox(true);
   };
   const [showHelpBox, setShowHelpBox] = useState(false);
-    
-    const hideFloatingHelpBox = () => {
-      setShowHelpBox(false);
-    }
+
+  const hideFloatingHelpBox = () => {
+    setShowHelpBox(false);
+  }
   const [selected, setSelected] = useState('chaos');
   const [selectedDropdown1, setSelectedDropdown1] = useState("고궁/문화유산");
   const [selectedDropdown2, setSelectedDropdown2] = useState("경복궁");
@@ -143,13 +158,13 @@ function Map() {
         <div className='detail-view'>
           <div className='population'>
             <div className='population_top'>
-            <HelpButton
-          ref={helpButtonRef} // 참조 연결
-          className='help_button'
-          onMouseEnter={showFloatingHelpBox}
-          onClick={showFloatingHelpBox}
-          onMouseLeave={hideFloatingHelpBox}
-        />
+              <HelpButton
+                ref={helpButtonRef} // 참조 연결
+                className='help_button'
+                onMouseEnter={showFloatingHelpBox}
+                onClick={showFloatingHelpBox}
+                onMouseLeave={hideFloatingHelpBox}
+              />
               <div className='pop_text'>실시간 인구</div>
             </div>
             <div className='population_2'>
@@ -159,15 +174,29 @@ function Map() {
               </div>
               <div className='diz_text'>사람이 몰려있을 가능성이 매우 크고 많이 붐빈다고 느낄 수 있어요.<br /> 인구밀도가 높은 구간에서는 도보 이동시 부딪힘이 발생할 수 있어요.</div>
             </div>
-
           </div>
-          <div className='age'></div>
+          <div className='age'>
+            <div className='age_top'></div>
+              <div className='age_text'>연령대별 비율</div>
+            <div className='age_bottom'>
+              <AgePieChart data={ageData} width={200} height={200} />
+              <div className='age_detail'>
+                <First/><span className='a_text'>10대 이하</span>
+                <Second/><span className='a_text'>20대</span>
+                <Third/><span className='a_text'>30대</span>
+                <Fourth/><span className='a_text'>40대</span>
+                <Fifth/><span className='a_text'>50대</span>
+                <Sixth/><span className='a_text'>60대 이상</span>
+              </div>
+              
+            </div>
+          </div>
           <div className='gender'></div>
         </div>
       </div>
       {showHelpBox && (
         <div className="floating-help-box" style={floatingBoxPosition}>
-          <div className='text-box'>해당 장소에 사람이 얼마나 붐비는지 <br/>나타내는 지표로, 과거 평균 실시간 인<br/>구와 면적 대비 인구 수 등을 고려하여<br/> 산출합니다.</div>
+          <div className='text-box'>해당 장소에 사람이 얼마나 붐비는지 <br />나타내는 지표로, 과거 평균 실시간 인<br />구와 면적 대비 인구 수 등을 고려하여<br /> 산출합니다.</div>
         </div>
       )}
     </div>
