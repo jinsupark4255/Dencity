@@ -394,12 +394,7 @@ body {
   line-height: normal;
 }
 
-.community-float {
-  position: fixed;
-  top: 757px;
-  right: 767px;
-  z-index: 1000;
-}
+
 .floating-help-box {
   position: fixed;
   top: 418px;
@@ -464,6 +459,8 @@ body {
 .gender{
   height: 206px;
   width: 100%;
+  overflow: hidden;
+  position: relative;
 }
 .gender{
   width: 100%;
@@ -486,6 +483,36 @@ body {
 .genderbutton{
   height: 120px;
   width: 200px;
-  margin-top: 30px;
+  margin-top: 20px;
   margin-left: 82px;
+  
+}
+.community-float {
+  position: fixed; /* 상대적인 위치를 지정하고 싶을 경우 'absolute'를 사용 */
+  top: 90%; /* 페이지 상단에서 0px 떨어진 위치에 배치 */
+  right: 36%; /* 페이지의 중앙에서 정렬하기 위해 */
+  transform: translateX(-50%); /* 왼쪽으로 50% 이동하여 중앙 정렬 보정 */
+  z-index: 999; /* 다른 요소 위에 표시되도록 z-index 설정 */
+  width: 46px;
+  height: 46px;
+}
+
+@media (max-width: 844px) {
+  .community-float {
+    position: fixed; /* 상대적인 위치를 지정하고 싶을 경우 'absolute'를 사용 */
+    top: 90%; /* 페이지 상단에서 0px 떨어진 위치에 배치 */
+    right: -20px; /* 페이지의 중앙에서 정렬하기 위해 */
+    z-index: 999; /* 다른 요소 위에 표시되도록 z-index 설정 */
+    width: 46px;
+    height: 46px;
+  }
+  .dropdown-item:hover {
+    margin-left: -1px;
+    width: 91px;
+    height: 22px;
+    padding-left: 6px;
+    padding-top: 4px;
+    margin-bottom: -3px;
+    background-color: #F1A1B1;
+  }
 }

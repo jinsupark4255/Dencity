@@ -77,6 +77,13 @@ function Map() {
 
   const [dropdownOpen1, setDropdownOpen1] = useState(false);
   const [dropdownOpen2, setDropdownOpen2] = useState(false);
+  const toggleFloatingHelpBox = () => {
+    if (showHelpBox) {
+      hideFloatingHelpBox();
+    } else {
+      showFloatingHelpBox();
+    }
+  };
   useEffect(() => {
     if (showHelpBox) {
       window.addEventListener('scroll', updateFloatingBoxPosition);
@@ -102,6 +109,75 @@ function Map() {
   const handleDropdown2Item = (item) => {
     setSelectedDropdown2(item);
     setDropdownOpen2(false);
+  };
+
+  const renderDetailView = () => {
+    switch (selected) {
+      case 'chaos':
+        return (
+          <div className='detail-view'>
+            <div className='population'>
+              <div className='population_top'>
+                <HelpButton
+                  ref={helpButtonRef} // 참조 연결
+                  className='help_button'
+                  onMouseEnter={showFloatingHelpBox}
+                  onClick={toggleFloatingHelpBox}
+                  onMouseLeave={hideFloatingHelpBox}
+                />
+                <div className='pop_text'>실시간 인구</div>
+              </div>
+              <div className='population_2'>
+                <div className='population_bottom'>
+                  <div className='emoji'><DizzyEmoji /></div>
+                  <div className='dizzyness'>혼잡</div>
+                </div>
+                <div className='diz_text'>사람이 몰려있을 가능성이 매우 크고 많이 붐빈다고 느낄 수 있어요.<br /> 인구밀도가 높은 구간에서는 도보 이동시 부딪힘이 발생할 수 있어요.</div>
+              </div>
+            </div>
+            <div className='age'>
+              <div className='age_top'></div>
+              <div className='age_text'>연령대별 비율</div>
+              <div className='age_bottom'>
+
+                <AgePieChart data={ageData} width={200} height={200} />
+                <div className='age_detail'>
+                  <First /><span className='a_text'>10대 이하</span>
+                  <Second /><span className='a_text'>20대</span>
+                  <Third /><span className='a_text'>30대</span>
+                  <Fourth /><span className='a_text'>40대</span>
+                  <Fifth /><span className='a_text'>50대</span>
+                  <Sixth /><span className='a_text'>60대 이상</span>
+                </div>
+              </div>
+            </div>
+            <div className='gender'>
+              <div className='gender_text'>성별 비율</div>
+              <div className='genderbutton'><GenderPieChart data={genderData} width={200} height={200} /></div>
+            </div>
+
+            {showHelpBox && (
+              <div className="floating-help-box" style={floatingBoxPosition}>
+                <div className='text-box'>해당 장소에 사람이 얼마나 붐비는지 <br />나타내는 지표로, 과거 평균 실시간 인<br />구와 면적 대비 인구 수 등을 고려하여<br /> 산출합니다.</div>
+              </div>
+            )}
+          </div>
+        );
+      case 'weather':
+        return (
+          <div>
+            {/* ...날씨 상세보기 내용... */}
+          </div>
+        );
+      case 'dust':
+        return (
+          <div>
+            {/* ...미세먼지 상세보기 내용... */}
+          </div>
+        );
+      default:
+        return null;
+    }
   };
 
   return (
@@ -160,54 +236,9 @@ function Map() {
             <span className='mid_text_3'>미세먼지</span>
           </div>
         </div>
-        <div className='detail-view'>
-          <div className='population'>
-            <div className='population_top'>
-              <HelpButton
-                ref={helpButtonRef} // 참조 연결
-                className='help_button'
-                onMouseEnter={showFloatingHelpBox}
-                onClick={showFloatingHelpBox}
-                onMouseLeave={hideFloatingHelpBox}
-              />
-              <div className='pop_text'>실시간 인구</div>
-            </div>
-            <div className='population_2'>
-              <div className='population_bottom'>
-                <div className='emoji'><DizzyEmoji /></div>
-                <div className='dizzyness'>혼잡</div>
-              </div>
-              <div className='diz_text'>사람이 몰려있을 가능성이 매우 크고 많이 붐빈다고 느낄 수 있어요.<br /> 인구밀도가 높은 구간에서는 도보 이동시 부딪힘이 발생할 수 있어요.</div>
-            </div>
-          </div>
-          <div className='age'>
-            <div className='age_top'></div>
-            <div className='age_text'>연령대별 비율</div>
-            <div className='age_bottom'>
-              <AgePieChart data={ageData} width={200} height={200} />
-              <div className='age_detail'>
-                <First /><span className='a_text'>10대 이하</span>
-                <Second /><span className='a_text'>20대</span>
-                <Third /><span className='a_text'>30대</span>
-                <Fourth /><span className='a_text'>40대</span>
-                <Fifth /><span className='a_text'>50대</span>
-                <Sixth /><span className='a_text'>60대 이상</span>
-              </div>
-            </div>
-          </div>
-          <div className='gender'>
-            <div className='gender_text'>성별 비율</div>
-            <div className='genderbutton'><GenderPieChart  data={genderData} width={200} height={200} /></div>
-          </div>
-
-
-        </div>
+        {renderDetailView()}
       </div>
-      {showHelpBox && (
-        <div className="floating-help-box" style={floatingBoxPosition}>
-          <div className='text-box'>해당 장소에 사람이 얼마나 붐비는지 <br />나타내는 지표로, 과거 평균 실시간 인<br />구와 면적 대비 인구 수 등을 고려하여<br /> 산출합니다.</div>
-        </div>
-      )}
+
     </div>
   );
 }
