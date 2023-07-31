@@ -2,22 +2,22 @@ import React, { useState, useEffect, useRef } from 'react';
 import './nav.css'
 import AgePieChart from './AgePieChart';
 import GenderPieChart from './GenderPieChart';
-import { ReactComponent as Image1 } from './mypage.svg';
-import { ReactComponent as Image2 } from './commu.svg';
-import { ReactComponent as DButton } from './dropbutton.svg';
-import { ReactComponent as DButton2 } from './dropbutton2.svg';
-import { ReactComponent as ChaosButton1 } from './chaos_icon_1.svg';
-import { ReactComponent as WeatherButton2 } from './weather_icon_2.svg';
-import { ReactComponent as DustButton2 } from './dust_icon_2.svg';
-import { ReactComponent as HelpButton } from './Help.svg';
-import { ReactComponent as DizzyEmoji } from './Dizzy.svg';
-import { ReactComponent as CommunityFloat } from './commu_float.svg';
-import { ReactComponent as First } from './10대.svg';
-import { ReactComponent as Second } from './20대.svg';
-import { ReactComponent as Third } from './30대.svg';
-import { ReactComponent as Fourth } from './40대.svg';
-import { ReactComponent as Fifth } from './50대.svg';
-import { ReactComponent as Sixth } from './60대.svg';
+import { ReactComponent as Image1 } from './images/mypage.svg';
+import { ReactComponent as Image2 } from './images/commu.svg';
+import { ReactComponent as DButton } from './images/dropbutton.svg';
+import { ReactComponent as DButton2 } from './images/dropbutton2.svg';
+import { ReactComponent as ChaosButton1 } from './images/chaos_icon_1.svg';
+import { ReactComponent as WeatherButton2 } from './images/weather_icon_2.svg';
+import { ReactComponent as DustButton2 } from './images/dust_icon_2.svg';
+import { ReactComponent as HelpButton } from './images/Help.svg';
+import { ReactComponent as DizzyEmoji } from './images/Dizzy.svg';
+import { ReactComponent as CommunityFloat } from './images/commu_float.svg';
+import { ReactComponent as First } from './images/10대.svg';
+import { ReactComponent as Second } from './images/20대.svg';
+import { ReactComponent as Third } from './images/30대.svg';
+import { ReactComponent as Fourth } from './images/40대.svg';
+import { ReactComponent as Fifth } from './images/50대.svg';
+import { ReactComponent as Sixth } from './images/60대.svg';
 
 function MainPage() {
   useEffect(() => {
