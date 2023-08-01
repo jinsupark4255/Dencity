@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import axios from 'axios';  
 import './nav.css'
 import AgePieChart from './AgePieChart';
 import GenderPieChart from './GenderPieChart';
@@ -38,6 +39,19 @@ function MainPage() {
 
     // 마커가 지도 위에 표시되도록 설정합니다
     marker.setMap(map);
+
+    ///api 받아오기
+    const fetchData = async () => {
+      try {
+        const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
+        const titles = response.data[1].userId; // title만 추출
+        console.log('타이틀:', titles);
+      } catch (error) {
+        console.error('데이터를 불러오는데 실패했습니다', error);
+      }
+    };
+
+    fetchData();
   }, [])
   const ageData = [
     { ageGroup: '8.6%', value: 8.6 },
