@@ -53,8 +53,7 @@ const KakaoLogin = () => {
         src={Logo}
         alt="로고 이미지"
       />
-
-
+      
       <img
         className='kakao-login-button'
         src={KakaoLogo}
