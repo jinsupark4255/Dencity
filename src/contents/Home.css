@@ -1,0 +1,25 @@
+/* 전체 컨테이너 스타일 */
+.kakao-login-container {
+    width: 390px;
+    height: 844px;
+    position: relative;
+    background-color: white;
+  }
+  
+  /* 로고 이미지 스타일 */
+  .logo-image {
+    width: 165px; /* 로고 이미지의 원하는 크기로 설정 */
+    height: 165px; /* 로고 이미지의 원하는 크기로 설정 */
+    position: absolute;
+    top: 257px;
+    left: 113px;
+  }
+  
+  /* 로그인 버튼 스타일 */
+  .kakao-login-button {
+    width: 293px;
+    height: 48px;
+    position: absolute;top: 496px;left: 49px;
+    cursor: pointer;
+  
+  }
