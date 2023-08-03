@@ -459,7 +459,10 @@ function MainPage() {
       case 'dust':
         return (
           <div>
-            {/* ...미세먼지 상세보기 내용... */}
+            <div>sss</div>
+            {/* ...미세먼지 상세보기 내용... */
+            
+            }
           </div>
         );
       default:
