@@ -445,24 +445,23 @@ function MainPage() {
               24시간 날씨 예보
             </div>
 
-
-
-
-
-
-
-
-
-
           </div>
         );
-      case 'dust':
+      case 'dust'://dust 부분
         return (
-          <div>
-            <div>sss</div>
-            {/* ...미세먼지 상세보기 내용... */
-            
-            }
+          <div className='detail-view'>
+            <div>2023.07.24 16:55 기준</div>
+            <div>
+              <div>통합대기환경지수      /            보통</div>
+              <div>막대기 그래프</div>
+            </div>
+            <div>
+              <div>미세먼지       /     23 어쩌구저쩌구 좋음</div>
+              <div>초미세먼지     /     17 어쩌구저쩌구 보통</div>
+            </div>
+            <div>
+              오존/이산화질소/일산화탄소/아황산가스
+            </div>
           </div>
         );
       default:
