@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import axios from 'axios';  
 import './nav.css'
 import AgePieChart from './AgePieChart';
 import GenderPieChart from './GenderPieChart';
@@ -8,7 +7,10 @@ import { ReactComponent as Image2 } from './images/commu.svg';
 import { ReactComponent as DButton } from './images/dropbutton.svg';
 import { ReactComponent as DButton2 } from './images/dropbutton2.svg';
 import { ReactComponent as ChaosButton1 } from './images/chaos_icon_1.svg';
+import { ReactComponent as ChaosButton2 } from './images/chaos_icon_2.svg';
+import { ReactComponent as WeatherButton1 } from './images/weather_icon_1.svg';
 import { ReactComponent as WeatherButton2 } from './images/weather_icon_2.svg';
+import { ReactComponent as DustButton1 } from './images/dust_icon_1.svg';
 import { ReactComponent as DustButton2 } from './images/dust_icon_2.svg';
 import { ReactComponent as HelpButton } from './images/Help.svg';
 import { ReactComponent as DizzyEmoji } from './images/Dizzy.svg';
@@ -19,6 +21,8 @@ import { ReactComponent as Third } from './images/30대.svg';
 import { ReactComponent as Fourth } from './images/40대.svg';
 import { ReactComponent as Fifth } from './images/50대.svg';
 import { ReactComponent as Sixth } from './images/60대.svg';
+import { ReactComponent as Male } from './images/male.svg';
+import { ReactComponent as Female } from './images/female.svg';
 
 function MainPage() {
   useEffect(() => {
@@ -40,18 +44,7 @@ function MainPage() {
     // 마커가 지도 위에 표시되도록 설정합니다
     marker.setMap(map);
 
-    ///api 받아오기
-    const fetchData = async () => {
-      try {
-        const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
-        const titles = response.data[1].userId; // title만 추출
-        console.log('타이틀:', titles);
-      } catch (error) {
-        console.error('데이터를 불러오는데 실패했습니다', error);
-      }
-    };
 
-    fetchData();
   }, [])
   const ageData = [
     { ageGroup: '8.6%', value: 8.6 },
@@ -125,6 +118,40 @@ function MainPage() {
     setDropdownOpen2(false);
   };
 
+  const [buttons, setButtons] = useState({
+    chaos: ChaosButton1,
+    weather: WeatherButton2,
+    dust: DustButton2,
+  });
+
+  const [activeButton, setActiveButton] = useState('chaos');
+  const handleChaosClick = () => {
+    setButtons({
+      chaos: ChaosButton1,
+      weather: WeatherButton2,
+      dust: DustButton2,
+    });
+    setActiveButton('chaos');
+  };
+
+  const handleWeatherClick = () => {
+    setButtons({
+      chaos: ChaosButton2,
+      weather: WeatherButton1,
+      dust: DustButton2,
+    });
+    setActiveButton('weather');
+  };
+
+  const handleDustClick = () => {
+    setButtons({
+      chaos: ChaosButton2,
+      weather: WeatherButton2,
+      dust: DustButton1,
+    });
+    setActiveButton('dust');
+  };
+
   const renderDetailView = () => {
     switch (selected) {
       case 'chaos':
@@ -167,7 +194,17 @@ function MainPage() {
             </div>
             <div className='gender'>
               <div className='gender_text'>성별 비율</div>
-              <div className='genderbutton'><GenderPieChart data={genderData} width={200} height={200} /></div>
+              <div className='gender_bottom'>
+                <div className='male_gender'>
+                  <Male className='male_icon' /><span className='male_text'>남성</span>
+                </div>
+
+                <div className='genderbutton'><GenderPieChart data={genderData} width={200} height={200} /></div>
+                <div className='female_gender'>
+                  <Female className='female_icon' /><span className='female_text'>여성</span>
+                </div>
+
+              </div>
             </div>
 
             {showHelpBox && (
@@ -237,16 +274,25 @@ function MainPage() {
         </div>
         <div className="mapscale" id="map" style={{ width: '364px', height: '246px' }} />
         <div className='mid-main-view'>
-          <div className={`chaos ${selected === 'chaos' ? 'selected' : ''}`} onClick={() => setSelected('chaos')}>
-            <ChaosButton1 className="chaos_icon" />
+          <div className={`chaos ${activeButton === 'chaos' ? 'active' : ''}`} onClick={() => {
+            handleChaosClick();
+            setSelected('chaos');
+          }}>
+            <buttons.chaos className="chaos_icon" />
             <span className='mid_text_1'>혼잡도</span>
           </div>
-          <div className={`weather ${selected === 'weather' ? 'selected' : ''}`} onClick={() => setSelected('weather')}>
-            <WeatherButton2 className="weather_icon" />
+          <div className={`weather ${activeButton === 'weather' ? 'active' : ''}`} onClick={() => {
+            handleWeatherClick();
+            setSelected('weather');
+          }}>
+            <buttons.weather className="weather_icon" />
             <span className='mid_text_2'>날씨</span>
           </div>
-          <div className={`dust ${selected === 'dust' ? 'selected' : ''}`} onClick={() => setSelected('dust')}>
-            <DustButton2 className="dust_icon" />
+          <div className={`dust ${activeButton === 'dust' ? 'active' : ''}`} onClick={() => {
+            handleDustClick();
+            setSelected('dust');
+          }}>
+            <buttons.dust className="dust_icon" />
             <span className='mid_text_3'>미세먼지</span>
           </div>
         </div>
