@@ -1,4 +1,8 @@
 import React, { useState, useEffect, useRef } from 'react';
+
+
+import axios from 'axios';
+
 import './nav.css'
 import AgePieChart from './AgePieChart';
 import GenderPieChart from './GenderPieChart';
@@ -21,8 +25,12 @@ import { ReactComponent as Third } from './images/30대.svg';
 import { ReactComponent as Fourth } from './images/40대.svg';
 import { ReactComponent as Fifth } from './images/50대.svg';
 import { ReactComponent as Sixth } from './images/60대.svg';
+
 import { ReactComponent as Male } from './images/male.svg';
 import { ReactComponent as Female } from './images/female.svg';
+
+import sunnyIcon from './images/sunny.svg';
+
 
 function MainPage() {
   useEffect(() => {
@@ -118,6 +126,7 @@ function MainPage() {
     setDropdownOpen2(false);
   };
 
+
   const [buttons, setButtons] = useState({
     chaos: ChaosButton1,
     weather: WeatherButton2,
@@ -151,6 +160,78 @@ function MainPage() {
     });
     setActiveButton('dust');
   };
+
+
+
+
+  const forecastData_top = [
+    { emogi: 'sunny', value: 'sunny' },
+    { temperature: '29.7°C', value: '29.7°C' },
+  ];
+
+  const forecastData_minmax = [
+    { min: '25°C', value: '25°C' },
+    { max: '29°C', value: '29°C' },
+  ];
+
+  const forecastData_time = [
+    { weather0: '16시', value: '16시' },
+    { weather1: '17시', value: '17시' },
+    { weather2: '18시', value: '18시' },
+    { weather3: '19시', value: '19시' },
+    { weather4: '20시', value: '20시' },
+    { weather5: '21시', value: '21시' },
+    { weather6: '22시', value: '22시' }
+  ];
+
+  const forecastData_weather = [
+    { weather0: 'cloud', value: 'cloud' },
+    { weather1: 'sunny', value: 'sunny' },
+    { weather2: 'sunny', value: 'sunny' },
+    { weather3: 'sunny', value: 'sunny' },
+    { weather4: 'sunny', value: 'sunny' },
+    { weather5: 'sunny', value: 'sunny' },
+    { weather6: 'sunny', value: 'sunny' }
+  ];
+
+  const forecastData_temperature = [
+    { weather0: '30°C', value: '30°C' },
+    { weather1: '30°C', value: '30°C' },
+    { weather2: '30°C', value: '30°C' },
+    { weather3: '30°C', value: '30°C' },
+    { weather4: '30°C', value: '30°C' },
+    { weather5: '30°C', value: '30°C' },
+    { weather6: '30°C', value: '30°C' }
+  ];
+
+  const forecastData_precipitation = [
+    { weather0: '--', value: '--' },
+    { weather1: '--', value: '--' },
+    { weather2: '--', value: '--' },
+    { weather3: '--', value: '--' },
+    { weather4: '--', value: '--' },
+    { weather5: '--', value: '--' },
+    { weather6: '--', value: '--' }
+  ];
+
+  const forecastData_probability = [
+    { weather0: '30%', value: '30%' },
+    { weather1: '30%', value: '30%' },
+    { weather2: '30%', value: '30%' },
+    { weather3: '30%', value: '30%' },
+    { weather4: '30%', value: '30%' },
+    { weather5: '30%', value: '30%' },
+    { weather6: '30%', value: '30%' }
+  ];
+
+
+
+
+
+
+
+
+
 
   const renderDetailView = () => {
     switch (selected) {
@@ -214,10 +295,165 @@ function MainPage() {
             )}
           </div>
         );
+
       case 'weather':
+        const currentDate = new Date();
+        function formatDateTime(date) {
+          const year = date.getFullYear();
+          const month = String(date.getMonth() + 1).padStart(2, '0');
+          const day = String(date.getDate()).padStart(2, '0');
+          const hours = String(date.getHours()).padStart(2, '0');
+          const minutes = String(date.getMinutes()).padStart(2, '0');
+
+          return `${year}.${month}.${day} ${hours}:${minutes}`;
+        }
+        const formattedDate = formatDateTime(currentDate);
+
         return (
-          <div>
-            {/* ...날씨 상세보기 내용... */}
+          <div className='detail-view' style={{ position: 'relative' }}>
+            <div style={{ position: 'absolute', top: '115px', left: '130px' }}>
+              {forecastData_top.map((data) =>
+                data.value === 'sunny' ? (
+                  <img src={sunnyIcon} alt="sunny" width="88" height="88" />
+                ) : null
+              )}
+            </div>
+
+            <div
+              style={{
+                position: 'absolute',
+                top: '226px',
+                left: '128px',
+                height: '29px',
+                color: '#000',
+                fontFamily: 'Inter',
+                fontSize: '24px',
+                fontStyle: 'normal',
+                fontWeight: 400,
+                lineHeight: 'normal',
+              }}
+            >
+              {forecastData_top[1].temperature}
+            </div>
+
+            <div
+              style={{
+                position: 'absolute',
+                top: '56px',
+                left: '18px',
+                height: '12px',
+                color: '#000',
+                fontFamily: 'Inter',
+                fontSize: '10px',
+                fontStyle: 'normal',
+                fontWeight: 400,
+                lineHeight: 'normal',
+              }}
+            >
+              {formattedDate} 기준
+            </div>
+            <div
+              style={{
+                position: 'absolute',
+                top: '290px',
+                left: '172px',
+                width: '1px',
+                height: '25px',
+                backgroundColor: '#000',
+              }}
+            ></div>
+            <div
+              style={{
+                position: 'absolute',
+                top: '290px',
+                left: '100px',
+                height: '17px', // 최저 기온, 최고 기온을 상자 안에 17px 높이로 조정
+                color: '#000',
+                fontFamily: 'Inter',
+                fontSize: '14px',
+                fontStyle: 'normal',
+                fontWeight: 400,
+                lineHeight: 'normal',
+              }}
+            >
+              {forecastData_minmax[0].min}
+            </div>
+            <div
+              style={{
+                position: 'absolute',
+                top: '290px',
+                left: '282px', // 최저 기온과 최고 기온 사이에 25px만큼 떨어지도록 조정
+                height: '17px', // 최저 기온, 최고 기온을 상자 안에 17px 높이로 조정
+                color: '#000',
+                fontFamily: 'Inter',
+                fontSize: '14px',
+                fontStyle: 'normal',
+                fontWeight: 400,
+                lineHeight: 'normal',
+              }}
+            >
+              {forecastData_minmax[1].max}
+            </div>
+
+            <div
+              style={{
+                position: 'absolute',
+                top: '290px',
+                left: '22px', // 최저 기온과 최고 기온 사이에 25px만큼 떨어지도록 조정
+                height: '17px', // 최저 기온, 최고 기온을 상자 안에 17px 높이로 조정
+                color: '#000',
+                fontFamily: 'Inter',
+                fontSize: '14px',
+                fontStyle: 'normal',
+                fontWeight: 400,
+                lineHeight: 'normal',
+              }}
+            >
+              최저기온
+            </div>
+            <div
+              style={{
+                position: 'absolute',
+                top: '290px',
+                left: '204px', // 최저 기온과 최고 기온 사이에 25px만큼 떨어지도록 조정
+                height: '17px', // 최저 기온, 최고 기온을 상자 안에 17px 높이로 조정
+                color: '#000',
+                fontFamily: 'Inter',
+                fontSize: '14px',
+                fontStyle: 'normal',
+                fontWeight: 400,
+                lineHeight: 'normal',
+              }}
+            >
+              최고기온
+            </div>
+
+            <div
+              style={{
+                position: 'absolute',
+                top: '371px',
+                left: '18px', // 최저 기온과 최고 기온 사이에 25px만큼 떨어지도록 조정
+                height: '24px', // 최저 기온, 최고 기온을 상자 안에 17px 높이로 조정
+                color: '#000',
+                fontFamily: 'Inter',
+                fontSize: '20px',
+                fontStyle: 'normal',
+                fontWeight: 400,
+                lineHeight: 'normal',
+              }}
+            >
+              24시간 날씨 예보
+            </div>
+
+
+
+
+
+
+
+
+
+
           </div>
         );
       case 'dust':
@@ -229,7 +465,14 @@ function MainPage() {
       default:
         return null;
     }
+
+
+
+
   };
+
+
+
 
   return (
     <div className='view'>
