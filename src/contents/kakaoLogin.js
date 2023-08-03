@@ -9,7 +9,7 @@ const KakaoLogin = () => {
 
   useEffect(() => {
     if (!window.Kakao.isInitialized()) {
-      window.Kakao.init('0863428c06e9c37bf600d68470c14ee0');
+      window.Kakao.init('bed2468089c58f53cf785a627b6dcf9b');
     }
   }, []);
 
