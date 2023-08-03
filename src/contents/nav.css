@@ -273,7 +273,26 @@ body {
   height: 11px;
   white-space: nowrap;
 }
-
+.mid_text_1_2 {
+  color: #9C9C9C;
+  font-size: 9px;
+  font-weight: 400;
+  margin-top: 6px;
+  margin-left: 10px;
+  width: 34px;
+  height: 11px;
+  white-space: nowrap;
+}
+.mid_text_2_2{
+  color: #9C9C9C;
+  font-size: 9px;
+  font-weight: 400;
+  margin-top: 6px;
+  margin-left: 10px;
+  width: 34px;
+  height: 11px;
+  white-space: nowrap;
+}
 .mid_text_2 {
   font-size: 9px;
   font-weight: 400;
@@ -283,7 +302,16 @@ body {
   height: 11px;
   white-space: nowrap;
 }
-
+.mid_text_3_2{
+  color: #9C9C9C;
+  font-size: 9px;
+  font-weight: 400;
+  margin-top: 6px;
+  margin-left: 10px;
+  width: 34px;
+  height: 11px;
+  white-space: nowrap;
+}
 .mid_text_3 {
   font-size: 9px;
   font-weight: 400;
@@ -480,11 +508,15 @@ body {
   line-height: normal;
   white-space: nowrap;
 }
+.gender_bottom{
+  display: flex;
+  flex-direction: row;
+}
 .genderbutton{
   height: 120px;
   width: 200px;
   margin-top: 20px;
-  margin-left: 82px;
+
   
 }
 .community-float {
@@ -515,4 +547,38 @@ body {
     margin-bottom: -3px;
     background-color: #F1A1B1;
   }
+}
+.male_icon{
+  width: 52px;
+  height: 42px;
+  margin-left: 30px;
+  margin-top: 70px;
+  
+}
+.female_icon{
+  width: 52px;
+height: 42px;
+margin-top: 70px;
+margin-left: 4px;
+}
+.male_gender{
+  display: flex;
+  flex-direction: column;
+}
+.male_text{
+  margin-left: 46px;
+  margin-top: -5px;
+}
+.female_text{
+  margin-left: 20px;
+  margin-top: -5px;
+}
+.female_gender{
+  display: flex;
+  flex-direction: column;
+}
+.active{
+  border-radius: 29px;
+border: 1px solid #DC143C;
+background: #FFF;
 }
