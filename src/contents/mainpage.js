@@ -28,6 +28,13 @@ import { ReactComponent as Sixth } from './images/60대.svg';
 
 import { ReactComponent as Male } from './images/male.svg';
 import { ReactComponent as Female } from './images/female.svg';
+import { ReactComponent as Red } from './images/red.svg';
+import { ReactComponent as Green } from './images/green.svg';
+import { ReactComponent as Yellow } from './images/yellow.svg';
+import { ReactComponent as Orange } from './images/orange.svg';
+import { ReactComponent as AirMarker_Yellow } from './images/air_marker_Y.svg';
+import { ReactComponent as Aline } from './images/aline.svg';
+import { ReactComponent as Bline } from './images/bline.svg';
 
 import sunnyIcon from './images/sunny.svg';
 
@@ -224,7 +231,17 @@ function MainPage() {
     { weather6: '30%', value: '30%' }
   ];
 
+  const currentDate = new Date();
+  function formatDateTime(date) {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    const hours = String(date.getHours()).padStart(2, '0');
+    const minutes = String(date.getMinutes()).padStart(2, '0');
 
+    return `${year}.${month}.${day} ${hours}:${minutes}`;
+  }
+  const formattedDate = formatDateTime(currentDate);
 
 
 
@@ -297,17 +314,7 @@ function MainPage() {
         );
 
       case 'weather':
-        const currentDate = new Date();
-        function formatDateTime(date) {
-          const year = date.getFullYear();
-          const month = String(date.getMonth() + 1).padStart(2, '0');
-          const day = String(date.getDate()).padStart(2, '0');
-          const hours = String(date.getHours()).padStart(2, '0');
-          const minutes = String(date.getMinutes()).padStart(2, '0');
 
-          return `${year}.${month}.${day} ${hours}:${minutes}`;
-        }
-        const formattedDate = formatDateTime(currentDate);
 
         return (
           <div className='detail-view' style={{ position: 'relative' }}>
@@ -445,21 +452,38 @@ function MainPage() {
               24시간 날씨 예보
             </div>
 
-
-
-
-
-
-
-
-
-
           </div>
         );
-      case 'dust':
+      case 'dust'://dust 부분
         return (
-          <div>
-            {/* ...미세먼지 상세보기 내용... */}
+          <div className='detail-view'>
+            <span className='today_date'>{formattedDate} 기준</span>
+            <div>
+              <div className='airpollution_state'>
+                <div className='air_text'>통합대기환경지수</div>
+                <div className='air_state'>보통</div>
+              </div>
+              <div className='graph'>
+                <div className='marker'>
+                  <AirMarker_Yellow />
+                </div>
+                <div className='air_graph'><Green /><Yellow /><Orange /><Red /></div>
+              </div>    
+            </div>
+            <div className='air_detail_data'>
+              <div className='little_dust'>
+                <div className='little_text'>미세먼지</div>
+                <div className='little_state'>23㎍/㎥ 좋음</div>
+              </div>
+              <div className='tiny_dust'>
+                <div className='tiny_text'>초미세먼지</div>
+                <div className='tiny_state'>17㎍/㎥ 보통</div>
+              </div>
+            </div>
+            <div className='line'>
+              <Aline className='aline'/>
+              <Bline className='bline'/>
+            </div>
           </div>
         );
       default:
