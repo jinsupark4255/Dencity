@@ -172,13 +172,13 @@ function MainPage() {
   const StyledAirState = styled.div`
   color: ${(props) => {
     switch (props.status) {
-      case '안정':
+      case '좋음':
         return '#00E92A';
       case '보통':
         return `#FFD600;`;
-      case '주의':
+      case '나쁨':
         return '#FF9900';
-      case '위험':
+      case '매우나쁨':
         return '#E80000';
       default:
         return 'black';
@@ -193,9 +193,9 @@ const StyledLittleDust = styled.div`
         return '#00E92A';
       case '보통':
         return `#FFD600;`;
-      case '주의':
+      case '나쁨':
         return '#FF9900';
-      case '위험':
+      case '매우나쁨':
         return '#E80000';
       default:
         return 'black';
@@ -210,9 +210,9 @@ const StyledTinyDust = styled.div`
         return '#00E92A';
       case '보통':
         return `#FFD600;`;
-      case '주의':
+      case '나쁨':
         return '#FF9900';
-      case '위험':
+      case '매우나쁨':
         return '#E80000';
       default:
         return 'black';
@@ -228,9 +228,9 @@ const StyledD1 = styled.div`
         return '#00E92A';
       case '보통':
         return `#FFD600;`;
-      case '주의':
+      case '나쁨':
         return '#FF9900';
-      case '위험':
+      case '매우나쁨':
         return '#E80000';
       default:
         return 'black';
@@ -246,9 +246,9 @@ const StyledD2 = styled.div`
         return '#00E92A';
       case '보통':
         return `#FFD600;`;
-      case '주의':
+      case '나쁨':
         return '#FF9900';
-      case '위험':
+      case '매우나쁨':
         return '#E80000';
       default:
         return 'black';
@@ -264,9 +264,9 @@ const StyledD3 = styled.div`
         return '#00E92A';
       case '보통':
         return `#FFD600;`;
-      case '주의':
+      case '나쁨':
         return '#FF9900';
-      case '위험':
+      case '매우나쁨':
         return '#E80000';
       default:
         return 'black';
@@ -282,9 +282,9 @@ const StyledD4 = styled.div`
         return '#00E92A';
       case '보통':
         return `#FFD600;`;
-      case '주의':
+      case '나쁨':
         return '#FF9900';
-      case '위험':
+      case '매우나쁨':
         return '#E80000';
       default:
         return 'black';
