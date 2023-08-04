@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-
+import styled from 'styled-components';
 
 import axios from 'axios';
 
@@ -169,6 +169,23 @@ function MainPage() {
   };
 
 
+  const StyledAirState = styled.div`
+  color: ${(props) => {
+    switch (props.status) {
+      case '안정':
+        return 'green';
+      case '보통':
+        return `#FFD600;`;
+      case '주의':
+        return 'orange';
+      case '위험':
+        return 'red';
+      default:
+        return 'black';
+    }
+  }};
+  // 다른 스타일 규칙 추가
+`;
 
 
   const forecastData_top = [
@@ -314,8 +331,6 @@ function MainPage() {
         );
 
       case 'weather':
-
-
         return (
           <div className='detail-view' style={{ position: 'relative' }}>
             <div style={{ position: 'absolute', top: '115px', left: '130px' }}>
@@ -461,14 +476,14 @@ function MainPage() {
             <div>
               <div className='airpollution_state'>
                 <div className='air_text'>통합대기환경지수</div>
-                <div className='air_state'>보통</div>
+                <StyledAirState className='air_state' status="보통">보통</StyledAirState>
               </div>
-              <div className='graph'>
+              <div className='graph'> 
                 <div className='marker'>
                   <AirMarker_Yellow />
                 </div>
                 <div className='air_graph'><Green /><Yellow /><Orange /><Red /></div>
-              </div>    
+              </div>
             </div>
             <div className='air_detail_data'>
               <div className='little_dust'>
@@ -480,22 +495,36 @@ function MainPage() {
                 <div className='tiny_state'>17㎍/㎥ 보통</div>
               </div>
             </div>
-            <div className='line'>
-              <Aline className='aline'/>
-              <Bline className='bline'/>
+            <div className='diagram'>
+              <div className='upper'>
+                <div className='upper_1'>
+                  <div className='up_text1'>오존농도</div>
+                  <div className='up_state1'>0.062ppm 보통</div>
+                </div>
+                <div className='upper_2'>
+                  <div className='up_text2'>이산화질소</div>
+                  <div className='up_state2'>0.013ppm 좋음</div>
+                </div>
+              </div>
+              <div className='down'>
+                <div className='down_1'>
+                  <div className='down_text1'>일산화탄소</div>
+                  <div className='down_state1'>0.4ppm 좋음</div>
+                </div>
+                <div className='down_2'>
+                  <div className='down_text2'>아황산가스</div>
+                  <div className='down_state2'>0.003ppm 좋음</div>
+                </div>
+              </div>
+              <Aline className='aline' />
+              <Bline className='bline' />
             </div>
           </div>
         );
       default:
         return null;
     }
-
-
-
-
   };
-
-
 
 
   return (
