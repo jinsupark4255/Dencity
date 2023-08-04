@@ -173,18 +173,123 @@ function MainPage() {
   color: ${(props) => {
     switch (props.status) {
       case '안정':
-        return 'green';
+        return '#00E92A';
       case '보통':
         return `#FFD600;`;
       case '주의':
-        return 'orange';
+        return '#FF9900';
       case '위험':
-        return 'red';
+        return '#E80000';
       default:
         return 'black';
     }
   }};
-  // 다른 스타일 규칙 추가
+`;
+
+const StyledLittleDust = styled.div`
+  color: ${(props) => {
+    switch (props.status) {
+      case '좋음':
+        return '#00E92A';
+      case '보통':
+        return `#FFD600;`;
+      case '주의':
+        return '#FF9900';
+      case '위험':
+        return '#E80000';
+      default:
+        return 'black';
+    }
+  }};
+`;
+
+const StyledTinyDust = styled.div`
+  color: ${(props) => {
+    switch (props.status) {
+      case '좋음':
+        return '#00E92A';
+      case '보통':
+        return `#FFD600;`;
+      case '주의':
+        return '#FF9900';
+      case '위험':
+        return '#E80000';
+      default:
+        return 'black';
+    }
+  }};
+`;
+
+//오존 농도 색깔
+const StyledD1 = styled.div`
+  color: ${(props) => {
+    switch (props.status) {
+      case '좋음':
+        return '#00E92A';
+      case '보통':
+        return `#FFD600;`;
+      case '주의':
+        return '#FF9900';
+      case '위험':
+        return '#E80000';
+      default:
+        return 'black';
+    }
+  }};
+`;
+
+//이산화질소 색깔
+const StyledD2 = styled.div`
+  color: ${(props) => {
+    switch (props.status) {
+      case '좋음':
+        return '#00E92A';
+      case '보통':
+        return `#FFD600;`;
+      case '주의':
+        return '#FF9900';
+      case '위험':
+        return '#E80000';
+      default:
+        return 'black';
+    }
+  }};
+`;
+
+//일산화탄소 색깔
+const StyledD3 = styled.div`
+  color: ${(props) => {
+    switch (props.status) {
+      case '좋음':
+        return '#00E92A';
+      case '보통':
+        return `#FFD600;`;
+      case '주의':
+        return '#FF9900';
+      case '위험':
+        return '#E80000';
+      default:
+        return 'black';
+    }
+  }};
+`;
+
+//아황산가스 색깔
+const StyledD4 = styled.div`
+  color: ${(props) => {
+    switch (props.status) {
+      case '좋음':
+        return '#00E92A';
+      case '보통':
+        return `#FFD600;`;
+      case '주의':
+        return '#FF9900';
+      case '위험':
+        return '#E80000';
+      default:
+        return 'black';
+    }
+  }};
 `;
 
 
@@ -259,12 +364,6 @@ function MainPage() {
     return `${year}.${month}.${day} ${hours}:${minutes}`;
   }
   const formattedDate = formatDateTime(currentDate);
-
-
-
-
-
-
 
 
   const renderDetailView = () => {
@@ -488,32 +587,32 @@ function MainPage() {
             <div className='air_detail_data'>
               <div className='little_dust'>
                 <div className='little_text'>미세먼지</div>
-                <div className='little_state'>23㎍/㎥ 좋음</div>
+                <StyledLittleDust className='little_state' status="좋음">23㎍/㎥ 좋음</StyledLittleDust>
               </div>
               <div className='tiny_dust'>
                 <div className='tiny_text'>초미세먼지</div>
-                <div className='tiny_state'>17㎍/㎥ 보통</div>
+                <StyledTinyDust className='tiny_state' status='보통'>17㎍/㎥ 보통</StyledTinyDust>
               </div>
             </div>
             <div className='diagram'>
               <div className='upper'>
                 <div className='upper_1'>
                   <div className='up_text1'>오존농도</div>
-                  <div className='up_state1'>0.062ppm 보통</div>
+                  <StyledD1 className='up_state1' status='보통'>0.062ppm 보통</StyledD1>
                 </div>
                 <div className='upper_2'>
                   <div className='up_text2'>이산화질소</div>
-                  <div className='up_state2'>0.013ppm 좋음</div>
+                  <StyledD2 className='up_state2' status='좋음'>0.013ppm 좋음</StyledD2>
                 </div>
               </div>
               <div className='down'>
                 <div className='down_1'>
                   <div className='down_text1'>일산화탄소</div>
-                  <div className='down_state1'>0.4ppm 좋음</div>
+                  <StyledD3 className='down_state1' status='좋음'>0.4ppm 좋음</StyledD3>
                 </div>
                 <div className='down_2'>
                   <div className='down_text2'>아황산가스</div>
-                  <div className='down_state2'>0.003ppm 좋음</div>
+                  <StyledD4 className='down_state2' status='좋음'>0.003ppm 좋음</StyledD4>
                 </div>
               </div>
               <Aline className='aline' />
