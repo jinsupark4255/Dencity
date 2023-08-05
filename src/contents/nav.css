@@ -615,7 +615,6 @@ line-height: normal;
 }
 .air_state{
   margin-left: 95px;
-  color: #FFD600;
 font-family: Inter;
 font-size: 24px;
 font-style: normal;
@@ -655,7 +654,6 @@ margin-bottom: 2px;
   padding-top: 8px;
 }
 .little_state{
-  color: #00E92A;
   font-family: Inter;
   font-size: 24px;
   font-style: normal;
@@ -686,8 +684,123 @@ margin-bottom: 2px;
   line-height: normal;
   margin-left: 76px;
 }
-
-
+.diagram{
+  display: flex;
+  flex-direction: column;
+  margin-left: 76px;
+  margin-top: 86px;
+}
+.upper{
+  display: flex;
+  flex-direction: row;
+}
+.upper_1{
+  display: flex;
+  flex-direction: column;
+}
+.up_text1{
+  color: #000;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+.up_state1{
+  margin-top: 16px;
+  margin-left: -19px;
+  color: #FFD600;
+font-family: Inter;
+font-size: 13px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+align-items: center;
+justify-content: center;
+}
+.up_text2{
+  margin-left: 75px;
+  color: #000;
+font-family: Inter;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+.up_state2{
+  margin-top: 16px;
+  color: #00E92A;
+text-align: center;
+font-family: Inter;
+font-size: 13px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+margin-left: 67px;
+align-items: center;
+justify-content: center;
+}
+.upper_2{
+  display: flex;
+  flex-direction: column;
+}
+.down{
+  display:flex;
+  flex-direction: row;
+  margin-top: 40px;
+}
+.down_1{
+  display:flex;
+  flex-direction: column;
+}
+.down_text1{
+  margin-left: -5px;
+  color: #000;
+font-family: Inter;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+}
+.down_state1{
+  color: #00E92A;
+text-align: center;
+font-family: Inter;
+font-size: 13px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+margin-top: 16px;
+margin-left: -7px;
+align-items: center;
+justify-content: center;
+}
+.down_2{
+  display:flex;
+  flex-direction: column;
+}
+.down_text2{
+  color: #000;
+font-family: Inter;
+font-size: 14px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+margin-left: 77.5px;
+}
+.down_state2{
+  color: #00E92A;
+text-align: center;
+font-family: Inter;
+font-size: 13px;
+font-style: normal;
+font-weight: 400;
+line-height: normal;
+margin-left: 69.5px;
+margin-top: 16px;
+align-items: center;
+justify-content: center;
+}
 .aline{
   position: absolute;
   bottom: 115px;
@@ -700,4 +813,7 @@ margin-bottom: 2px;
   right: 185px;
   bottom: 40px;
   z-index: 2;
+}
+.marker{
+  margin-left: 150px;
 }
