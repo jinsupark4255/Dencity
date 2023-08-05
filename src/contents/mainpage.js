@@ -1,5 +1,6 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
 import styled from 'styled-components';
+import { UserContext } from './UserContext';
 
 import axios from 'axios';
 
@@ -61,6 +62,11 @@ function MainPage() {
 
 
   }, [])
+
+  const [user, setUser] = useContext(UserContext); //여기서 카카오 사용자 이름 가져옴
+
+  console.log(user ? `Hello, ${user.name}` : 'You are not logged in');
+
   const ageData = [
     { ageGroup: '8.6%', value: 8.6 },
     { ageGroup: '43.4%', value: 43.4 },
@@ -371,6 +377,7 @@ const StyledD4 = styled.div`
       case 'chaos':
         return (
           <div className='detail-view'>
+            {/* <div> {user ? `Hello, ${user.name}` : 'You are not logged in'}</div>  테스트용*/ }
             <div className='population'>
               <div className='population_top'>
                 <HelpButton

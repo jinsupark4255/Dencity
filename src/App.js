@@ -5,10 +5,12 @@ import MainPage from './contents/mainpage';
 import KakaoLogin from './contents/kakaoLogin';
 import Profile from './contents/profile';
 import KakaoCallback from './contents/KakaoCallback';
+import { UserContextProvider } from "./contents/UserContext";
 
 function App() {
   return (
-    <AuthProvider>
+    <UserContextProvider>
+<AuthProvider>
       <Router>
         <Routes>
           <Route path="/" element={<KakaoLogin />} />
@@ -18,6 +20,8 @@ function App() {
         </Routes>
       </Router>
     </AuthProvider>
+    </UserContextProvider>
+    
   );
 }
 export default App;

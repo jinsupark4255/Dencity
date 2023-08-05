@@ -814,3 +814,6 @@ justify-content: center;
   bottom: 40px;
   z-index: 2;
 }
+.marker{
+  margin-left: 150px;
+}
