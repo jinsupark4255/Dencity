@@ -39,6 +39,9 @@ import { ReactComponent as Bline } from './images/bline.svg';
 
 import sunnyIcon from './images/sunny.svg';
 
+import ForecastTable from './ForecastTable';
+
+
 
 function MainPage() {
   useEffect(() => {
@@ -145,8 +148,7 @@ function MainPage() {
     weather: WeatherButton2,
     dust: DustButton2,
   });
-
-  const [activeButton, setActiveButton] = useState('chaos');
+ const [activeButton, setActiveButton] = useState('chaos');
   const handleChaosClick = () => {
     setButtons({
       chaos: ChaosButton1,
@@ -301,62 +303,12 @@ const StyledD4 = styled.div`
 
   const forecastData_top = [
     { emogi: 'sunny', value: 'sunny' },
-    { temperature: '29.7°C', value: '29.7°C' },
+    { temperature: '29.7', value: '29.7' },
   ];
 
   const forecastData_minmax = [
-    { min: '25°C', value: '25°C' },
-    { max: '29°C', value: '29°C' },
-  ];
-
-  const forecastData_time = [
-    { weather0: '16시', value: '16시' },
-    { weather1: '17시', value: '17시' },
-    { weather2: '18시', value: '18시' },
-    { weather3: '19시', value: '19시' },
-    { weather4: '20시', value: '20시' },
-    { weather5: '21시', value: '21시' },
-    { weather6: '22시', value: '22시' }
-  ];
-
-  const forecastData_weather = [
-    { weather0: 'cloud', value: 'cloud' },
-    { weather1: 'sunny', value: 'sunny' },
-    { weather2: 'sunny', value: 'sunny' },
-    { weather3: 'sunny', value: 'sunny' },
-    { weather4: 'sunny', value: 'sunny' },
-    { weather5: 'sunny', value: 'sunny' },
-    { weather6: 'sunny', value: 'sunny' }
-  ];
-
-  const forecastData_temperature = [
-    { weather0: '30°C', value: '30°C' },
-    { weather1: '30°C', value: '30°C' },
-    { weather2: '30°C', value: '30°C' },
-    { weather3: '30°C', value: '30°C' },
-    { weather4: '30°C', value: '30°C' },
-    { weather5: '30°C', value: '30°C' },
-    { weather6: '30°C', value: '30°C' }
-  ];
-
-  const forecastData_precipitation = [
-    { weather0: '--', value: '--' },
-    { weather1: '--', value: '--' },
-    { weather2: '--', value: '--' },
-    { weather3: '--', value: '--' },
-    { weather4: '--', value: '--' },
-    { weather5: '--', value: '--' },
-    { weather6: '--', value: '--' }
-  ];
-
-  const forecastData_probability = [
-    { weather0: '30%', value: '30%' },
-    { weather1: '30%', value: '30%' },
-    { weather2: '30%', value: '30%' },
-    { weather3: '30%', value: '30%' },
-    { weather4: '30%', value: '30%' },
-    { weather5: '30%', value: '30%' },
-    { weather6: '30%', value: '30%' }
+    { min: '25', value: '25' },
+    { max: '29', value: '29' },
   ];
 
   const currentDate = new Date();
@@ -366,6 +318,7 @@ const StyledD4 = styled.div`
     const day = String(date.getDate()).padStart(2, '0');
     const hours = String(date.getHours()).padStart(2, '0');
     const minutes = String(date.getMinutes()).padStart(2, '0');
+
 
     return `${year}.${month}.${day} ${hours}:${minutes}`;
   }
@@ -439,10 +392,20 @@ const StyledD4 = styled.div`
       case 'weather':
         return (
           <div className='detail-view' style={{ position: 'relative' }}>
-            <div style={{ position: 'absolute', top: '115px', left: '130px' }}>
+
+
+            <div
+              style={{
+                position: 'absolute',
+                top: '65px',
+                left: '138px',
+                height: '88px',
+                weight: '88px',
+              }}
+            >
               {forecastData_top.map((data) =>
                 data.value === 'sunny' ? (
-                  <img src={sunnyIcon} alt="sunny" width="88" height="88" />
+                  <img src={sunnyIcon} alt="sunny" />
                 ) : null
               )}
             </div>
@@ -450,26 +413,30 @@ const StyledD4 = styled.div`
             <div
               style={{
                 position: 'absolute',
-                top: '226px',
-                left: '128px',
+                top: '184px',
+                left: '136px',
                 height: '29px',
+                width: '91px',
                 color: '#000',
                 fontFamily: 'Inter',
                 fontSize: '24px',
                 fontStyle: 'normal',
                 fontWeight: 400,
                 lineHeight: 'normal',
+                textAlign: 'center',
               }}
             >
-              {forecastData_top[1].temperature}
+              {forecastData_top[1].temperature}  °C
             </div>
 
             <div
               style={{
                 position: 'absolute',
-                top: '56px',
-                left: '18px',
+                top: '16px',
+                left: '11px',
                 height: '12px',
+                width: '103px',
+                textAlign: 'center',
                 color: '#000',
                 fontFamily: 'Inter',
                 fontSize: '10px',
@@ -480,22 +447,15 @@ const StyledD4 = styled.div`
             >
               {formattedDate} 기준
             </div>
+
             <div
               style={{
                 position: 'absolute',
-                top: '290px',
-                left: '172px',
-                width: '1px',
-                height: '25px',
-                backgroundColor: '#000',
-              }}
-            ></div>
-            <div
-              style={{
-                position: 'absolute',
-                top: '290px',
-                left: '100px',
-                height: '17px', // 최저 기온, 최고 기온을 상자 안에 17px 높이로 조정
+                top: '251px',
+                left: '111px',
+                height: '17px',
+                width: '38px',
+                textAlign: 'center',
                 color: '#000',
                 fontFamily: 'Inter',
                 fontSize: '14px',
@@ -504,14 +464,16 @@ const StyledD4 = styled.div`
                 lineHeight: 'normal',
               }}
             >
-              {forecastData_minmax[0].min}
+              {forecastData_minmax[0].min} °C
             </div>
             <div
               style={{
                 position: 'absolute',
-                top: '290px',
-                left: '282px', // 최저 기온과 최고 기온 사이에 25px만큼 떨어지도록 조정
-                height: '17px', // 최저 기온, 최고 기온을 상자 안에 17px 높이로 조정
+                top: '251px',
+                left: '293px',
+                height: '17px',
+                width: '38px',
+                textAlign: 'center',
                 color: '#000',
                 fontFamily: 'Inter',
                 fontSize: '14px',
@@ -520,15 +482,17 @@ const StyledD4 = styled.div`
                 lineHeight: 'normal',
               }}
             >
-              {forecastData_minmax[1].max}
+              {forecastData_minmax[1].max} °C
             </div>
 
             <div
               style={{
                 position: 'absolute',
-                top: '290px',
-                left: '22px', // 최저 기온과 최고 기온 사이에 25px만큼 떨어지도록 조정
-                height: '17px', // 최저 기온, 최고 기온을 상자 안에 17px 높이로 조정
+                top: '251px',
+                left: '33px',
+                height: '17px',
+                width: '56px',
+                textAlign: 'center',
                 color: '#000',
                 fontFamily: 'Inter',
                 fontSize: '14px',
@@ -542,9 +506,11 @@ const StyledD4 = styled.div`
             <div
               style={{
                 position: 'absolute',
-                top: '290px',
-                left: '204px', // 최저 기온과 최고 기온 사이에 25px만큼 떨어지도록 조정
-                height: '17px', // 최저 기온, 최고 기온을 상자 안에 17px 높이로 조정
+                top: '251px',
+                left: '215px',
+                height: '17px',
+                width: '56px',
+                textAlign: 'center',
                 color: '#000',
                 fontFamily: 'Inter',
                 fontSize: '14px',
@@ -559,9 +525,22 @@ const StyledD4 = styled.div`
             <div
               style={{
                 position: 'absolute',
-                top: '371px',
-                left: '18px', // 최저 기온과 최고 기온 사이에 25px만큼 떨어지도록 조정
-                height: '24px', // 최저 기온, 최고 기온을 상자 안에 17px 높이로 조정
+                top: '247px',
+                left: '183px',
+                height: '25px',
+                width: '1px', 
+                background: '#000', 
+              }}
+            ></div>
+
+            <div
+              style={{
+                position: 'absolute',
+                top: '343px',
+                left: '17px',
+                height: '24px',
+                width: '147px',
+                textAlign: 'center',
                 color: '#000',
                 fontFamily: 'Inter',
                 fontSize: '20px',
@@ -573,7 +552,21 @@ const StyledD4 = styled.div`
               24시간 날씨 예보
             </div>
 
+
+            <div
+              style={{
+                position: 'absolute',
+                top: '389px',
+                left: '14px',
+              }}
+            >
+              <ForecastTable />
+            </div>
+
+
           </div>
+
+          
         );
       case 'dust'://dust 부분
         return (
