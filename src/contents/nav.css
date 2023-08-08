@@ -589,11 +589,11 @@ background: #FFF;
   margin-top: 16px;
   margin-left: 11px;
   color: #000;
-font-family: Inter;
-font-size: 10px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
+  font-Family: 'Inter';
+  font-size: '10px';
+  font-style: 'normal';
+  font-weight: 400;
+  line-height: 'normal';
 }
 .airpollution_state{
   display: flex;
