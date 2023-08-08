@@ -38,7 +38,9 @@ import { ReactComponent as Aline } from './images/aline.svg';
 import { ReactComponent as Bline } from './images/bline.svg';
 
 import sunnyIcon from './images/sunny.svg';
+
 import ForecastTable from './ForecastTable';
+
 
 
 function MainPage() {
@@ -146,8 +148,7 @@ function MainPage() {
     weather: WeatherButton2,
     dust: DustButton2,
   });
-
-  const [activeButton, setActiveButton] = useState('chaos');
+ const [activeButton, setActiveButton] = useState('chaos');
   const handleChaosClick = () => {
     setButtons({
       chaos: ChaosButton1,
@@ -310,7 +311,6 @@ const StyledD4 = styled.div`
     { max: '29', value: '29' },
   ];
 
-
   const currentDate = new Date();
   function formatDateTime(date) {
     const year = date.getFullYear();
@@ -318,6 +318,7 @@ const StyledD4 = styled.div`
     const day = String(date.getDate()).padStart(2, '0');
     const hours = String(date.getHours()).padStart(2, '0');
     const minutes = String(date.getMinutes()).padStart(2, '0');
+
 
     return `${year}.${month}.${day} ${hours}:${minutes}`;
   }
@@ -551,6 +552,7 @@ const StyledD4 = styled.div`
               24시간 날씨 예보
             </div>
 
+
             <div
               style={{
                 position: 'absolute',
@@ -560,6 +562,7 @@ const StyledD4 = styled.div`
             >
               <ForecastTable />
             </div>
+
 
           </div>
 

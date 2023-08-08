@@ -1,25 +1,16 @@
-import { createContext, useState, useEffect } from 'react';
+// UserContext.js
+import React, { createContext, useState } from "react";
 
+// Create Context Object
 export const UserContext = createContext();
 
-export const UserProvider = ({ children }) => {
+// Create a provider for components to consume and subscribe to changes
+export const UserContextProvider = props => {
   const [user, setUser] = useState(null);
 
-  useEffect(() => {
-    const savedUser = localStorage.getItem('user');
-    if (savedUser) {
-      setUser(JSON.parse(savedUser));
-    }
-  }, []);
-
-  const saveUser = (userInfo) => {
-    setUser(userInfo);
-    localStorage.setItem('user', JSON.stringify(userInfo));
-  };
-
   return (
-    <UserContext.Provider value={{ user, saveUser }}>
-      {children}
+    <UserContext.Provider value={[user, setUser]}>
+      {props.children}
     </UserContext.Provider>
   );
 };

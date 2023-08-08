@@ -9,7 +9,7 @@ const GenderPieChart = ({ data, width, height }) => {
 
     const colorScale = d3.scaleOrdinal()
       .domain(data.map(item => item.gender))
-      .range(['#3498DB', '#E74C3C']); // 남자와 여자의 색상
+      .range(['#404E99', '#E47178']); // 남자와 여자의 색상
 
     const pie = d3.pie().value(d => d.value)
     .sort(null)
