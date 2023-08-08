@@ -1,5 +1,9 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useEffect, useRef, useContext } from 'react';
+import styled from 'styled-components';
+import { UserContext } from './UserContext';
+
 import axios from 'axios';
+
 import './nav.css'
 import AgePieChart from './AgePieChart';
 import GenderPieChart from './GenderPieChart';
@@ -8,7 +12,10 @@ import { ReactComponent as Image2 } from './images/commu.svg';
 import { ReactComponent as DButton } from './images/dropbutton.svg';
 import { ReactComponent as DButton2 } from './images/dropbutton2.svg';
 import { ReactComponent as ChaosButton1 } from './images/chaos_icon_1.svg';
+import { ReactComponent as ChaosButton2 } from './images/chaos_icon_2.svg';
+import { ReactComponent as WeatherButton1 } from './images/weather_icon_1.svg';
 import { ReactComponent as WeatherButton2 } from './images/weather_icon_2.svg';
+import { ReactComponent as DustButton1 } from './images/dust_icon_1.svg';
 import { ReactComponent as DustButton2 } from './images/dust_icon_2.svg';
 import { ReactComponent as HelpButton } from './images/Help.svg';
 import { ReactComponent as DizzyEmoji } from './images/Dizzy.svg';
@@ -19,8 +26,19 @@ import { ReactComponent as Third } from './images/30대.svg';
 import { ReactComponent as Fourth } from './images/40대.svg';
 import { ReactComponent as Fifth } from './images/50대.svg';
 import { ReactComponent as Sixth } from './images/60대.svg';
-import sunnyIcon from './images/sunny.svg';
 
+import { ReactComponent as Male } from './images/male.svg';
+import { ReactComponent as Female } from './images/female.svg';
+import { ReactComponent as Red } from './images/red.svg';
+import { ReactComponent as Green } from './images/green.svg';
+import { ReactComponent as Yellow } from './images/yellow.svg';
+import { ReactComponent as Orange } from './images/orange.svg';
+import { ReactComponent as AirMarker_Yellow } from './images/air_marker_Y.svg';
+import { ReactComponent as Aline } from './images/aline.svg';
+import { ReactComponent as Bline } from './images/bline.svg';
+
+import sunnyIcon from './images/sunny.svg';
+import ForecastTable from './ForecastTable';
 
 
 function MainPage() {
@@ -43,19 +61,13 @@ function MainPage() {
     // 마커가 지도 위에 표시되도록 설정합니다
     marker.setMap(map);
 
-    ///api 받아오기
-    const fetchData = async () => {
-      try {
-        const response = await axios.get('https://jsonplaceholder.typicode.com/posts');
-        const titles = response.data[1].userId; // title만 추출
-        console.log('타이틀:', titles);
-      } catch (error) {
-        console.error('데이터를 불러오는데 실패했습니다', error);
-      }
-    };
 
-    fetchData();
   }, [])
+
+  const [user, setUser] = useContext(UserContext); //여기서 카카오 사용자 이름 가져옴
+
+  console.log(user ? `Hello, ${user.name}` : 'You are not logged in');
+
   const ageData = [
     { ageGroup: '8.6%', value: 8.6 },
     { ageGroup: '43.4%', value: 43.4 },
@@ -129,75 +141,187 @@ function MainPage() {
   };
 
 
+  const [buttons, setButtons] = useState({
+    chaos: ChaosButton1,
+    weather: WeatherButton2,
+    dust: DustButton2,
+  });
 
+  const [activeButton, setActiveButton] = useState('chaos');
+  const handleChaosClick = () => {
+    setButtons({
+      chaos: ChaosButton1,
+      weather: WeatherButton2,
+      dust: DustButton2,
+    });
+    setActiveButton('chaos');
+  };
+
+  const handleWeatherClick = () => {
+    setButtons({
+      chaos: ChaosButton2,
+      weather: WeatherButton1,
+      dust: DustButton2,
+    });
+    setActiveButton('weather');
+  };
+
+  const handleDustClick = () => {
+    setButtons({
+      chaos: ChaosButton2,
+      weather: WeatherButton2,
+      dust: DustButton1,
+    });
+    setActiveButton('dust');
+  };
+
+
+  const StyledAirState = styled.div`
+  color: ${(props) => {
+    switch (props.status) {
+      case '좋음':
+        return '#00E92A';
+      case '보통':
+        return `#FFD600;`;
+      case '나쁨':
+        return '#FF9900';
+      case '매우나쁨':
+        return '#E80000';
+      default:
+        return 'black';
+    }
+  }};
+`;
+
+const StyledLittleDust = styled.div`
+  color: ${(props) => {
+    switch (props.status) {
+      case '좋음':
+        return '#00E92A';
+      case '보통':
+        return `#FFD600;`;
+      case '나쁨':
+        return '#FF9900';
+      case '매우나쁨':
+        return '#E80000';
+      default:
+        return 'black';
+    }
+  }};
+`;
+
+const StyledTinyDust = styled.div`
+  color: ${(props) => {
+    switch (props.status) {
+      case '좋음':
+        return '#00E92A';
+      case '보통':
+        return `#FFD600;`;
+      case '나쁨':
+        return '#FF9900';
+      case '매우나쁨':
+        return '#E80000';
+      default:
+        return 'black';
+    }
+  }};
+`;
+
+//오존 농도 색깔
+const StyledD1 = styled.div`
+  color: ${(props) => {
+    switch (props.status) {
+      case '좋음':
+        return '#00E92A';
+      case '보통':
+        return `#FFD600;`;
+      case '나쁨':
+        return '#FF9900';
+      case '매우나쁨':
+        return '#E80000';
+      default:
+        return 'black';
+    }
+  }};
+`;
+
+//이산화질소 색깔
+const StyledD2 = styled.div`
+  color: ${(props) => {
+    switch (props.status) {
+      case '좋음':
+        return '#00E92A';
+      case '보통':
+        return `#FFD600;`;
+      case '나쁨':
+        return '#FF9900';
+      case '매우나쁨':
+        return '#E80000';
+      default:
+        return 'black';
+    }
+  }};
+`;
+
+//일산화탄소 색깔
+const StyledD3 = styled.div`
+  color: ${(props) => {
+    switch (props.status) {
+      case '좋음':
+        return '#00E92A';
+      case '보통':
+        return `#FFD600;`;
+      case '나쁨':
+        return '#FF9900';
+      case '매우나쁨':
+        return '#E80000';
+      default:
+        return 'black';
+    }
+  }};
+`;
+
+//아황산가스 색깔
+const StyledD4 = styled.div`
+  color: ${(props) => {
+    switch (props.status) {
+      case '좋음':
+        return '#00E92A';
+      case '보통':
+        return `#FFD600;`;
+      case '나쁨':
+        return '#FF9900';
+      case '매우나쁨':
+        return '#E80000';
+      default:
+        return 'black';
+    }
+  }};
+`;
 
 
   const forecastData_top = [
     { emogi: 'sunny', value: 'sunny' },
-    { temperature: '29.7°C', value: '29.7°C' },
+    { temperature: '29.7', value: '29.7' },
   ];
 
   const forecastData_minmax = [
-    { min: '25°C', value: '25°C' },
-    { max: '29°C', value: '29°C' },
-  ];
-
-  const forecastData_time = [
-    { weather0: '16시', value: '16시' },
-    { weather1: '17시', value: '17시' },
-    { weather2: '18시', value: '18시' },
-    { weather3: '19시', value: '19시' },
-    { weather4: '20시', value: '20시' },
-    { weather5: '21시', value: '21시' },
-    { weather6: '22시', value: '22시' }
-  ];
-
-  const forecastData_weather = [
-    { weather0: 'cloud', value: 'cloud' },
-    { weather1: 'sunny', value: 'sunny' },
-    { weather2: 'sunny', value: 'sunny' },
-    { weather3: 'sunny', value: 'sunny' },
-    { weather4: 'sunny', value: 'sunny' },
-    { weather5: 'sunny', value: 'sunny' },
-    { weather6: 'sunny', value: 'sunny' }
-  ];
-
-  const forecastData_temperature = [
-    { weather0: '30°C', value: '30°C' },
-    { weather1: '30°C', value: '30°C' },
-    { weather2: '30°C', value: '30°C' },
-    { weather3: '30°C', value: '30°C' },
-    { weather4: '30°C', value: '30°C' },
-    { weather5: '30°C', value: '30°C' },
-    { weather6: '30°C', value: '30°C' }
-  ];
-
-  const forecastData_precipitation = [
-    { weather0: '--', value: '--' },
-    { weather1: '--', value: '--' },
-    { weather2: '--', value: '--' },
-    { weather3: '--', value: '--' },
-    { weather4: '--', value: '--' },
-    { weather5: '--', value: '--' },
-    { weather6: '--', value: '--' }
-  ];
-
-  const forecastData_probability = [
-    { weather0: '30%', value: '30%' },
-    { weather1: '30%', value: '30%' },
-    { weather2: '30%', value: '30%' },
-    { weather3: '30%', value: '30%' },
-    { weather4: '30%', value: '30%' },
-    { weather5: '30%', value: '30%' },
-    { weather6: '30%', value: '30%' }
+    { min: '25', value: '25' },
+    { max: '29', value: '29' },
   ];
 
 
+  const currentDate = new Date();
+  function formatDateTime(date) {
+    const year = date.getFullYear();
+    const month = String(date.getMonth() + 1).padStart(2, '0');
+    const day = String(date.getDate()).padStart(2, '0');
+    const hours = String(date.getHours()).padStart(2, '0');
+    const minutes = String(date.getMinutes()).padStart(2, '0');
 
-
-
-
-
+    return `${year}.${month}.${day} ${hours}:${minutes}`;
+  }
+  const formattedDate = formatDateTime(currentDate);
 
 
   const renderDetailView = () => {
@@ -205,6 +329,7 @@ function MainPage() {
       case 'chaos':
         return (
           <div className='detail-view'>
+            {/* <div> {user ? `Hello, ${user.name}` : 'You are not logged in'}</div>  테스트용*/ }
             <div className='population'>
               <div className='population_top'>
                 <HelpButton
@@ -242,7 +367,17 @@ function MainPage() {
             </div>
             <div className='gender'>
               <div className='gender_text'>성별 비율</div>
-              <div className='genderbutton'><GenderPieChart data={genderData} width={200} height={200} /></div>
+              <div className='gender_bottom'>
+                <div className='male_gender'>
+                  <Male className='male_icon' /><span className='male_text'>남성</span>
+                </div>
+
+                <div className='genderbutton'><GenderPieChart data={genderData} width={200} height={200} /></div>
+                <div className='female_gender'>
+                  <Female className='female_icon' /><span className='female_text'>여성</span>
+                </div>
+
+              </div>
             </div>
 
             {showHelpBox && (
@@ -254,24 +389,22 @@ function MainPage() {
         );
 
       case 'weather':
-        const currentDate = new Date();
-        function formatDateTime(date) {
-          const year = date.getFullYear();
-          const month = String(date.getMonth() + 1).padStart(2, '0');
-          const day = String(date.getDate()).padStart(2, '0');
-          const hours = String(date.getHours()).padStart(2, '0');
-          const minutes = String(date.getMinutes()).padStart(2, '0');
-
-          return `${year}.${month}.${day} ${hours}:${minutes}`;
-        }
-        const formattedDate = formatDateTime(currentDate);
-
         return (
           <div className='detail-view' style={{ position: 'relative' }}>
-            <div style={{ position: 'absolute', top: '115px', left: '130px' }}>
+
+
+            <div
+              style={{
+                position: 'absolute',
+                top: '65px',
+                left: '138px',
+                height: '88px',
+                weight: '88px',
+              }}
+            >
               {forecastData_top.map((data) =>
                 data.value === 'sunny' ? (
-                  <img src={sunnyIcon} alt="sunny" width="88" height="88" />
+                  <img src={sunnyIcon} alt="sunny" />
                 ) : null
               )}
             </div>
@@ -279,26 +412,30 @@ function MainPage() {
             <div
               style={{
                 position: 'absolute',
-                top: '226px',
-                left: '128px',
+                top: '184px',
+                left: '136px',
                 height: '29px',
+                width: '91px',
                 color: '#000',
                 fontFamily: 'Inter',
                 fontSize: '24px',
                 fontStyle: 'normal',
                 fontWeight: 400,
                 lineHeight: 'normal',
+                textAlign: 'center',
               }}
             >
-              {forecastData_top[1].temperature}
+              {forecastData_top[1].temperature}  °C
             </div>
 
             <div
               style={{
                 position: 'absolute',
-                top: '56px',
-                left: '18px',
+                top: '16px',
+                left: '11px',
                 height: '12px',
+                width: '103px',
+                textAlign: 'center',
                 color: '#000',
                 fontFamily: 'Inter',
                 fontSize: '10px',
@@ -309,22 +446,15 @@ function MainPage() {
             >
               {formattedDate} 기준
             </div>
+
             <div
               style={{
                 position: 'absolute',
-                top: '290px',
-                left: '172px',
-                width: '1px',
-                height: '25px',
-                backgroundColor: '#000',
-              }}
-            ></div>
-            <div
-              style={{
-                position: 'absolute',
-                top: '290px',
-                left: '100px',
-                height: '17px', // 최저 기온, 최고 기온을 상자 안에 17px 높이로 조정
+                top: '251px',
+                left: '111px',
+                height: '17px',
+                width: '38px',
+                textAlign: 'center',
                 color: '#000',
                 fontFamily: 'Inter',
                 fontSize: '14px',
@@ -333,14 +463,16 @@ function MainPage() {
                 lineHeight: 'normal',
               }}
             >
-              {forecastData_minmax[0].min}
+              {forecastData_minmax[0].min} °C
             </div>
             <div
               style={{
                 position: 'absolute',
-                top: '290px',
-                left: '282px', // 최저 기온과 최고 기온 사이에 25px만큼 떨어지도록 조정
-                height: '17px', // 최저 기온, 최고 기온을 상자 안에 17px 높이로 조정
+                top: '251px',
+                left: '293px',
+                height: '17px',
+                width: '38px',
+                textAlign: 'center',
                 color: '#000',
                 fontFamily: 'Inter',
                 fontSize: '14px',
@@ -349,15 +481,17 @@ function MainPage() {
                 lineHeight: 'normal',
               }}
             >
-              {forecastData_minmax[1].max}
+              {forecastData_minmax[1].max} °C
             </div>
 
             <div
               style={{
                 position: 'absolute',
-                top: '290px',
-                left: '22px', // 최저 기온과 최고 기온 사이에 25px만큼 떨어지도록 조정
-                height: '17px', // 최저 기온, 최고 기온을 상자 안에 17px 높이로 조정
+                top: '251px',
+                left: '33px',
+                height: '17px',
+                width: '56px',
+                textAlign: 'center',
                 color: '#000',
                 fontFamily: 'Inter',
                 fontSize: '14px',
@@ -371,9 +505,11 @@ function MainPage() {
             <div
               style={{
                 position: 'absolute',
-                top: '290px',
-                left: '204px', // 최저 기온과 최고 기온 사이에 25px만큼 떨어지도록 조정
-                height: '17px', // 최저 기온, 최고 기온을 상자 안에 17px 높이로 조정
+                top: '251px',
+                left: '215px',
+                height: '17px',
+                width: '56px',
+                textAlign: 'center',
                 color: '#000',
                 fontFamily: 'Inter',
                 fontSize: '14px',
@@ -388,9 +524,22 @@ function MainPage() {
             <div
               style={{
                 position: 'absolute',
-                top: '371px',
-                left: '18px', // 최저 기온과 최고 기온 사이에 25px만큼 떨어지도록 조정
-                height: '24px', // 최저 기온, 최고 기온을 상자 안에 17px 높이로 조정
+                top: '247px',
+                left: '183px',
+                height: '25px',
+                width: '1px', 
+                background: '#000', 
+              }}
+            ></div>
+
+            <div
+              style={{
+                position: 'absolute',
+                top: '343px',
+                left: '17px',
+                height: '24px',
+                width: '147px',
+                textAlign: 'center',
                 color: '#000',
                 fontFamily: 'Inter',
                 fontSize: '20px',
@@ -402,33 +551,76 @@ function MainPage() {
               24시간 날씨 예보
             </div>
 
-
-
-
-
-
-
-
-
+            <div
+              style={{
+                position: 'absolute',
+                top: '389px',
+                left: '14px',
+              }}
+            >
+              <ForecastTable />
+            </div>
 
           </div>
+
+          
         );
-      case 'dust':
+      case 'dust'://dust 부분
         return (
-          <div>
-            {/* ...미세먼지 상세보기 내용... */}
+          <div className='detail-view'>
+            <span className='today_date'>{formattedDate} 기준</span>
+            <div>
+              <div className='airpollution_state'>
+                <div className='air_text'>통합대기환경지수</div>
+                <StyledAirState className='air_state' status="보통">보통</StyledAirState>
+              </div>
+              <div className='graph'> 
+                <div className='marker'>
+                  <AirMarker_Yellow />
+                </div>
+                <div className='air_graph'><Green /><Yellow /><Orange /><Red /></div>
+              </div>
+            </div>
+            <div className='air_detail_data'>
+              <div className='little_dust'>
+                <div className='little_text'>미세먼지</div>
+                <StyledLittleDust className='little_state' status="좋음">23㎍/㎥ 좋음</StyledLittleDust>
+              </div>
+              <div className='tiny_dust'>
+                <div className='tiny_text'>초미세먼지</div>
+                <StyledTinyDust className='tiny_state' status='보통'>17㎍/㎥ 보통</StyledTinyDust>
+              </div>
+            </div>
+            <div className='diagram'>
+              <div className='upper'>
+                <div className='upper_1'>
+                  <div className='up_text1'>오존농도</div>
+                  <StyledD1 className='up_state1' status='보통'>0.062ppm 보통</StyledD1>
+                </div>
+                <div className='upper_2'>
+                  <div className='up_text2'>이산화질소</div>
+                  <StyledD2 className='up_state2' status='좋음'>0.013ppm 좋음</StyledD2>
+                </div>
+              </div>
+              <div className='down'>
+                <div className='down_1'>
+                  <div className='down_text1'>일산화탄소</div>
+                  <StyledD3 className='down_state1' status='좋음'>0.4ppm 좋음</StyledD3>
+                </div>
+                <div className='down_2'>
+                  <div className='down_text2'>아황산가스</div>
+                  <StyledD4 className='down_state2' status='좋음'>0.003ppm 좋음</StyledD4>
+                </div>
+              </div>
+              <Aline className='aline' />
+              <Bline className='bline' />
+            </div>
           </div>
         );
       default:
         return null;
     }
-
-
-
-
   };
-
-
 
 
   return (
@@ -474,16 +666,25 @@ function MainPage() {
         </div>
         <div className="mapscale" id="map" style={{ width: '364px', height: '246px' }} />
         <div className='mid-main-view'>
-          <div className={`chaos ${selected === 'chaos' ? 'selected' : ''}`} onClick={() => setSelected('chaos')}>
-            <ChaosButton1 className="chaos_icon" />
+          <div className={`chaos ${activeButton === 'chaos' ? 'active' : ''}`} onClick={() => {
+            handleChaosClick();
+            setSelected('chaos');
+          }}>
+            <buttons.chaos className="chaos_icon" />
             <span className='mid_text_1'>혼잡도</span>
           </div>
-          <div className={`weather ${selected === 'weather' ? 'selected' : ''}`} onClick={() => setSelected('weather')}>
-            <WeatherButton2 className="weather_icon" />
+          <div className={`weather ${activeButton === 'weather' ? 'active' : ''}`} onClick={() => {
+            handleWeatherClick();
+            setSelected('weather');
+          }}>
+            <buttons.weather className="weather_icon" />
             <span className='mid_text_2'>날씨</span>
           </div>
-          <div className={`dust ${selected === 'dust' ? 'selected' : ''}`} onClick={() => setSelected('dust')}>
-            <DustButton2 className="dust_icon" />
+          <div className={`dust ${activeButton === 'dust' ? 'active' : ''}`} onClick={() => {
+            handleDustClick();
+            setSelected('dust');
+          }}>
+            <buttons.dust className="dust_icon" />
             <span className='mid_text_3'>미세먼지</span>
           </div>
         </div>
