@@ -433,7 +433,7 @@ const StyledD4 = styled.div`
               style={{
                 position: 'absolute',
                 top: '16px',
-                left: '11px',
+                left: '9.4px',
                 height: '12px',
                 width: '103px',
                 textAlign: 'center',
@@ -539,7 +539,7 @@ const StyledD4 = styled.div`
                 top: '343px',
                 left: '17px',
                 height: '24px',
-                width: '147px',
+                width: '160px',
                 textAlign: 'center',
                 color: '#000',
                 fontFamily: 'Inter',
@@ -547,6 +547,7 @@ const StyledD4 = styled.div`
                 fontStyle: 'normal',
                 fontWeight: 400,
                 lineHeight: 'normal',
+               
               }}
             >
               24시간 날씨 예보
