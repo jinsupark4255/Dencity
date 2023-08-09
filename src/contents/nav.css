@@ -355,7 +355,10 @@ body {
   margin-bottom: 25px;
   position: relative;
 }
-
+.population_2{
+  display: flex;
+  flex-direction: column;
+}
 .population {
   height: 146px;
   width: 100%;
@@ -411,10 +414,11 @@ body {
 }
 
 .diz_text {
+  width: 280px;
   display: flex;
   flex-direction: row;
+  margin-left: 40px;
   margin-top: -20px;
-  justify-content: center;
   color: #000;
   font-family: Inter;
   font-size: 9px;

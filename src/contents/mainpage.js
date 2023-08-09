@@ -1,9 +1,6 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
 import styled from 'styled-components';
 import { UserContext } from './UserContext';
-
-import axios from 'axios';
-
 import './nav.css'
 import AgePieChart from './AgePieChart';
 import GenderPieChart from './GenderPieChart';
@@ -26,7 +23,6 @@ import { ReactComponent as Third } from './images/30대.svg';
 import { ReactComponent as Fourth } from './images/40대.svg';
 import { ReactComponent as Fifth } from './images/50대.svg';
 import { ReactComponent as Sixth } from './images/60대.svg';
-
 import { ReactComponent as Male } from './images/male.svg';
 import { ReactComponent as Female } from './images/female.svg';
 import { ReactComponent as Red } from './images/red.svg';
@@ -36,9 +32,7 @@ import { ReactComponent as Orange } from './images/orange.svg';
 import { ReactComponent as AirMarker_Yellow } from './images/air_marker_Y.svg';
 import { ReactComponent as Aline } from './images/aline.svg';
 import { ReactComponent as Bline } from './images/bline.svg';
-
 import sunnyIcon from './images/sunny.svg';
-
 import ForecastTable from './ForecastTable';
 
 
@@ -68,16 +62,32 @@ function MainPage() {
 
   const [user, setUser] = useContext(UserContext); //여기서 카카오 사용자 이름 가져옴
 
+  const [seoulPlace, setSeoulPlace] = useState('고궁/문화유산'); //여기는 드롭다운에서 장소 선택할때 쓰는거
+
+  const placeOfSeoul = {
+    "고궁/문화유산": {
+      populationStatus: '혼잡',
+      populationDescription: '사람이 몰려있을 가능성이 매우 크고 많이 붐빈다고 느낄 수 있어요. 인구밀도가 높은 구간에서는 도보 이동시 부딪힘이 발생할 수 있어요.',
+      // 다른 데이터들...
+      ageDistribution: [
+        { ageGroup: '8.6%', value: 8.6 },
+        { ageGroup: '43.4%', value: 43.4 },
+        { ageGroup: '16.6%', value: 16.6 },
+        { ageGroup: '11.0%', value: 11 },
+        { ageGroup: '9.1%', value: 9.1 },
+        { ageGroup: '11.3%', value: 11.3 },
+      ]
+    },
+    "공원": {
+      populationStatus: '보통',
+      populationDescription: '...' /* 다른 설명 */
+    },
+    // 다른 드롭다운 아이템에 대한 데이터들...
+  }
+
   console.log(user ? `Hello, ${user.name}` : 'You are not logged in');
 
-  const ageData = [
-    { ageGroup: '8.6%', value: 8.6 },
-    { ageGroup: '43.4%', value: 43.4 },
-    { ageGroup: '16.6%', value: 16.6 },
-    { ageGroup: '11.0%', value: 11 },
-    { ageGroup: '9.1%', value: 9.1 },
-    { ageGroup: '11.3%', value: 11.3 },
-  ];
+  
   const genderData = [
     { gender: '40.6%', value: 40.6 },
     { gender: '59.4', value: 59.4 },
@@ -128,19 +138,14 @@ function MainPage() {
     setDropdownOpen1(!dropdownOpen1);
   }
 
-  const handleDropdownClick2 = () => {
-    setDropdownOpen2(!dropdownOpen2);
-  }
+ 
 
   const handleDropdown1Item = (item) => {
     setSelectedDropdown1(item);
+    setSeoulPlace(item);
     setDropdownOpen1(false);
   };
 
-  const handleDropdown2Item = (item) => {
-    setSelectedDropdown2(item);
-    setDropdownOpen2(false);
-  };
 
 
   const [buttons, setButtons] = useState({
@@ -326,6 +331,7 @@ const StyledD4 = styled.div`
 
 
   const renderDetailView = () => {
+    const selectedData = placeOfSeoul[seoulPlace];
     switch (selected) {
       case 'chaos':
         return (
@@ -345,9 +351,9 @@ const StyledD4 = styled.div`
               <div className='population_2'>
                 <div className='population_bottom'>
                   <div className='emoji'><DizzyEmoji /></div>
-                  <div className='dizzyness'>혼잡</div>
+                  <div className='dizzyness'>{selectedData.populationStatus}</div>
                 </div>
-                <div className='diz_text'>사람이 몰려있을 가능성이 매우 크고 많이 붐빈다고 느낄 수 있어요.<br /> 인구밀도가 높은 구간에서는 도보 이동시 부딪힘이 발생할 수 있어요.</div>
+                <div className='diz_text'>{selectedData.populationDescription}</div>
               </div>
             </div>
             <div className='age'>
@@ -355,7 +361,7 @@ const StyledD4 = styled.div`
               <div className='age_text'>연령대별 비율</div>
               <div className='age_bottom'>
 
-                <AgePieChart data={ageData} width={200} height={200} />
+                <AgePieChart data={selectedData.ageDistribution} width={200} height={200} />
                 <div className='age_detail'>
                   <First /><span className='a_text'>10대 이하</span>
                   <Second /><span className='a_text'>20대</span>
@@ -653,20 +659,7 @@ const StyledD4 = styled.div`
               )}
             </div>
           </div>
-          <div className='dropdown2'>
-            <div className='d1' onClick={handleDropdownClick2}>
-              {selectedDropdown2}
-              {dropdownOpen2 ? <DButton2 className="img-down2" /> : <DButton className="img-down2" />}
-              {/* Dropdown menu code */}
-              {dropdownOpen2 && (
-                <div className="dropdown-menu">
-                  <div className="dropdown-item1" onClick={() => handleDropdown2Item("경복궁")}>경복궁</div>
-                  <div className="dropdown-item" onClick={() => handleDropdown2Item("떡볶이")}>떡볶이</div>
-                  <div className="dropdown-item" onClick={() => handleDropdown2Item("남산타워")}>남산타워</div>
-                </div>
-              )}
-            </div>
-          </div>
+          
         </div>
         <div className="mapscale" id="map" style={{ width: '364px', height: '246px' }} />
         <div className='mid-main-view'>
