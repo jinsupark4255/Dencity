@@ -415,8 +415,7 @@ body {
 
 .diz_text {
   width: 280px;
-  display: flex;
-  flex-direction: row;
+  height: 30px;
   margin-left: 40px;
   margin-top: -20px;
   color: #000;
@@ -425,6 +424,7 @@ body {
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  text-align: center;
 }
 
 

@@ -62,13 +62,17 @@ function MainPage() {
 
   const [user, setUser] = useContext(UserContext); //여기서 카카오 사용자 이름 가져옴
 
-  const [seoulPlace, setSeoulPlace] = useState('고궁/문화유산'); //여기는 드롭다운에서 장소 선택할때 쓰는거
+  const [seoulPlace, setSeoulPlace] = useState('고궁/문화유산'); //여기는 드롭다운에서 장소 선택할때 쓰는거 (디폴트로 고궁/문화유산으로 지정함)
 
+  //서울시 지역별로 데이터 따로 정리하시면 됩니다.
   const placeOfSeoul = {
     "고궁/문화유산": {
+      //1. 혼잡도 파트
+      //혼잡도
       populationStatus: '혼잡',
+      //혼잡도에 따른 텍스트
       populationDescription: '사람이 몰려있을 가능성이 매우 크고 많이 붐빈다고 느낄 수 있어요. 인구밀도가 높은 구간에서는 도보 이동시 부딪힘이 발생할 수 있어요.',
-      // 다른 데이터들...
+      // 나이대별 비율
       ageDistribution: [
         { ageGroup: '8.6%', value: 8.6 },
         { ageGroup: '43.4%', value: 43.4 },
@@ -76,22 +80,148 @@ function MainPage() {
         { ageGroup: '11.0%', value: 11 },
         { ageGroup: '9.1%', value: 9.1 },
         { ageGroup: '11.3%', value: 11.3 },
-      ]
+      ],
+      //성별 비율
+      genderData : [
+        { gender: '40.6%', value: 40.6 },
+        { gender: '59.4', value: 59.4 },
+      ],
+      //2. 날씨 파트 (유환님이 여기 담당하시면 됩니다.)
+
+      //3. 미세먼지 파트
+      air_clearity: '보통',
+      air_num: 30,
+      littledust_num: 23,
+      littledust: '좋음',
+      tinydust_num:17,
+      tinydust: '보통'
     },
     "공원": {
+      //1. 혼잡도 파트
+      //혼잡도
       populationStatus: '보통',
-      populationDescription: '...' /* 다른 설명 */
+      //혼잡도에 따른 텍스트
+      populationDescription: '놀러가고 싶음 ㄹㅇ.',
+      // 나이대별 비율
+      ageDistribution: [
+        { ageGroup: '8.6%', value: 8.6 },
+        { ageGroup: '43.4%', value: 43.4 },
+        { ageGroup: '16.6%', value: 16.6 },
+        { ageGroup: '11.0%', value: 11 },
+        { ageGroup: '9.1%', value: 9.1 },
+        { ageGroup: '11.3%', value: 11.3 },
+      ],
+      //성별 비율
+      genderData : [
+        { gender: '40.6%', value: 40.6 },
+        { gender: '59.4', value: 59.4 },
+      ],
+      //2. 날씨 파트 (유환님이 여기 담당하시면 됩니다.)
+
+      //3. 미세먼지 파트
+      air_clearity: '보통',
+      air_num: 30,
+      littledust_num: 23,
+      littledust: '좋음',
+      tinydust_num:17,
+      tinydust: '보통'
     },
-    // 다른 드롭다운 아이템에 대한 데이터들...
+    "관광특구":{
+      //1. 혼잡도 파트
+      //혼잡도
+      populationStatus: '혼잡',
+      //혼잡도에 따른 텍스트
+      populationDescription: '사람이 몰려있을 가능성이 매우 크고 많이 붐빈다고 느낄 수 있어요. 인구밀도가 높은 구간에서는 도보 이동시 부딪힘이 발생할 수 있어요.',
+      // 나이대별 비율
+      ageDistribution: [
+        { ageGroup: '8.6%', value: 8.6 },
+        { ageGroup: '43.4%', value: 43.4 },
+        { ageGroup: '16.6%', value: 16.6 },
+        { ageGroup: '11.0%', value: 11 },
+        { ageGroup: '9.1%', value: 9.1 },
+        { ageGroup: '11.3%', value: 11.3 },
+      ],
+      //성별 비율
+      genderData : [
+        { gender: '40.6%', value: 40.6 },
+        { gender: '59.4', value: 59.4 },
+      ],
+      //2. 날씨 파트 (유환님이 여기 담당하시면 됩니다.)
+
+      //3. 미세먼지 파트
+      air_clearity: '보통',
+      air_num: 30,
+      littledust_num: 23,
+      littledust: '좋음',
+      tinydust_num:17,
+      tinydust: '보통'
+    },
+    "발달상권":{
+      //1. 혼잡도 파트
+      //혼잡도
+      populationStatus: '혼잡',
+      //혼잡도에 따른 텍스트
+      populationDescription: '사람이 몰려있을 가능성이 매우 크고 많이 붐빈다고 느낄 수 있어요. 인구밀도가 높은 구간에서는 도보 이동시 부딪힘이 발생할 수 있어요.',
+      // 나이대별 비율
+      ageDistribution: [
+        { ageGroup: '8.6%', value: 8.6 },
+        { ageGroup: '43.4%', value: 43.4 },
+        { ageGroup: '16.6%', value: 16.6 },
+        { ageGroup: '11.0%', value: 11 },
+        { ageGroup: '9.1%', value: 9.1 },
+        { ageGroup: '11.3%', value: 11.3 },
+      ],
+      //성별 비율
+      genderData : [
+        { gender: '40.6%', value: 40.6 },
+        { gender: '59.4', value: 59.4 },
+      ],
+      //2. 날씨 파트 (유환님이 여기 담당하시면 됩니다.)
+
+      //3. 미세먼지 파트
+      air_clearity: '보통',
+      air_num: 30,
+      littledust_num: 23,
+      littledust: '좋음',
+      tinydust_num:17,
+      tinydust: '보통'
+    },
+    "인구밀집지역":{
+      //1. 혼잡도 파트
+      //혼잡도
+      populationStatus: 'ㅋㅋㅋ',
+      //혼잡도에 따른 텍스트
+      populationDescription: '사람이 몰려있을 가능성이 매우 크고 많이 붐빈다고 느낄 수 있어요. 인구밀도가 높은 구간에서는 도보 이동시 부딪힘이 발생할 수 있어요.',
+      // 나이대별 비율
+      ageDistribution: [
+        { ageGroup: '8.6%', value: 8.6 },
+        { ageGroup: '43.4%', value: 43.4 },
+        { ageGroup: '16.6%', value: 16.6 },
+        { ageGroup: '11.0%', value: 11 },
+        { ageGroup: '9.1%', value: 9.1 },
+        { ageGroup: '11.3%', value: 11.3 },
+      ],
+      //성별 비율
+      genderData : [
+        { gender: '40.6%', value: 40.6 },
+        { gender: '59.4', value: 59.4 },
+      ],
+      //2. 날씨 파트 (유환님이 여기 담당하시면 됩니다.)
+
+      //3. 미세먼지 파트
+      air_clearity: '보통',
+      air_num: 30,
+      littledust_num: 23,
+      littledust: '좋음',
+      tinydust_num:17,
+      tinydust: '보통'
+    }
   }
 
   console.log(user ? `Hello, ${user.name}` : 'You are not logged in');
 
   
-  const genderData = [
-    { gender: '40.6%', value: 40.6 },
-    { gender: '59.4', value: 59.4 },
-  ];
+  
   const helpButtonRef = useRef(null);
   const [floatingBoxPosition, setFloatingBoxPosition] = useState({ top: 0, left: 0 });
   const updateFloatingBoxPosition = () => {
@@ -114,10 +244,8 @@ function MainPage() {
   }
   const [selected, setSelected] = useState('chaos');
   const [selectedDropdown1, setSelectedDropdown1] = useState("고궁/문화유산");
-  const [selectedDropdown2, setSelectedDropdown2] = useState("경복궁");
-
   const [dropdownOpen1, setDropdownOpen1] = useState(false);
-  const [dropdownOpen2, setDropdownOpen2] = useState(false);
+
   const toggleFloatingHelpBox = () => {
     if (showHelpBox) {
       hideFloatingHelpBox();
@@ -180,7 +308,22 @@ function MainPage() {
     });
     setActiveButton('dust');
   };
-
+  const StyledChaos = styled.div`
+  color: ${(props) => {
+    switch (props.status) {
+      case '여유':
+        return '#00E92A';
+      case '보통':
+        return `#FFD600;`;
+      case '약간 혼잡':
+        return '#FF9900';
+      case '혼잡':
+        return '#E80000';
+      default:
+        return 'black';
+    }
+  }};
+`;
 
   const StyledAirState = styled.div`
   color: ${(props) => {
@@ -217,78 +360,6 @@ const StyledLittleDust = styled.div`
 `;
 
 const StyledTinyDust = styled.div`
-  color: ${(props) => {
-    switch (props.status) {
-      case '좋음':
-        return '#00E92A';
-      case '보통':
-        return `#FFD600;`;
-      case '나쁨':
-        return '#FF9900';
-      case '매우나쁨':
-        return '#E80000';
-      default:
-        return 'black';
-    }
-  }};
-`;
-
-//오존 농도 색깔
-const StyledD1 = styled.div`
-  color: ${(props) => {
-    switch (props.status) {
-      case '좋음':
-        return '#00E92A';
-      case '보통':
-        return `#FFD600;`;
-      case '나쁨':
-        return '#FF9900';
-      case '매우나쁨':
-        return '#E80000';
-      default:
-        return 'black';
-    }
-  }};
-`;
-
-//이산화질소 색깔
-const StyledD2 = styled.div`
-  color: ${(props) => {
-    switch (props.status) {
-      case '좋음':
-        return '#00E92A';
-      case '보통':
-        return `#FFD600;`;
-      case '나쁨':
-        return '#FF9900';
-      case '매우나쁨':
-        return '#E80000';
-      default:
-        return 'black';
-    }
-  }};
-`;
-
-//일산화탄소 색깔
-const StyledD3 = styled.div`
-  color: ${(props) => {
-    switch (props.status) {
-      case '좋음':
-        return '#00E92A';
-      case '보통':
-        return `#FFD600;`;
-      case '나쁨':
-        return '#FF9900';
-      case '매우나쁨':
-        return '#E80000';
-      default:
-        return 'black';
-    }
-  }};
-`;
-
-//아황산가스 색깔
-const StyledD4 = styled.div`
   color: ${(props) => {
     switch (props.status) {
       case '좋음':
@@ -351,7 +422,7 @@ const StyledD4 = styled.div`
               <div className='population_2'>
                 <div className='population_bottom'>
                   <div className='emoji'><DizzyEmoji /></div>
-                  <div className='dizzyness'>{selectedData.populationStatus}</div>
+                  <StyledChaos className='dizzyness' status={selectedData.populationStatus}>{selectedData.populationStatus}</StyledChaos>
                 </div>
                 <div className='diz_text'>{selectedData.populationDescription}</div>
               </div>
@@ -379,7 +450,7 @@ const StyledD4 = styled.div`
                   <Male className='male_icon' /><span className='male_text'>남성</span>
                 </div>
 
-                <div className='genderbutton'><GenderPieChart data={genderData} width={200} height={200} /></div>
+                <div className='genderbutton'><GenderPieChart data={selectedData.genderData} width={200} height={200} /></div>
                 <div className='female_gender'>
                   <Female className='female_icon' /><span className='female_text'>여성</span>
                 </div>
@@ -582,7 +653,7 @@ const StyledD4 = styled.div`
             <div>
               <div className='airpollution_state'>
                 <div className='air_text'>통합대기환경지수</div>
-                <StyledAirState className='air_state' status="보통">보통</StyledAirState>
+                <StyledAirState className='air_state' status={selectedData.air_clearity}>{selectedData.air_clearity}</StyledAirState>
               </div>
               <div className='graph'> 
                 <div className='marker'>
@@ -594,13 +665,13 @@ const StyledD4 = styled.div`
             <div className='air_detail_data'>
               <div className='little_dust'>
                 <div className='little_text'>미세먼지</div>
-                <StyledLittleDust className='little_state' status="좋음">23㎍/㎥ 좋음</StyledLittleDust>
+                <StyledLittleDust className='little_state' status={selectedData.littledust}>{selectedData.littledust_num}㎍/㎥ {selectedData.littledust}</StyledLittleDust>
               </div>
               <div className='tiny_dust'>
                 <div className='tiny_text'>초미세먼지</div>
-                <StyledTinyDust className='tiny_state' status='보통'>17㎍/㎥ 보통</StyledTinyDust>
+                <StyledTinyDust className='tiny_state' status={selectedData.tinydust}>{selectedData.tinydust_num}㎍/㎥ {selectedData.tinydust}</StyledTinyDust>
               </div>
-            </div>
+            {/* </div>
             <div className='diagram'>
               <div className='upper'>
                 <div className='upper_1'>
@@ -623,7 +694,7 @@ const StyledD4 = styled.div`
                 </div>
               </div>
               <Aline className='aline' />
-              <Bline className='bline' />
+              <Bline className='bline' /> */}
             </div>
           </div>
         );
@@ -631,7 +702,6 @@ const StyledD4 = styled.div`
         return null;
     }
   };
-
 
   return (
     <div className='view'>
