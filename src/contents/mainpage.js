@@ -129,7 +129,7 @@ function MainPage() {
     "관광특구":{
       //1. 혼잡도 파트
       //혼잡도
-      populationStatus: '혼잡',
+      populationStatus: '여유',
       //혼잡도에 따른 텍스트
       populationDescription: '사람이 몰려있을 가능성이 매우 크고 많이 붐빈다고 느낄 수 있어요. 인구밀도가 높은 구간에서는 도보 이동시 부딪힘이 발생할 수 있어요.',
       // 나이대별 비율
