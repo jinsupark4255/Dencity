@@ -23,7 +23,7 @@ const KakaoLogin = () => {
           url: "/v2/user/me",
           success: (res) => {
             const userName = res.properties.nickname;
-            setUser({ name: userName }); // Set user data to context
+            setUser({ name: userName }); // 카카오 닉네임
             navigate("/oauth/callback/kakao", { state: authObj });
           },
           fail: (error) => {
