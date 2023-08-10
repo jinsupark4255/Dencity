@@ -44,10 +44,10 @@ body {
 }
 
 .community {
-  width: 16px;
+  width: 18px;
   height: 17px;
-  margin-left: 143px;
-  margin-top: 58px;
+  margin-left: 140px;
+  margin-top: 60px;
 }
 
 .main-view {
@@ -68,7 +68,7 @@ body {
   flex-direction: row;
   margin-top: 11px;
   margin-left: 14px;
-  width: 95px;
+  width: 120px;
   height: 22px;
   font-size: 10px;
   border: 1px solid #DC143C;
@@ -84,7 +84,7 @@ body {
   /* dropdown 컴포넌트의 바로 밑에 위치 */
   left: 0;
   /* dropdown 컴포넌트의 왼쪽 경계와 정렬 */
-  width: 96px;
+  width: 120px;
   z-index: 1000;
   margin-left: -5px;
   margin-top: -5.411px;
@@ -92,7 +92,7 @@ body {
 
 .dropdown-item1 {
   margin-left: -1px;
-  width: 91px;
+  width: 115px;
   height: 22px;
   padding-left: 6px;
   padding-top: 4px;
@@ -102,7 +102,7 @@ body {
 
 .dropdown-item1:hover {
   margin-left: -1px;
-  width: 91px;
+  width: 115px;
   height: 22px;
   padding-left: 6px;
   padding-top: 4px;
@@ -112,7 +112,7 @@ body {
 
 .dropdown-item {
   margin-left: -1px;
-  width: 91px;
+  width: 115px;
   height: 22px;
   padding-left: 6px;
   padding-top: 4px;
@@ -122,7 +122,7 @@ body {
 
 .dropdown-item:hover {
   margin-left: -1px;
-  width: 91px;
+  width: 115px;
   height: 22px;
   padding-left: 6px;
   padding-top: 4px;
@@ -131,7 +131,7 @@ body {
 }
 
 .d1 {
-  width: 59px;
+  width: 115px;
   height: 11px;
   margin-left: 5px;
   font-size: 10px;
@@ -349,13 +349,29 @@ body {
   border-radius: 11px;
   border: 1px solid #E0E0E0;
   background: #FFF;
-  margin-left: 13px;
+  margin-left: 12px;
   display: flex;
   flex-direction: column;
   margin-bottom: 25px;
   position: relative;
 }
 
+.detail-view2 {
+  width: 364px;
+  height: 360px;
+  border-radius: 11px;
+  border: 1px solid #E0E0E0;
+  background: #FFF;
+  margin-left: 12px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+  position: relative;
+}
+.population_2{
+  display: flex;
+  flex-direction: column;
+}
 .population {
   height: 146px;
   width: 100%;
@@ -411,16 +427,17 @@ body {
 }
 
 .diz_text {
-  display: flex;
-  flex-direction: row;
+  width: 280px;
+  height: 30px;
+  margin-left: 40px;
   margin-top: -20px;
-  justify-content: center;
   color: #000;
   font-family: Inter;
   font-size: 9px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
+  text-align: center;
 }
 
 
@@ -478,12 +495,14 @@ body {
   width: 310px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 .a_text{
-  margin-left: -6px;
+  margin-left: -4.5px;
   padding-bottom: 1px;
+  font-size: 8px;
+  font-weight: bold;
 }
 .gender{
   height: 206px;
@@ -589,11 +608,11 @@ background: #FFF;
   margin-top: 16px;
   margin-left: 11px;
   color: #000;
-font-family: Inter;
-font-size: 10px;
-font-style: normal;
-font-weight: 400;
-line-height: normal;
+  font-Family: 'Inter';
+  font-size: '10px';
+  font-style: 'normal';
+  font-weight: 400;
+  line-height: 'normal';
 }
 .airpollution_state{
   display: flex;
