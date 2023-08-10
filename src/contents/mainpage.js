@@ -43,35 +43,53 @@ import ForecastTable from './ForecastTable';
 
 
 function MainPage() {
-  useEffect(() => {
-    const container = document.getElementById('map'); // 지도를 담을 영역의 DOM 레퍼런스
-    const options = { // 지도를 생성할 때 필요한 기본 옵션
-      center: new window.kakao.maps.LatLng(33.450701, 126.570667), // 지도의 중심좌표.
-      level: 3 // 지도의 레벨(확대, 축소 정도)
-    };
-
-    const map = new window.kakao.maps.Map(container, options); // 지도 생성 및 객체 리턴
-    // 마커가 표시될 위치를 지도의 중심으로 설정
-    const markerPosition = new window.kakao.maps.LatLng(33.450701, 126.570667);
-
-    // 마커를 생성합니다
-    const marker = new window.kakao.maps.Marker({
-      position: markerPosition
-    });
-
-    // 마커가 지도 위에 표시되도록 설정합니다
-    marker.setMap(map);
-
-
-  }, [])
+  
+  
 
   const [user, setUser] = useContext(UserContext); //여기서 카카오 사용자 이름 가져옴
 
-  const [seoulPlace, setSeoulPlace] = useState('고궁/문화유산'); //여기는 드롭다운에서 장소 선택할때 쓰는거 (디폴트로 고궁/문화유산으로 지정함)
+  const [seoulPlace, setSeoulPlace] = useState('창덕궁 종묘'); //여기는 드롭다운에서 장소 선택할때 쓰는거 (디폴트로 창덕궁 종묘로 지정함)
+  useEffect(() => {
+    const container = document.getElementById('map');
+    const options = {
+      center: new window.kakao.maps.LatLng(33.450701, 126.570667),
+      level: 3
+    };
+    
+    const map = new window.kakao.maps.Map(container, options);
+  
+    // 사용자 입력 받기 (예: 검색창에서 '경복궁' 입력)
+    
+  
+    searchPlaces(seoulPlace, map);
+  
+  }, [seoulPlace]);
+  
+  function searchPlaces(keyword, map) {
+    const places = new window.kakao.maps.services.Places();
+  
+    places.keywordSearch(keyword, (result, status) => {
+      if (status === window.kakao.maps.services.Status.OK) {
+        const coords = new window.kakao.maps.LatLng(result[0].y, result[0].x);
+        
+        // 지도의 중심을 결과값으로 받은 위치로 이동시킵니다.
+        map.setCenter(coords);
+  
+        // 마커를 생성하고 지도 위에 마커를 표시합니다.
+        const marker = new window.kakao.maps.Marker({
+          position: coords
+        });
+        marker.setMap(map);
+      } else {
+        console.log("장소를 찾지 못했습니다.");
+      }
+    });
+  }
+
 
   //서울시 지역별로 데이터 따로 정리하시면 됩니다.
   const placeOfSeoul = {
-    "고궁/문화유산": {
+    "창덕궁 종묘": {
       //1. 혼잡도 파트
       //혼잡도
       populationStatus: '혼잡',
@@ -103,7 +121,7 @@ function MainPage() {
       tinydust_num:17,
       tinydust: '보통'
     },
-    "공원": {
+    "가산디지털단지역": {
       //1. 혼잡도 파트
       //혼잡도
       populationStatus: '보통',
@@ -135,7 +153,7 @@ function MainPage() {
       tinydust_num:17,
       tinydust: '보통'
     },
-    "관광특구":{
+    "홍대입구역 9번 출구":{
       //1. 혼잡도 파트
       //혼잡도
       populationStatus: '여유',
@@ -167,7 +185,7 @@ function MainPage() {
       tinydust_num:17,
       tinydust: '보통'
     },
-    "발달상권":{
+    "성수 카페거리":{
       //1. 혼잡도 파트
       //혼잡도
       populationStatus: '약간 혼잡',
@@ -199,7 +217,7 @@ function MainPage() {
       tinydust_num:17,
       tinydust: '보통'
     },
-    "인구밀집지역":{
+    "여의도":{
       //1. 혼잡도 파트
       //혼잡도
       populationStatus: 'ㅋㅋㅋ',
@@ -256,7 +274,7 @@ function MainPage() {
     setShowHelpBox(false);
   }
   const [selected, setSelected] = useState('chaos');
-  const [selectedDropdown1, setSelectedDropdown1] = useState("고궁/문화유산");
+  const [selectedDropdown1, setSelectedDropdown1] = useState("창덕궁 종묘");
   const [dropdownOpen1, setDropdownOpen1] = useState(false);
 
   const toggleFloatingHelpBox = () => {
@@ -427,10 +445,10 @@ const StyledTinyDust = styled.div`
     return `${year}.${month}.${day} ${hours}:${minutes}`;
   }
   const formattedDate = formatDateTime(currentDate);
-
+  const selectedData = placeOfSeoul[seoulPlace];
 
   const renderDetailView = () => {
-    const selectedData = placeOfSeoul[seoulPlace];
+    
     switch (selected) {
       case 'chaos':
         return (
@@ -751,11 +769,11 @@ const StyledTinyDust = styled.div`
               {/* Dropdown menu code */}
               {dropdownOpen1 && (
                 <div className="dropdown-menu">
-                  <div className="dropdown-item1" onClick={() => handleDropdown1Item("고궁/문화유산")}>고궁/문화유산</div>
-                  <div className="dropdown-item" onClick={() => handleDropdown1Item("공원")}>공원</div>
-                  <div className="dropdown-item" onClick={() => handleDropdown1Item("관광특구")}>관광특구</div>
-                  <div className="dropdown-item" onClick={() => handleDropdown1Item("발달상권")}>발달상권</div>
-                  <div className="dropdown-item" onClick={() => handleDropdown1Item("인구밀집지역")}>인구밀집지역</div>
+                  <div className="dropdown-item1" onClick={() => handleDropdown1Item("창덕궁 종묘")}>창덕궁 종묘</div>
+                  <div className="dropdown-item" onClick={() => handleDropdown1Item("가산디지털단지역")}>가산디지털단지역</div>
+                  <div className="dropdown-item" onClick={() => handleDropdown1Item("홍대입구역 9번 출구")}>홍대입구역 9번 출구</div>
+                  <div className="dropdown-item" onClick={() => handleDropdown1Item("성수 카페거리")}>성수 카페거리</div>
+                  <div className="dropdown-item" onClick={() => handleDropdown1Item("여의도")}>여의도</div>
                 </div>
               )}
             </div>
