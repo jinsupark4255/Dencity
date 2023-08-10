@@ -17,12 +17,14 @@ import { ReactComponent as DustButton2 } from './images/dust_icon_2.svg';
 import { ReactComponent as HelpButton } from './images/Help.svg';
 import { ReactComponent as DizzyEmoji } from './images/Dizzy.svg';
 import { ReactComponent as CommunityFloat } from './images/commu_float.svg';
+import { ReactComponent as Zero } from './images/10대 이하.svg';
 import { ReactComponent as First } from './images/10대.svg';
 import { ReactComponent as Second } from './images/20대.svg';
 import { ReactComponent as Third } from './images/30대.svg';
 import { ReactComponent as Fourth } from './images/40대.svg';
 import { ReactComponent as Fifth } from './images/50대.svg';
 import { ReactComponent as Sixth } from './images/60대.svg';
+import { ReactComponent as Seventh } from './images/70대 이상.svg';
 import { ReactComponent as Male } from './images/male.svg';
 import { ReactComponent as Female } from './images/female.svg';
 import { ReactComponent as Red } from './images/red.svg';
@@ -74,12 +76,14 @@ function MainPage() {
       populationDescription: '사람이 몰려있을 가능성이 매우 크고 많이 붐빈다고 느낄 수 있어요. 인구밀도가 높은 구간에서는 도보 이동시 부딪힘이 발생할 수 있어요.',
       // 나이대별 비율
       ageDistribution: [
-        { ageGroup: '8.6%', value: 8.6 },
-        { ageGroup: '43.4%', value: 43.4 },
-        { ageGroup: '16.6%', value: 16.6 },
-        { ageGroup: '11.0%', value: 11 },
-        { ageGroup: '9.1%', value: 9.1 },
-        { ageGroup: '11.3%', value: 11.3 },
+        { ageGroup: '13.5%', value: 13.5 },//0-10대
+        { ageGroup: '12.4%', value: 12.4 },//10대 
+        { ageGroup: '11.2%', value: 11.2 },//20대
+        { ageGroup: '14.1%', value: 14.1 },//30대
+        { ageGroup: '9.3%', value: 9.3 },//40대
+        { ageGroup: '10.9%', value: 10.9 },//50대
+        { ageGroup: '15.3%', value: 15.3 },//60대
+        { ageGroup: '13.3%', value: 13.3 },//70대 이상
       ],
       //성별 비율
       genderData : [
@@ -104,12 +108,14 @@ function MainPage() {
       populationDescription: '놀러가고 싶음 ㄹㅇ.',
       // 나이대별 비율
       ageDistribution: [
-        { ageGroup: '8.6%', value: 8.6 },
-        { ageGroup: '43.4%', value: 43.4 },
-        { ageGroup: '16.6%', value: 16.6 },
-        { ageGroup: '11.0%', value: 11 },
-        { ageGroup: '9.1%', value: 9.1 },
-        { ageGroup: '11.3%', value: 11.3 },
+        { ageGroup: '13.5%', value: 13.5 },//0-10대
+        { ageGroup: '12.4%', value: 12.4 },//10대 
+        { ageGroup: '11.2%', value: 11.2 },//20대
+        { ageGroup: '14.1%', value: 14.1 },//30대
+        { ageGroup: '9.3%', value: 9.3 },//40대
+        { ageGroup: '10.9%', value: 10.9 },//50대
+        { ageGroup: '15.3%', value: 15.3 },//60대
+        { ageGroup: '13.3%', value: 13.3 },//70대 이상
       ],
       //성별 비율
       genderData : [
@@ -134,12 +140,14 @@ function MainPage() {
       populationDescription: '사람이 몰려있을 가능성이 매우 크고 많이 붐빈다고 느낄 수 있어요. 인구밀도가 높은 구간에서는 도보 이동시 부딪힘이 발생할 수 있어요.',
       // 나이대별 비율
       ageDistribution: [
-        { ageGroup: '8.6%', value: 8.6 },
-        { ageGroup: '43.4%', value: 43.4 },
-        { ageGroup: '16.6%', value: 16.6 },
-        { ageGroup: '11.0%', value: 11 },
-        { ageGroup: '9.1%', value: 9.1 },
-        { ageGroup: '11.3%', value: 11.3 },
+        { ageGroup: '13.5%', value: 13.5 },//0-10대
+        { ageGroup: '12.4%', value: 12.4 },//10대 
+        { ageGroup: '11.2%', value: 11.2 },//20대
+        { ageGroup: '14.1%', value: 14.1 },//30대
+        { ageGroup: '9.3%', value: 9.3 },//40대
+        { ageGroup: '10.9%', value: 10.9 },//50대
+        { ageGroup: '15.3%', value: 15.3 },//60대
+        { ageGroup: '13.3%', value: 13.3 },//70대 이상
       ],
       //성별 비율
       genderData : [
@@ -164,12 +172,14 @@ function MainPage() {
       populationDescription: '사람이 몰려있을 가능성이 매우 크고 많이 붐빈다고 느낄 수 있어요. 인구밀도가 높은 구간에서는 도보 이동시 부딪힘이 발생할 수 있어요.',
       // 나이대별 비율
       ageDistribution: [
-        { ageGroup: '8.6%', value: 8.6 },
-        { ageGroup: '43.4%', value: 43.4 },
-        { ageGroup: '16.6%', value: 16.6 },
-        { ageGroup: '11.0%', value: 11 },
-        { ageGroup: '9.1%', value: 9.1 },
-        { ageGroup: '11.3%', value: 11.3 },
+        { ageGroup: '13.5%', value: 13.5 },//0-10대
+        { ageGroup: '12.4%', value: 12.4 },//10대 
+        { ageGroup: '11.2%', value: 11.2 },//20대
+        { ageGroup: '14.1%', value: 14.1 },//30대
+        { ageGroup: '9.3%', value: 9.3 },//40대
+        { ageGroup: '10.9%', value: 10.9 },//50대
+        { ageGroup: '15.3%', value: 15.3 },//60대
+        { ageGroup: '13.3%', value: 13.3 },//70대 이상
       ],
       //성별 비율
       genderData : [
@@ -194,12 +204,14 @@ function MainPage() {
       populationDescription: '사람이 몰려있을 가능성이 매우 크고 많이 붐빈다고 느낄 수 있어요. 인구밀도가 높은 구간에서는 도보 이동시 부딪힘이 발생할 수 있어요.',
       // 나이대별 비율
       ageDistribution: [
-        { ageGroup: '8.6%', value: 8.6 },
-        { ageGroup: '43.4%', value: 43.4 },
-        { ageGroup: '16.6%', value: 16.6 },
-        { ageGroup: '11.0%', value: 11 },
-        { ageGroup: '9.1%', value: 9.1 },
-        { ageGroup: '11.3%', value: 11.3 },
+        { ageGroup: '13.5%', value: 13.5 },//0-10대
+        { ageGroup: '12.4%', value: 12.4 },//10대 
+        { ageGroup: '11.2%', value: 11.2 },//20대
+        { ageGroup: '14.1%', value: 14.1 },//30대
+        { ageGroup: '9.3%', value: 9.3 },//40대
+        { ageGroup: '10.9%', value: 10.9 },//50대
+        { ageGroup: '15.3%', value: 15.3 },//60대
+        { ageGroup: '13.3%', value: 13.3 },//70대 이상
       ],
       //성별 비율
       genderData : [
@@ -434,12 +446,14 @@ const StyledTinyDust = styled.div`
 
                 <AgePieChart data={selectedData.ageDistribution} width={200} height={200} />
                 <div className='age_detail'>
-                  <First /><span className='a_text'>10대 이하</span>
+                  <Zero/><span className='a_text'>10대⬇</span>
+                  <First /><span className='a_text'>10대</span>
                   <Second /><span className='a_text'>20대</span>
                   <Third /><span className='a_text'>30대</span>
                   <Fourth /><span className='a_text'>40대</span>
                   <Fifth /><span className='a_text'>50대</span>
-                  <Sixth /><span className='a_text'>60대 이상</span>
+                  <Sixth /><span className='a_text'>60대</span>
+                  <Seventh /><span className='a_text'>70대⬆</span>
                 </div>
               </div>
             </div>

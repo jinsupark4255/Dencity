@@ -44,10 +44,10 @@ body {
 }
 
 .community {
-  width: 16px;
+  width: 18px;
   height: 17px;
-  margin-left: 143px;
-  margin-top: 58px;
+  margin-left: 140px;
+  margin-top: 60px;
 }
 
 .main-view {
@@ -482,12 +482,14 @@ body {
   width: 310px;
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 .a_text{
-  margin-left: -6px;
+  margin-left: -4.5px;
   padding-bottom: 1px;
+  font-size: 8px;
+  font-weight: bold;
 }
 .gender{
   height: 206px;

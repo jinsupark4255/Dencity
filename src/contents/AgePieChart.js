@@ -9,7 +9,7 @@ const AgePieChart = ({ data, width, height }) => {
 
     const colorScale = d3.scaleOrdinal()
       .domain(data.map(item => item.ageGroup))
-      .range(['#FFE45C', '#FD7B49', '#E8395C', '#B137A3', '#6957CB','#43ABAF']);
+      .range(['#00E92A','#FFE45C', '#FD7B49', '#E8395C', '#B137A3', '#6957CB','#43ABAF','#82B7FF']);
 
     const pie = d3.pie().value(d => d.value)
     .sort(null)
