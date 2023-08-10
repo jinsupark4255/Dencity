@@ -16,6 +16,9 @@ import { ReactComponent as DustButton1 } from './images/dust_icon_1.svg';
 import { ReactComponent as DustButton2 } from './images/dust_icon_2.svg';
 import { ReactComponent as HelpButton } from './images/Help.svg';
 import { ReactComponent as DizzyEmoji } from './images/Dizzy.svg';
+import { ReactComponent as LittleDizzyEmoji } from './images/LittleDizzy.svg';
+import { ReactComponent as AverageEmoji } from './images/Average.svg';
+import { ReactComponent as GoodEmoji } from './images/Good.svg';
 import { ReactComponent as CommunityFloat } from './images/commu_float.svg';
 import { ReactComponent as Zero } from './images/10대 이하.svg';
 import { ReactComponent as First } from './images/10대.svg';
@@ -32,8 +35,8 @@ import { ReactComponent as Green } from './images/green.svg';
 import { ReactComponent as Yellow } from './images/yellow.svg';
 import { ReactComponent as Orange } from './images/orange.svg';
 import { ReactComponent as AirMarker_Yellow } from './images/air_marker_Y.svg';
-import { ReactComponent as Aline } from './images/aline.svg';
-import { ReactComponent as Bline } from './images/bline.svg';
+// import { ReactComponent as Aline } from './images/aline.svg';
+// import { ReactComponent as Bline } from './images/bline.svg';
 import sunnyIcon from './images/sunny.svg';
 import ForecastTable from './ForecastTable';
 
@@ -167,7 +170,7 @@ function MainPage() {
     "발달상권":{
       //1. 혼잡도 파트
       //혼잡도
-      populationStatus: '혼잡',
+      populationStatus: '약간 혼잡',
       //혼잡도에 따른 텍스트
       populationDescription: '사람이 몰려있을 가능성이 매우 크고 많이 붐빈다고 느낄 수 있어요. 인구밀도가 높은 구간에서는 도보 이동시 부딪힘이 발생할 수 있어요.',
       // 나이대별 비율
@@ -230,9 +233,7 @@ function MainPage() {
     }
   }
 
-  console.log(user ? `Hello, ${user.name}` : 'You are not logged in');
-
-  
+  console.log(user ? `Hello, ${user.name}` : 'You are not logged in'); //카카오 로그인 정보 가져오기  
   
   const helpButtonRef = useRef(null);
   const [floatingBoxPosition, setFloatingBoxPosition] = useState({ top: 0, left: 0 });
@@ -337,6 +338,21 @@ function MainPage() {
   }};
 `;
 
+const ChaosEmoji = ({ status }) => {
+  switch (status) {
+    case '여유':
+      return <GoodEmoji/>;
+    case '보통':
+      return <AverageEmoji/>;
+    case '약간 혼잡':
+      return <LittleDizzyEmoji/>;
+    case '혼잡':
+      return <DizzyEmoji/>;
+    default:
+      return ; // 혹은 기본값 아이콘
+  }
+};
+
   const StyledAirState = styled.div`
   color: ${(props) => {
     switch (props.status) {
@@ -433,7 +449,8 @@ const StyledTinyDust = styled.div`
               </div>
               <div className='population_2'>
                 <div className='population_bottom'>
-                  <div className='emoji'><DizzyEmoji /></div>
+                
+                  <div className='emoji'><ChaosEmoji status={selectedData.populationStatus} /></div>
                   <StyledChaos className='dizzyness' status={selectedData.populationStatus}>{selectedData.populationStatus}</StyledChaos>
                 </div>
                 <div className='diz_text'>{selectedData.populationDescription}</div>
@@ -662,7 +679,7 @@ const StyledTinyDust = styled.div`
         );
       case 'dust'://dust 부분
         return (
-          <div className='detail-view'>
+          <div className='detail-view2'>
             <span className='today_date'>{formattedDate} 기준</span>
             <div>
               <div className='airpollution_state'>

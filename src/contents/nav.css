@@ -349,7 +349,20 @@ body {
   border-radius: 11px;
   border: 1px solid #E0E0E0;
   background: #FFF;
-  margin-left: 13px;
+  margin-left: 12px;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 25px;
+  position: relative;
+}
+
+.detail-view2 {
+  width: 364px;
+  height: 360px;
+  border-radius: 11px;
+  border: 1px solid #E0E0E0;
+  background: #FFF;
+  margin-left: 12px;
   display: flex;
   flex-direction: column;
   margin-bottom: 25px;
