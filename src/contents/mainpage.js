@@ -39,12 +39,17 @@ import { ReactComponent as AirMarker_Yellow } from './images/air_marker_Y.svg';
 // import { ReactComponent as Bline } from './images/bline.svg';
 import sunnyIcon from './images/sunny.svg';
 import ForecastTable from './ForecastTable';
-
-
+import axios from 'axios';
 
 function MainPage() {
   
-  
+axios.get('http://54.180.87.174')
+.then(response => {
+  console.log(response.data);
+})
+.catch(error => {
+  console.error("Error fetching data:", error);
+});
 
   const [user, setUser] = useContext(UserContext); //여기서 카카오 사용자 이름 가져옴
 
