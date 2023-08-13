@@ -41,7 +41,7 @@ import axios from 'axios';
 
 function MainPage() {
 
-  axios.get('https://www.naver.com/')
+  axios.get('https://54.180.87.174')
     .then(response => {
       console.log(response.data);
     })
