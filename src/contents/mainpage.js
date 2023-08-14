@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef, useContext } from 'react';
 import styled from 'styled-components';
 import { UserContext } from './UserContext';
+import { useNavigate } from 'react-router-dom';
 import './nav.css'
 import AgePieChart from './AgePieChart';
 import GenderPieChart from './GenderPieChart';
@@ -35,12 +36,13 @@ import { ReactComponent as Green } from './images/green.svg';
 import { ReactComponent as Yellow } from './images/yellow.svg';
 import { ReactComponent as Orange } from './images/orange.svg';
 import { ReactComponent as AirMarker_Yellow } from './images/air_marker_Y.svg';
+import { ReactComponent as Dencity } from './images/Dencity.svg';
 import sunnyIcon from './images/sunny.svg';
 import ForecastTable from './ForecastTable';
 import axios from 'axios';
 //commit check
 function MainPage() {
-
+  const navigate = useNavigate();
   axios.get('https://54.180.87.174')
     .then(response => {
       console.log(response.data);
@@ -735,8 +737,8 @@ function MainPage() {
     <div className='view'>
       <CommunityFloat className="community-float" />
       <div className='top-view'>
-        <div className='top-image'><Image1 /></div>
-        <div className='logo'>로고</div>
+        <div className='top-image' onClick={() => navigate('/mypage')}><Image1 /></div>
+        <div className='logo'><Dencity/></div>
         <div className='community'><Image2 /></div>
       </div>
       <div className='main-view'>
