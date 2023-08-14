@@ -26,7 +26,7 @@ const KakaoLogin = () => {
             const userProfile = res.properties.profile_image;
             const userEmail = res.kakao_account.email;
             setUser({ name: userName , profile: userProfile, email:userEmail}); // 카카오 닉네임
-            navigate("/oauth/callback/kakao", { state: authObj });
+            navigate("https://likelion-hackathon-7xfowac6n-jinsupark4255.vercel.app/oauth/callback/kakao", { state: authObj });
           },
           fail: (error) => {
             console.log(error);
@@ -41,18 +41,13 @@ const KakaoLogin = () => {
 
   return (
     <div className="kakao-login-container">
-
       <Logo className='logo-image'/>
-     
-      
       <img
         className='kakao-login-button'
         src={KakaoLogo}
         alt="카카오로 로그인하기"
         onClick={handleLogin}
       />
-
-
     </div>
   );
 };
