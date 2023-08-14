@@ -959,7 +959,7 @@ body {
 .mypage-view {
   position: relative;
   margin-top: 1px;
-  height: calc(800px - 115px);
+  height: calc(844px - 115px);
   overflow-y: auto;
 }
 
