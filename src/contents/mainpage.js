@@ -58,7 +58,8 @@ function MainPage() {
     const container = document.getElementById('map');
     const options = {
       center: new window.kakao.maps.LatLng(33.450701, 126.570667),
-      level: 3
+      level: 3,
+      draggable: true
     };
 
     const map = new window.kakao.maps.Map(container, options);
@@ -67,8 +68,10 @@ function MainPage() {
 
 
     searchPlaces(seoulPlace, map);
+    
 
   }, [seoulPlace]);
+ 
 
   function searchPlaces(keyword, map) {
     const places = new window.kakao.maps.services.Places();
