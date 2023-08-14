@@ -26,7 +26,7 @@ const KakaoLogin = () => {
             const userProfile = res.properties.profile_image;
             const userEmail = res.kakao_account.email;
             setUser({ name: userName , profile: userProfile, email:userEmail}); // 카카오 닉네임
-            navigate("https://likelion-hackathon.vercel.app/oauth/callback/kakao", { state: authObj });
+            navigate("/oauth/callback/kakao", { state: authObj });
           },
           fail: (error) => {
             console.log(error);
