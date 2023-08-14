@@ -380,6 +380,7 @@ body {
   margin-left: 12px;
   display: flex;
   flex-direction: column;
+  margin-bottom: 25px;
   position: relative;
 }
 
@@ -958,7 +959,7 @@ body {
 .mypage-view {
   position: relative;
   margin-top: 1px;
-  height: calc(820px - 115px);
+  height: calc(800px - 115px);
   overflow-y: auto;
 }
 
