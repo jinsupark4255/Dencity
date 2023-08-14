@@ -17,28 +17,28 @@ function Mypage() {
             </header>
             <div className='mypage_view'>
                 <section className='my_main'>
-                    <div className='profile'></div>
+                    <img className='profile'src={user.profile} alt="카카오 프로필 사진" />
                     <div className='userName'>{user.name}</div>
-                    <div className='userEmail'></div>
+                    <div className='userEmail'>{user.email}</div>
                 </section>
                 <section className='my_account'>
-                    <p>계정</p>
-                    <p>비밀번호 변경</p>
-                    <p>이메일 변경</p>
+                    <div className='a1'>계정</div>
+                    <div className='a2'>비밀번호 변경</div>
+                    <div className='a2'>이메일 변경</div>
                 </section>
                 <section className='my_info'>
-                    <p>이용 안내</p>
-                    <p>앱 버전</p>
-                    <p>문의하기</p>
-                    <p>공지사항</p>
-                    <p>서비스 이용약관</p>
-                    <p>개인정보 처리방침</p>
+                    <div className='i1'>이용 안내</div>
+                    <div className='i2'>앱 버전</div>
+                    <div className='i2'>문의하기</div>
+                    <div className='i2'>공지사항</div>
+                    <div className='i2'>서비스 이용약관</div>
+                    <div className='i2'>개인정보 처리방침</div>
                 </section>
                 <section className='my_extra'>
-                    <p>기타</p>
-                    <p>정보 동의설정</p>
-                    <p>회원 탈퇴</p>
-                    <p>로그아웃</p>
+                    <div className='e1'>기타</div>
+                    <div className='e2'>정보 동의설정</div>
+                    <div className='e2'>회원 탈퇴</div>
+                    <div className='e2'>로그아웃</div>
                 </section>
                 <section className='my_logo'><Logo/></section>
             </div>
