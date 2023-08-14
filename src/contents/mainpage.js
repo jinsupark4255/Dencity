@@ -820,17 +820,6 @@ function MainPage() {
     }};
 `;
 
-
-  const forecastData_top = [
-    { emogi: 'sunny', value: 'sunny' },
-    { temperature: '29.7', value: '29.7' },
-  ];
-
-  const forecastData_minmax = [
-    { min: '25', value: '25' },
-    { max: '29', value: '29' },
-  ];
-
   const currentDate = new Date();
   function formatDateTime(date) {
     const year = date.getFullYear();
@@ -927,7 +916,7 @@ function MainPage() {
                 weight: '88px',
               }}
             >
-              {forecastData_top.map((data) =>
+              {selectedData.forecastData_top.map((data) =>
                 data.value === 'sunny' ? (
                   <img src={sunnyIcon} alt="sunny" />
                 ) : null
@@ -950,7 +939,7 @@ function MainPage() {
                 textAlign: 'center',
               }}
             >
-              {forecastData_top[1].temperature}  °C
+              {selectedData.forecastData_top[1].temperature}  °C
             </div>
 
             <div
@@ -988,7 +977,7 @@ function MainPage() {
                 lineHeight: 'normal',
               }}
             >
-              {forecastData_minmax[0].min} °C
+              {selectedData.forecastData_minmax[0].min} °C
             </div>
             <div
               style={{
@@ -1006,7 +995,7 @@ function MainPage() {
                 lineHeight: 'normal',
               }}
             >
-              {forecastData_minmax[1].max} °C
+              {selectedData.forecastData_minmax[1].max} °C
             </div>
 
             <div
@@ -1085,7 +1074,7 @@ function MainPage() {
                 left: '14px',
               }}
             >
-              <ForecastTable />
+              <ForecastTable forecastData={selectedData.forecastData} />
             </div>
 
 
