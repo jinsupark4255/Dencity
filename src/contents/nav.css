@@ -12,7 +12,7 @@ body {
 
 .view {
   width: 390px;
-  height: 820px;
+  height: 800px;
   /* //844px */
   display: flex;
   flex-direction: column;
@@ -74,7 +74,7 @@ body {
 .main-view {
   position: relative;
   margin-top: 1px;
-  height: calc(820px - 89px);
+  height: calc(800px - 89px);
   overflow-y: auto;
 }
 
