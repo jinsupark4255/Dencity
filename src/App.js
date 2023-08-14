@@ -14,11 +14,11 @@ function App() {
 <AuthProvider>
       <Router>
         <Routes>
-          <Route path="https://likelion-hackathon-7xfowac6n-jinsupark4255.vercel.app/" element={<KakaoLogin />} />
-          <Route path="https://likelion-hackathon-7xfowac6n-jinsupark4255.vercel.app/oauth/callback/kakao" element={<KakaoCallback />} />
-          <Route path="https://likelion-hackathon-7xfowac6n-jinsupark4255.vercel.app/profile" element={<Profile />} />
-          <Route path="https://likelion-hackathon-7xfowac6n-jinsupark4255.vercel.app/main" element={<MainPage />} />
-          <Route path="https://likelion-hackathon-7xfowac6n-jinsupark4255.vercel.app/mypage" element ={<Mypage/>}/>
+          <Route path="https://likelion-hackathon.vercel.app/" element={<KakaoLogin />} />
+          <Route path="https://likelion-hackathon.vercel.app/oauth/callback/kakao" element={<KakaoCallback />} />
+          <Route path="https://likelion-hackathon.vercel.app/profile" element={<Profile />} />
+          <Route path="https://likelion-hackathon.vercel.app/main" element={<MainPage />} />
+          <Route path="https://likelion-hackathon.vercel.app/mypage" element ={<Mypage/>}/>
         </Routes>
       </Router>
     </AuthProvider>
