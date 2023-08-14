@@ -53,7 +53,7 @@ function MainPage() {
 
   const [user, setUser] = useContext(UserContext); //여기서 카카오 사용자 이름 가져옴
 
-  const [seoulPlace, setSeoulPlace] = useState('창덕궁 종묘'); //여기는 드롭다운에서 장소 선택할때 쓰는거 (디폴트로 창덕궁 종묘로 지정함)
+  const [seoulPlace, setSeoulPlace] = useState('가산디지털단지역'); //여기는 드롭다운에서 장소 선택할때 쓰는거 (디폴트로 창덕궁 종묘로 지정함)
   useEffect(() => {
     const container = document.getElementById('map');
     const options = {
@@ -116,7 +116,29 @@ function MainPage() {
         { gender: '40.6%', value: 40.6 },
         { gender: '59.4', value: 59.4 },
       ],
-      //2. 날씨 파트 (유환님이 여기 담당하시면 됩니다.)
+      //2. 날씨 파트
+      forecastData_top: [
+        { emogi: 'sunny', value: 'sunny' },
+        { temperature: '29.7', value: '29.7' },
+      ],
+
+      forecastData_minmax: [
+        { min: '25', value: '25' },
+        { max: '29', value: '29' },
+      ],
+
+      forecastData: [
+        { date: '16', weather: 'clo', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '17', weather: 'ㄹㄹㄹ', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '18', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '19', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '20', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '21', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '22', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '23', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '24', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '25', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' }
+      ],
 
       //3. 미세먼지 파트
       air_clearity: '보통',
@@ -126,6 +148,7 @@ function MainPage() {
       tinydust_num: 17,
       tinydust: '보통'
     },
+
     "가산디지털단지역": {
       //1. 혼잡도 파트
       //혼잡도
@@ -148,7 +171,29 @@ function MainPage() {
         { gender: '40.6%', value: 40.6 },
         { gender: '59.4', value: 59.4 },
       ],
-      //2. 날씨 파트 (유환님이 여기 담당하시면 됩니다.)
+      //2. 날씨 파트
+      forecastData_top: [
+        { emogi: 'sunny', value: 'sunny' },
+        { temperature: '29.7', value: '29.7' },
+      ],
+
+      forecastData_minmax: [
+        { min: '25', value: '25' },
+        { max: '29', value: '29' },
+      ],
+
+      forecastData: [
+        { date: '16', weather: 'clo', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '17', weather: 'ㄹㄹㄹ', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '18', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '19', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '20', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '21', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '22', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '23', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '24', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '25', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' }
+      ],
 
       //3. 미세먼지 파트
       air_clearity: '보통',
@@ -158,12 +203,13 @@ function MainPage() {
       tinydust_num: 17,
       tinydust: '보통'
     },
-    "홍대입구역 9번 출구": {
+
+    "강남역": {
       //1. 혼잡도 파트
       //혼잡도
-      populationStatus: '여유',
+      populationStatus: '보통',
       //혼잡도에 따른 텍스트
-      populationDescription: '사람이 몰려있을 가능성이 매우 크고 많이 붐빈다고 느낄 수 있어요. 인구밀도가 높은 구간에서는 도보 이동시 부딪힘이 발생할 수 있어요.',
+      populationDescription: '놀러가고 싶음 ㄹㅇ.',
       // 나이대별 비율
       ageDistribution: [
         { ageGroup: '13.5%', value: 13.5 },//0-10대
@@ -180,7 +226,29 @@ function MainPage() {
         { gender: '40.6%', value: 40.6 },
         { gender: '59.4', value: 59.4 },
       ],
-      //2. 날씨 파트 (유환님이 여기 담당하시면 됩니다.)
+      //2. 날씨 파트
+      forecastData_top: [
+        { emogi: 'sunny', value: 'sunny' },
+        { temperature: '29.7', value: '29.7' },
+      ],
+
+      forecastData_minmax: [
+        { min: '25', value: '25' },
+        { max: '29', value: '29' },
+      ],
+
+      forecastData: [
+        { date: '16', weather: 'clo', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '17', weather: 'ㄹㄹㄹ', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '18', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '19', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '20', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '21', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '22', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '23', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '24', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '25', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' }
+      ],
 
       //3. 미세먼지 파트
       air_clearity: '보통',
@@ -190,6 +258,62 @@ function MainPage() {
       tinydust_num: 17,
       tinydust: '보통'
     },
+
+    "서울역": {
+      //1. 혼잡도 파트
+      //혼잡도
+      populationStatus: '보통',
+      //혼잡도에 따른 텍스트
+      populationDescription: '놀러가고 싶음 ㄹㅇ.',
+      // 나이대별 비율
+      ageDistribution: [
+        { ageGroup: '13.5%', value: 13.5 },//0-10대
+        { ageGroup: '12.4%', value: 12.4 },//10대 
+        { ageGroup: '11.2%', value: 11.2 },//20대
+        { ageGroup: '14.1%', value: 14.1 },//30대
+        { ageGroup: '9.3%', value: 9.3 },//40대
+        { ageGroup: '10.9%', value: 10.9 },//50대
+        { ageGroup: '15.3%', value: 15.3 },//60대
+        { ageGroup: '13.3%', value: 13.3 },//70대 이상
+      ],
+      //성별 비율
+      genderData: [
+        { gender: '40.6%', value: 40.6 },
+        { gender: '59.4', value: 59.4 },
+      ],
+      //2. 날씨 파트
+      forecastData_top: [
+        { emogi: 'sunny', value: 'sunny' },
+        { temperature: '29.7', value: '29.7' },
+      ],
+
+      forecastData_minmax: [
+        { min: '25', value: '25' },
+        { max: '29', value: '29' },
+      ],
+
+      forecastData: [
+        { date: '16', weather: 'clo', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '17', weather: 'ㄹㄹㄹ', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '18', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '19', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '20', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '21', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '22', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '23', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '24', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '25', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' }
+      ],
+
+      //3. 미세먼지 파트
+      air_clearity: '보통',
+      air_num: 30,
+      littledust_num: 23,
+      littledust: '좋음',
+      tinydust_num: 17,
+      tinydust: '보통'
+    },
+
     "성수 카페거리": {
       //1. 혼잡도 파트
       //혼잡도
@@ -212,7 +336,29 @@ function MainPage() {
         { gender: '40.6%', value: 40.6 },
         { gender: '59.4', value: 59.4 },
       ],
-      //2. 날씨 파트 (유환님이 여기 담당하시면 됩니다.)
+      //2. 날씨 파트
+      forecastData_top: [
+        { emogi: 'sunny', value: 'sunny' },
+        { temperature: '29.7', value: '29.7' },
+      ],
+
+      forecastData_minmax: [
+        { min: '25', value: '25' },
+        { max: '29', value: '29' },
+      ],
+
+      forecastData: [
+        { date: '16', weather: 'clo', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '17', weather: 'ㄹㄹㄹ', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '18', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '19', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '20', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '21', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '22', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '23', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '24', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '25', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' }
+      ],
 
       //3. 미세먼지 파트
       air_clearity: '보통',
@@ -222,6 +368,117 @@ function MainPage() {
       tinydust_num: 17,
       tinydust: '보통'
     },
+
+    "시청광장": {
+      //1. 혼잡도 파트
+      //혼잡도
+      populationStatus: '약간 혼잡',
+      //혼잡도에 따른 텍스트
+      populationDescription: '사람이 몰려있을 가능성이 매우 크고 많이 붐빈다고 느낄 수 있어요. 인구밀도가 높은 구간에서는 도보 이동시 부딪힘이 발생할 수 있어요.',
+      // 나이대별 비율
+      ageDistribution: [
+        { ageGroup: '13.5%', value: 13.5 },//0-10대
+        { ageGroup: '12.4%', value: 12.4 },//10대 
+        { ageGroup: '11.2%', value: 11.2 },//20대
+        { ageGroup: '14.1%', value: 14.1 },//30대
+        { ageGroup: '9.3%', value: 9.3 },//40대
+        { ageGroup: '10.9%', value: 10.9 },//50대
+        { ageGroup: '15.3%', value: 15.3 },//60대
+        { ageGroup: '13.3%', value: 13.3 },//70대 이상
+      ],
+      //성별 비율
+      genderData: [
+        { gender: '40.6%', value: 40.6 },
+        { gender: '59.4', value: 59.4 },
+      ],
+      //2. 날씨 파트
+      forecastData_top: [
+        { emogi: 'sunny', value: 'sunny' },
+        { temperature: '29.7', value: '29.7' },
+      ],
+
+      forecastData_minmax: [
+        { min: '25', value: '25' },
+        { max: '29', value: '29' },
+      ],
+
+      forecastData: [
+        { date: '16', weather: 'clo', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '17', weather: 'ㄹㄹㄹ', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '18', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '19', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '20', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '21', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '22', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '23', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '24', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '25', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' }
+      ],
+
+      //3. 미세먼지 파트
+      air_clearity: '보통',
+      air_num: 30,
+      littledust_num: 23,
+      littledust: '좋음',
+      tinydust_num: 17,
+      tinydust: '보통'
+    },
+
+    "신촌 이대역": {
+      //1. 혼잡도 파트
+      //혼잡도
+      populationStatus: '약간 혼잡',
+      //혼잡도에 따른 텍스트
+      populationDescription: '사람이 몰려있을 가능성이 매우 크고 많이 붐빈다고 느낄 수 있어요. 인구밀도가 높은 구간에서는 도보 이동시 부딪힘이 발생할 수 있어요.',
+      // 나이대별 비율
+      ageDistribution: [
+        { ageGroup: '13.5%', value: 13.5 },//0-10대
+        { ageGroup: '12.4%', value: 12.4 },//10대 
+        { ageGroup: '11.2%', value: 11.2 },//20대
+        { ageGroup: '14.1%', value: 14.1 },//30대
+        { ageGroup: '9.3%', value: 9.3 },//40대
+        { ageGroup: '10.9%', value: 10.9 },//50대
+        { ageGroup: '15.3%', value: 15.3 },//60대
+        { ageGroup: '13.3%', value: 13.3 },//70대 이상
+      ],
+      //성별 비율
+      genderData: [
+        { gender: '40.6%', value: 40.6 },
+        { gender: '59.4', value: 59.4 },
+      ],
+      //2. 날씨 파트
+      forecastData_top: [
+        { emogi: 'sunny', value: 'sunny' },
+        { temperature: '29.7', value: '29.7' },
+      ],
+
+      forecastData_minmax: [
+        { min: '25', value: '25' },
+        { max: '29', value: '29' },
+      ],
+
+      forecastData: [
+        { date: '16', weather: 'clo', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '17', weather: 'ㄹㄹㄹ', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '18', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '19', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '20', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '21', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '22', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '23', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '24', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '25', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' }
+      ],
+
+      //3. 미세먼지 파트
+      air_clearity: '보통',
+      air_num: 30,
+      littledust_num: 23,
+      littledust: '좋음',
+      tinydust_num: 17,
+      tinydust: '보통'
+    },
+
     "여의도": {
       //1. 혼잡도 파트
       //혼잡도
@@ -244,7 +501,29 @@ function MainPage() {
         { gender: '40.6%', value: 40.6 },
         { gender: '59.4', value: 59.4 },
       ],
-      //2. 날씨 파트 (유환님이 여기 담당하시면 됩니다.)
+      //2. 날씨 파트
+      forecastData_top: [
+        { emogi: 'sunny', value: 'sunny' },
+        { temperature: '29.7', value: '29.7' },
+      ],
+
+      forecastData_minmax: [
+        { min: '25', value: '25' },
+        { max: '29', value: '29' },
+      ],
+
+      forecastData: [
+        { date: '16', weather: 'clo', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '17', weather: 'ㄹㄹㄹ', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '18', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '19', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '20', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '21', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '22', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '23', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '24', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '25', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' }
+      ],
 
       //3. 미세먼지 파트
       air_clearity: '보통',
@@ -253,7 +532,121 @@ function MainPage() {
       littledust: '좋음',
       tinydust_num: 17,
       tinydust: '보통'
-    }
+    },
+
+    "잠실종합운동장": {
+      //1. 혼잡도 파트
+      //혼잡도
+      populationStatus: 'ㅋㅋㅋ',
+      //혼잡도에 따른 텍스트
+      populationDescription: '사람이 몰려있을 가능성이 매우 크고 많이 붐빈다고 느낄 수 있어요. 인구밀도가 높은 구간에서는 도보 이동시 부딪힘이 발생할 수 있어요.',
+      // 나이대별 비율
+      ageDistribution: [
+        { ageGroup: '13.5%', value: 13.5 },//0-10대
+        { ageGroup: '12.4%', value: 12.4 },//10대 
+        { ageGroup: '11.2%', value: 11.2 },//20대
+        { ageGroup: '14.1%', value: 14.1 },//30대
+        { ageGroup: '9.3%', value: 9.3 },//40대
+        { ageGroup: '10.9%', value: 10.9 },//50대
+        { ageGroup: '15.3%', value: 15.3 },//60대
+        { ageGroup: '13.3%', value: 13.3 },//70대 이상
+      ],
+      //성별 비율
+      genderData: [
+        { gender: '40.6%', value: 40.6 },
+        { gender: '59.4', value: 59.4 },
+      ],
+      //2. 날씨 파트
+      forecastData_top: [
+        { emogi: 'sunny', value: 'sunny' },
+        { temperature: '29.7', value: '29.7' },
+      ],
+
+      forecastData_minmax: [
+        { min: '25', value: '25' },
+        { max: '29', value: '29' },
+      ],
+
+      forecastData: [
+        { date: '16', weather: 'clo', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '17', weather: 'ㄹㄹㄹ', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '18', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '19', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '20', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '21', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '22', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '23', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '24', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '25', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' }
+      ],
+
+      //3. 미세먼지 파트
+      air_clearity: '보통',
+      air_num: 30,
+      littledust_num: 23,
+      littledust: '좋음',
+      tinydust_num: 17,
+      tinydust: '보통'
+    },
+
+
+
+    "홍대입구역 9번 출구": {
+      //1. 혼잡도 파트
+      //혼잡도
+      populationStatus: '여유',
+      //혼잡도에 따른 텍스트
+      populationDescription: '사람이 몰려있을 가능성이 매우 크고 많이 붐빈다고 느낄 수 있어요. 인구밀도가 높은 구간에서는 도보 이동시 부딪힘이 발생할 수 있어요.',
+      // 나이대별 비율
+      ageDistribution: [
+        { ageGroup: '13.5%', value: 13.5 },//0-10대
+        { ageGroup: '12.4%', value: 12.4 },//10대 
+        { ageGroup: '11.2%', value: 11.2 },//20대
+        { ageGroup: '14.1%', value: 14.1 },//30대
+        { ageGroup: '9.3%', value: 9.3 },//40대
+        { ageGroup: '10.9%', value: 10.9 },//50대
+        { ageGroup: '15.3%', value: 15.3 },//60대
+        { ageGroup: '13.3%', value: 13.3 },//70대 이상
+      ],
+      //성별 비율
+      genderData: [
+        { gender: '40.6%', value: 40.6 },
+        { gender: '59.4', value: 59.4 },
+      ],
+      //2. 날씨 파트
+      forecastData_top: [
+        { emogi: 'sunny', value: 'sunny' },
+        { temperature: '29.7', value: '29.7' },
+      ],
+
+      forecastData_minmax: [
+        { min: '99', value: '25' },
+        { max: '99', value: '29' },
+      ],
+
+      forecastData: [
+        { date: '16', weather: 'clo', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '17', weather: 'ㄹㄹㄹ', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '18', weather: 'ㄷㄷㄷ', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '19', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '20', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '21', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '22', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '23', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '24', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '25', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' }
+      ],
+
+      //3. 미세먼지 파트
+      air_clearity: '보통',
+      air_num: 30,
+      littledust_num: 23,
+      littledust: '좋음',
+      tinydust_num: 17,
+      tinydust: '보통'
+    },
+
+
   }
 
   console.log(user ? `Hello, ${user.name}` : 'You are not logged in'); //카카오 로그인 정보 가져오기  
@@ -279,7 +672,7 @@ function MainPage() {
     setShowHelpBox(false);
   }
   const [selected, setSelected] = useState('chaos');
-  const [selectedDropdown1, setSelectedDropdown1] = useState("창덕궁 종묘");
+  const [selectedDropdown1, setSelectedDropdown1] = useState("가산디지털단지역");
   const [dropdownOpen1, setDropdownOpen1] = useState(false);
 
   const toggleFloatingHelpBox = () => {
@@ -750,11 +1143,16 @@ function MainPage() {
               {/* Dropdown menu code */}
               {dropdownOpen1 && (
                 <div className="dropdown-menu">
+                  <div className="dropdown-item1" onClick={() => handleDropdown1Item("가산디지털단지역")}>가산디지털단지역</div>
+                  <div className="dropdown-item1" onClick={() => handleDropdown1Item("강남역")}>강남역</div>                
+                  <div className="dropdown-item1" onClick={() => handleDropdown1Item("서울역")}>서울역</div>
+                  <div className="dropdown-item1" onClick={() => handleDropdown1Item("성수 카페거리")}>성수 카페거리</div>
+                  <div className="dropdown-item1" onClick={() => handleDropdown1Item("시청광장")}>시청광장</div>
+                  <div className="dropdown-item1" onClick={() => handleDropdown1Item("신촌 이대역")}>신촌 이대역</div>
+                  <div className="dropdown-item1" onClick={() => handleDropdown1Item("여의도")}>여의도</div>
+                  <div className="dropdown-item1" onClick={() => handleDropdown1Item("잠실종합운동장")}>잠실종합운동장</div>
                   <div className="dropdown-item1" onClick={() => handleDropdown1Item("창덕궁 종묘")}>창덕궁 종묘</div>
-                  <div className="dropdown-item" onClick={() => handleDropdown1Item("가산디지털단지역")}>가산디지털단지역</div>
-                  <div className="dropdown-item" onClick={() => handleDropdown1Item("홍대입구역 9번 출구")}>홍대입구역 9번 출구</div>
-                  <div className="dropdown-item" onClick={() => handleDropdown1Item("성수 카페거리")}>성수 카페거리</div>
-                  <div className="dropdown-item" onClick={() => handleDropdown1Item("여의도")}>여의도</div>
+                  <div className="dropdown-item1" onClick={() => handleDropdown1Item("홍대입구역 9번 출구")}>홍대입구역 9번 출구</div>
                 </div>
               )}
             </div>
