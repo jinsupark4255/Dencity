@@ -10,7 +10,7 @@ function Mypage() {
     const [user, setUser] = useContext(UserContext); //여기서 카카오 사용자 이름 가져옴
     console.log(user ? `Hello, ${user.name}` : 'You are not logged in'); //카카오 로그인 정보 가져오기  
     return (
-        <div className='view'>
+        <div className='view2'>
             <header className='mypage_top'>
                 <div className='back_button' onClick={() => navigate('/main')}><Back/></div>
                 <div className='my'>MY</div>

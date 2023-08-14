@@ -12,7 +12,7 @@ body {
 
 .view {
   width: 390px;
-  height: 844px;
+  height: 745px;
   /* //844px */
   display: flex;
   flex-direction: column;
@@ -24,9 +24,10 @@ body {
   flex-direction: row;
   width: 390px;
   height: 89px;
-  position: relative;
+  position: sticky;
   box-shadow: 0 4px 6px -6px black;
   overflow: hidden;
+  padding-bottom: 10px;
 }
 
 .top-image {
@@ -74,7 +75,7 @@ body {
 .main-view {
   position: relative;
   margin-top: 1px;
-  height: calc(844px - 89px);
+  height: 755px;
   overflow-y: auto;
 }
 
@@ -955,7 +956,15 @@ body {
   font-weight: 400;
   line-height: normal;
 }
-
+.view2{
+    width: 390px;
+    height: 844px;
+    /* //844px */
+    display: flex;
+    flex-direction: column;
+    background-color: #FFF;
+  
+}
 .mypage-view {
   position: relative;
   margin-top: 1px;
