@@ -1088,7 +1088,24 @@ function MainPage() {
       case 'dust'://dust 부분
         return (
           <div className='detail-view2'>
-            <span className='today_date'>{formattedDate} 기준</span>
+            <div
+              style={{
+                position: 'absolute',
+                top: '16px',
+                left: '9.4px',
+                height: '12px',
+                width: '103px',
+                textAlign: 'center',
+                color: '#000',
+                fontFamily: 'Inter',
+                fontSize: '10px',
+                fontStyle: 'normal',
+                fontWeight: 400,
+                lineHeight: 'normal',
+              }}
+            >
+              {formattedDate} 기준
+            </div>
             <div>
               <div className='airpollution_state'>
                 <div className='air_text'>통합대기환경지수</div>
