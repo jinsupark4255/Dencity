@@ -17,7 +17,7 @@ import { ReactComponent as DustButton1 } from './images/dust_icon_1.svg';
 import { ReactComponent as DustButton2 } from './images/dust_icon_2.svg';
 import { ReactComponent as HelpButton } from './images/Help.svg';
 import { ReactComponent as DizzyEmoji } from './images/Dizzy.svg';
-import { ReactComponent as LittleDizzyEmoji } from './images/LittleDizzy.svg';
+import { ReactComponent as LittleDizzyEmoji } from './images/Little_Dizzy.svg';
 import { ReactComponent as AverageEmoji } from './images/Average.svg';
 import { ReactComponent as GoodEmoji } from './images/Good.svg';
 import { ReactComponent as CommunityFloat } from './images/commu_float.svg';
