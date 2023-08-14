@@ -1,7 +1,7 @@
 import React, { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom'; // 'useNavigate'를 가져옵니다.
 import './Home.css';
-import Logo from './images/logo.png';
+import { ReactComponent as Logo } from './images/Dencity.svg';
 import KakaoLogo from './images/kakao_login_btn.png';
 
 import { UserContext } from "./UserContext"; // import the context
@@ -12,7 +12,7 @@ const KakaoLogin = () => {
 
   useEffect(() => {
     if (!window.Kakao.isInitialized()) {
-      window.Kakao.init("bed2468089c58f53cf785a627b6dcf9b");
+      window.Kakao.init("0863428c06e9c37bf600d68470c14ee0");
     }
   }, []);
 
@@ -23,7 +23,9 @@ const KakaoLogin = () => {
           url: "/v2/user/me",
           success: (res) => {
             const userName = res.properties.nickname;
-            setUser({ name: userName }); // 카카오 닉네임
+            const userProfile = res.properties.profile_image;
+            const userEmail = res.kakao_account.email;
+            setUser({ name: userName , profile: userProfile, email:userEmail}); // 카카오 닉네임
             navigate("/oauth/callback/kakao", { state: authObj });
           },
           fail: (error) => {
@@ -40,11 +42,8 @@ const KakaoLogin = () => {
   return (
     <div className="kakao-login-container">
 
-      <img
-        className="logo-image"
-        src={Logo}
-        alt="로고 이미지"
-      />
+      <Logo className='logo-image'/>
+     
       
       <img
         className='kakao-login-button'
