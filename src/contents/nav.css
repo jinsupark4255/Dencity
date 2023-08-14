@@ -12,7 +12,8 @@ body {
 
 .view {
   width: 390px;
-  height: 844px;
+  height: 820px;
+  /* //844px */
   display: flex;
   flex-direction: column;
   background-color: #FFF;
@@ -73,7 +74,7 @@ body {
 .main-view {
   position: relative;
   margin-top: 1px;
-  height: calc(844px - 89px);
+  height: calc(820px - 89px);
   overflow-y: auto;
 }
 
