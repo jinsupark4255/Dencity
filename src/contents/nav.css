@@ -1016,12 +1016,6 @@ body {
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  transition: color;
-  transition-duration: 0.5s;
-}
-
-.a2:hover{
-  color:#DC143C;
 }
 
 .my_info {
@@ -1057,13 +1051,8 @@ body {
   line-height: normal;
   margin-bottom: 1px;
   margin-left: 17px;
-  transition: color;
-  transition-duration: 0.5s;
 }
 
-.i2:hover{
-  color:#DC143C;
-}
 
 .my_extra {
   display: flex;
@@ -1097,12 +1086,6 @@ body {
   font-style: normal;
   font-weight: 500;
   line-height: normal;
-  transition: color;
-  transition-duration: 0.5s;
-}
-
-.e2:hover{
-  color:#DC143Ced;
 }
 
 .my_logo {
@@ -1116,7 +1099,6 @@ body {
   margin-top: 17px;
   width: 80px;
   height: 80px;
-  background-color: red;
 }
 
 .userName {
