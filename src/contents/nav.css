@@ -11,7 +11,7 @@ body {
 
 .view {
   width: 390px;
-  height: 844px;
+  height: 775px;
   /* //844px */
   display: flex;
   flex-direction: column;
