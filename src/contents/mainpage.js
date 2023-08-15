@@ -17,7 +17,7 @@ import { ReactComponent as DustButton1 } from './images/dust_icon_1.svg';
 import { ReactComponent as DustButton2 } from './images/dust_icon_2.svg';
 import { ReactComponent as HelpButton } from './images/Help.svg';
 import { ReactComponent as DizzyEmoji } from './images/Dizzy.svg';
-import { ReactComponent as LittleDizzyEmoji } from './images/LittleDizzy.svg';
+import { ReactComponent as LittleDizzyEmoji } from './images/Little_Dizzy.svg';
 import { ReactComponent as AverageEmoji } from './images/Average.svg';
 import { ReactComponent as GoodEmoji } from './images/Good.svg';
 import { ReactComponent as CommunityFloat } from './images/commu_float.svg';
@@ -37,28 +37,55 @@ import { ReactComponent as Yellow } from './images/yellow.svg';
 import { ReactComponent as Orange } from './images/orange.svg';
 import { ReactComponent as AirMarker_Yellow } from './images/air_marker_Y.svg';
 import { ReactComponent as Dencity } from './images/Dencity.svg';
-import sunnyIcon from './images/sunny.svg';
+import sunnyIcon1 from './images/맑음1.svg';
+
+
+
+
 import ForecastTable from './ForecastTable';
 import axios from 'axios';
+
 //commit check
 function MainPage() {
   const navigate = useNavigate();
-  axios.get('https://54.180.87.174')
-    .then(response => {
-      console.log(response.data);
-    })
-    .catch(error => {
-      console.error("Error fetching data:", error);
-    });
+
+  const place = "POI012";
+  const url = `http://54.180.87.174/home?place=${encodeURIComponent(place)}`;
+
+// 가산디지털단지            const place = "POI013";
+// 강남역                    const place = "POI014";
+// 서울역                    const place = "POI033";
+// 성수카페거리              const place = "POI068";
+// 시청광장                  const place = "POI101";
+// 신촌이대역                const place = "POI040";
+// 여의도                    const place = "POI072";
+// 잠실종합운동장            const place = "POI109";
+// 창덕궁 종묘               const place = "POI012";
+// 홍대입구역 9번출구        const place = "POI055";
+
+fetch(url)
+  .then(response => response.json())
+  .then(data => {
+    // 받은 데이터 처리
+    console.log(data);
+  })
+  .catch(error => {
+    console.error('Error:', error);
+  });
+  
+
+
+
 
   const [user, setUser] = useContext(UserContext); //여기서 카카오 사용자 이름 가져옴
 
-  const [seoulPlace, setSeoulPlace] = useState('창덕궁 종묘'); //여기는 드롭다운에서 장소 선택할때 쓰는거 (디폴트로 창덕궁 종묘로 지정함)
+  const [seoulPlace, setSeoulPlace] = useState('가산디지털단지역'); //여기는 드롭다운에서 장소 선택할때 쓰는거 (디폴트로 창덕궁 종묘로 지정함)
   useEffect(() => {
     const container = document.getElementById('map');
     const options = {
       center: new window.kakao.maps.LatLng(33.450701, 126.570667),
-      level: 3
+      level: 3,
+      draggable: true
     };
 
     const map = new window.kakao.maps.Map(container, options);
@@ -67,8 +94,10 @@ function MainPage() {
 
 
     searchPlaces(seoulPlace, map);
+    
 
   }, [seoulPlace]);
+ 
 
   function searchPlaces(keyword, map) {
     const places = new window.kakao.maps.services.Places();
@@ -94,8 +123,11 @@ function MainPage() {
 
   //서울시 지역별로 데이터 따로 정리하시면 됩니다.
   const placeOfSeoul = {
-
     "창덕궁 종묘": {
+
+      // 데이터 받아오기
+      
+
       //1. 혼잡도 파트
       //혼잡도
       populationStatus: '혼잡',
@@ -673,7 +705,7 @@ function MainPage() {
     setShowHelpBox(false);
   }
   const [selected, setSelected] = useState('chaos');
-  const [selectedDropdown1, setSelectedDropdown1] = useState("창덕궁 종묘");
+  const [selectedDropdown1, setSelectedDropdown1] = useState("가산디지털단지역");
   const [dropdownOpen1, setDropdownOpen1] = useState(false);
 
   const toggleFloatingHelpBox = () => {
@@ -821,8 +853,6 @@ function MainPage() {
     }};
 `;
 
-
-
   const currentDate = new Date();
   function formatDateTime(date) {
     const year = date.getFullYear();
@@ -921,7 +951,7 @@ function MainPage() {
             >
               {selectedData.forecastData_top.map((data) =>
                 data.value === 'sunny' ? (
-                  <img src={sunnyIcon} alt="sunny" />
+                  <img src={sunnyIcon1} alt="sunny" width="88px" height="88px"/>
                 ) : null
               )}
             </div>
@@ -1088,7 +1118,24 @@ function MainPage() {
       case 'dust'://dust 부분
         return (
           <div className='detail-view2'>
-            <span className='today_date'>{formattedDate} 기준</span>
+            <div
+              style={{
+                position: 'absolute',
+                top: '16px',
+                left: '9.4px',
+                height: '12px',
+                width: '103px',
+                textAlign: 'center',
+                color: '#000',
+                fontFamily: 'Inter',
+                fontSize: '10px',
+                fontStyle: 'normal',
+                fontWeight: 400,
+                lineHeight: 'normal',
+              }}
+            >
+              {formattedDate} 기준
+            </div>
             <div>
               <div className='airpollution_state'>
                 <div className='air_text'>통합대기환경지수</div>
@@ -1123,7 +1170,7 @@ function MainPage() {
       <CommunityFloat className="community-float" />
       <div className='top-view'>
         <div className='top-image' onClick={() => navigate('/mypage')}><Image1 /></div>
-        <div className='logo'><Dencity /></div>
+        <div className='logo'><Dencity/></div>
         <div className='community'><Image2 /></div>
       </div>
       <div className='main-view'>
@@ -1135,17 +1182,16 @@ function MainPage() {
               {/* Dropdown menu code */}
               {dropdownOpen1 && (
                 <div className="dropdown-menu">
+                  <div className="dropdown-item1" onClick={() => handleDropdown1Item("가산디지털단지역")}>가산디지털단지역</div>
+                  <div className="dropdown-item1" onClick={() => handleDropdown1Item("강남역")}>강남역</div>                
+                  <div className="dropdown-item1" onClick={() => handleDropdown1Item("서울역")}>서울역</div>
+                  <div className="dropdown-item1" onClick={() => handleDropdown1Item("성수 카페거리")}>성수 카페거리</div>
+                  <div className="dropdown-item1" onClick={() => handleDropdown1Item("시청광장")}>시청광장</div>
+                  <div className="dropdown-item1" onClick={() => handleDropdown1Item("신촌 이대역")}>신촌 이대역</div>
+                  <div className="dropdown-item1" onClick={() => handleDropdown1Item("여의도")}>여의도</div>
+                  <div className="dropdown-item1" onClick={() => handleDropdown1Item("잠실종합운동장")}>잠실종합운동장</div>
                   <div className="dropdown-item1" onClick={() => handleDropdown1Item("창덕궁 종묘")}>창덕궁 종묘</div>
-                  <div className="dropdown-item" onClick={() => handleDropdown1Item("가산디지털단지역")}>가산디지털단지역</div>
-                  <div className="dropdown-item" onClick={() => handleDropdown1Item("강남역")}>강남역</div>
-                  <div className="dropdown-item" onClick={() => handleDropdown1Item("서울역")}>서울역</div>
-                  <div className="dropdown-item" onClick={() => handleDropdown1Item("성수 카페거리")}>성수 카페거리</div>
-                  <div className="dropdown-item" onClick={() => handleDropdown1Item("시청광장")}>시청광장</div>
-                  <div className="dropdown-item" onClick={() => handleDropdown1Item("신촌 이대역")}>신촌 이대역</div>
-                  <div className="dropdown-item" onClick={() => handleDropdown1Item("여의도")}>여의도</div>
-                  <div className="dropdown-item" onClick={() => handleDropdown1Item("잠실종합운동장")}>잠실종합운동장</div>
-                  <div className="dropdown-item" onClick={() => handleDropdown1Item("홍대입구역 9번 출구")}>홍대입구역 9번 출구</div>
-
+                  <div className="dropdown-item1" onClick={() => handleDropdown1Item("홍대입구역 9번 출구")}>홍대입구역 9번 출구</div>
                 </div>
               )}
             </div>
