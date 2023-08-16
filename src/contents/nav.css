@@ -249,6 +249,7 @@ body {
   border: 1px solid #E0E0E0;
   background: #FFF;
   margin-left: 12px;
+  margin-bottom: 25px;
   font-size: 24px;
   animation: blink 3s infinite; /* 1s의 시간 동안 깜빡거리는 애니메이션을 무한 반복 */
 }
