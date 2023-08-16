@@ -317,7 +317,7 @@ body {
 }
 
 .mid_text_1 {
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 400;
   margin-top: 6px;
   margin-left: 7px;
@@ -349,10 +349,10 @@ body {
 }
 
 .mid_text_2 {
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 400;
   margin-top: 6px;
-  margin-left: 9px;
+  margin-left: 10px;
   width: 17px;
   height: 11px;
   white-space: nowrap;
@@ -370,7 +370,7 @@ body {
 }
 
 .mid_text_3 {
-  font-size: 9px;
+  font-size: 11px;
   font-weight: 400;
   margin-top: 6px;
   margin-left: 5px;
