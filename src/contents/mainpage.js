@@ -1566,7 +1566,7 @@ function MainPage() {
 
             {showHelpBox && (
               <div className="floating-help-box" style={floatingBoxPosition}>
-                <div className='text-box'>해당 장소에 사람이 얼마나 붐비는지 <br />나타내는 지표로, 과거 평균 실시간 인<br />구와 면적 대비 인구 수 등을 고려하여<br /> 산출합니다.</div>
+                <div className='text-box'>과거 평균 실시간 인구와 면적 대비 인구 수 등을 고려하여 산출합니다.</div>
               </div>
             )}
           </div>
