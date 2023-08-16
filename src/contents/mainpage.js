@@ -37,6 +37,7 @@ import { ReactComponent as Yellow } from './images/yellow.svg';
 import { ReactComponent as Orange } from './images/orange.svg';
 import { ReactComponent as AirMarker_Yellow } from './images/air_marker_Y.svg';
 import { ReactComponent as Dencity } from './images/Dencity.svg';
+
 import sunnyIcon1 from './images/맑음1.svg';
 
 
@@ -72,10 +73,6 @@ fetch(url)
   .catch(error => {
     console.error('Error:', error);
   });
-  
-
-
-
 
   const [user, setUser] = useContext(UserContext); //여기서 카카오 사용자 이름 가져옴
 
@@ -457,6 +454,63 @@ fetch(url)
       tinydust: '보통'
     },
 
+
+    "시청광장": {
+      //1. 혼잡도 파트
+      //혼잡도
+      populationStatus: '약간 혼잡',
+      //혼잡도에 따른 텍스트
+      populationDescription: '사람이 몰려있을 가능성이 매우 크고 많이 붐빈다고 느낄 수 있어요. 인구밀도가 높은 구간에서는 도보 이동시 부딪힘이 발생할 수 있어요.',
+      // 나이대별 비율
+      ageDistribution: [
+        { ageGroup: '13.5%', value: 13.5 },//0-10대
+        { ageGroup: '12.4%', value: 12.4 },//10대 
+        { ageGroup: '11.2%', value: 11.2 },//20대
+        { ageGroup: '14.1%', value: 14.1 },//30대
+        { ageGroup: '9.3%', value: 9.3 },//40대
+        { ageGroup: '10.9%', value: 10.9 },//50대
+        { ageGroup: '15.3%', value: 15.3 },//60대
+        { ageGroup: '13.3%', value: 13.3 },//70대 이상
+      ],
+      //성별 비율
+      genderData: [
+        { gender: '40.6%', value: 40.6 },
+        { gender: '59.4', value: 59.4 },
+      ],
+      //2. 날씨 파트
+      forecastData_top: [
+        { emogi: 'sunny', value: 'sunny' },
+        { temperature: '29.7', value: '29.7' },
+      ],
+
+      forecastData_minmax: [
+        { min: '25', value: '25' },
+        { max: '29', value: '29' },
+      ],
+
+      forecastData: [
+        { date: '16', weather: 'clo', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '17', weather: 'ㄹㄹㄹ', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '18', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '19', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '20', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '21', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '22', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '23', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '24', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
+        { date: '25', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' }
+      ],
+
+      //3. 미세먼지 파트
+      air_clearity: '보통',
+      air_num: 30,
+      littledust_num: 23,
+      littledust: '좋음',
+      tinydust_num: 17,
+      tinydust: '보통'
+    },
+
+
     "신촌 이대역": {
       //1. 혼잡도 파트
       //혼잡도
@@ -511,6 +565,7 @@ fetch(url)
       tinydust_num: 17,
       tinydust: '보통'
     },
+
 
     "여의도": {
       //1. 혼잡도 파트
