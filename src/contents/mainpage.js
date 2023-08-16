@@ -19,21 +19,22 @@ import { ReactComponent as DizzyEmoji } from './images/Dizzy.svg';
 import { ReactComponent as LittleDizzyEmoji } from './images/Little_Dizzy.svg';
 import { ReactComponent as AverageEmoji } from './images/Average.svg';
 import { ReactComponent as GoodEmoji } from './images/Good.svg';
-import { ReactComponent as Zero } from './images/10대 이하.svg';
 import { ReactComponent as First } from './images/10대.svg';
 import { ReactComponent as Second } from './images/20대.svg';
 import { ReactComponent as Third } from './images/30대.svg';
 import { ReactComponent as Fourth } from './images/40대.svg';
 import { ReactComponent as Fifth } from './images/50대.svg';
 import { ReactComponent as Sixth } from './images/60대.svg';
-import { ReactComponent as Seventh } from './images/70대 이상.svg';
 import { ReactComponent as Male } from './images/male.svg';
 import { ReactComponent as Female } from './images/female.svg';
 import { ReactComponent as Red } from './images/red.svg';
 import { ReactComponent as Green } from './images/green.svg';
 import { ReactComponent as Yellow } from './images/yellow.svg';
 import { ReactComponent as Orange } from './images/orange.svg';
+import { ReactComponent as AirMarker_Green } from './images/markergreen.svg';
 import { ReactComponent as AirMarker_Yellow } from './images/air_marker_Y.svg';
+import { ReactComponent as AirMarker_Orange } from './images/markerorange.svg';
+import { ReactComponent as AirMarker_Red } from './images/markerred.svg';
 import { ReactComponent as Dencity } from './images/Dencity.svg';
 
 import sunnyIcon1 from './images/맑음1.svg';
@@ -307,8 +308,8 @@ function MainPage() {
         const dustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['AIR_IDX'];
         const littledustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10_INDEX'];
         const tinydustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25_INDEX'];
-        const littledustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25'];
-        const tinydustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10'];
+        const littledustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10'];
+        const tinydustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25'];
         
         setFemalePopulationRate_1(rate);
         setMalePopulationRate_1(rate2);
@@ -358,8 +359,8 @@ function MainPage() {
         const dustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['AIR_IDX'];
         const littledustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10_INDEX'];
         const tinydustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25_INDEX'];
-        const littledustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25'];
-        const tinydustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10'];
+        const littledustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10'];
+        const tinydustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25'];
 
         setFemalePopulationRate_2(rate);
         setMalePopulationRate_2(rate2);
@@ -407,8 +408,8 @@ function MainPage() {
         const dustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['AIR_IDX'];
         const littledustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10_INDEX'];
         const tinydustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25_INDEX'];
-        const littledustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25'];
-        const tinydustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10'];
+        const littledustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10'];
+        const tinydustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25'];
 
         setFemalePopulationRate_3(rate);
         setMalePopulationRate_3(rate2);
@@ -456,8 +457,8 @@ function MainPage() {
         const dustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['AIR_IDX'];
         const littledustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10_INDEX'];
         const tinydustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25_INDEX'];
-        const littledustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25'];
-        const tinydustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10'];
+        const littledustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10'];
+        const tinydustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25'];
 
         setFemalePopulationRate_4(rate);
         setMalePopulationRate_4(rate2);
@@ -505,8 +506,8 @@ function MainPage() {
         const dustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['AIR_IDX'];
         const littledustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10_INDEX'];
         const tinydustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25_INDEX'];
-        const littledustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25'];
-        const tinydustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10'];
+        const littledustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10'];
+        const tinydustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25'];
 
         setFemalePopulationRate_5(rate);
         setMalePopulationRate_5(rate2);
@@ -554,8 +555,8 @@ function MainPage() {
         const dustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['AIR_IDX'];
         const littledustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10_INDEX'];
         const tinydustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25_INDEX'];
-        const littledustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25'];
-        const tinydustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10'];
+        const littledustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10'];
+        const tinydustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25'];
 
         setFemalePopulationRate_6(rate);
         setMalePopulationRate_6(rate2);
@@ -603,8 +604,8 @@ function MainPage() {
         const dustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['AIR_IDX'];
         const littledustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10_INDEX'];
         const tinydustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25_INDEX'];
-        const littledustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25'];
-        const tinydustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10'];
+        const littledustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10'];
+        const tinydustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25'];
 
         setFemalePopulationRate_7(rate);
         setMalePopulationRate_7(rate2);
@@ -652,8 +653,8 @@ function MainPage() {
         const dustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['AIR_IDX'];
         const littledustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10_INDEX'];
         const tinydustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25_INDEX'];
-        const littledustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25'];
-        const tinydustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10'];
+        const littledustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10'];
+        const tinydustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25'];
 
         setFemalePopulationRate_8(rate);
         setMalePopulationRate_8(rate2);
@@ -701,8 +702,8 @@ function MainPage() {
         const dustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['AIR_IDX'];
         const littledustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10_INDEX'];
         const tinydustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25_INDEX'];
-        const littledustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25'];
-        const tinydustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10'];
+        const littledustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10'];
+        const tinydustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25'];
 
         setFemalePopulationRate_9(rate);
         setMalePopulationRate_9(rate2);
@@ -750,8 +751,8 @@ function MainPage() {
         const dustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['AIR_IDX'];
         const littledustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10_INDEX'];
         const tinydustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25_INDEX'];
-        const littledustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25'];
-        const tinydustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10'];
+        const littledustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10'];
+        const tinydustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25'];
 
         setFemalePopulationRate_10(rate);
         setMalePopulationRate_10(rate2);
@@ -1504,7 +1505,6 @@ function MainPage() {
       case 'chaos':
         return (
           <div className='detail-view'>
-            {/* <div> {user ? `Hello, ${user.name}` : 'You are not logged in'}</div>  테스트용*/}
             <div className='population'>
               <div className='population_top'>
                 <HelpButton
@@ -1522,7 +1522,15 @@ function MainPage() {
                   <div className='emoji'><ChaosEmoji status={selectedData.populationStatus} /></div>
                   <StyledChaos className='dizzyness' status={selectedData.populationStatus}>{selectedData.populationStatus}</StyledChaos>
                 </div>
-                <div className='diz_text'>{selectedData.populationDescription}</div>
+                <div>{(() => {
+                switch (selectedData.populationStatus) {
+                    case '여유': return <div className='diz_text'>{selectedData.populationDescription}</div>;
+                    case '보통': return <div className='diz_text2'>{selectedData.populationDescription}</div>;
+                    case '약간 붐빔': return <div className='diz_text3'>{selectedData.populationDescription}</div>;
+                    case '붐빔': return <div className='diz_text4'>{selectedData.populationDescription}</div>;
+                    default: return null;
+                }
+            })()}</div>
               </div>
             </div>
             <div className='age'>
@@ -1772,8 +1780,16 @@ function MainPage() {
               </div>
               <div className='graph'>
                 <div className='marker'>
-                  <AirMarker_Yellow />
-                </div>
+            {(() => {
+                switch (selectedData.air_clearity) {
+                    case '좋음': return <AirMarker_Green className='marker1'/>;
+                    case '보통': return <AirMarker_Yellow className='marker2'/>;
+                    case '나쁨': return <AirMarker_Orange className='marker3'/>;
+                    case '매우나쁨': return <AirMarker_Red className='marker4'/>;
+                    default: return null;
+                }
+            })()}
+        </div>
                 <div className='air_graph'><Green /><Yellow /><Orange /><Red /></div>
               </div>
             </div>
@@ -1826,10 +1842,8 @@ function MainPage() {
         </div>
         <div className="mapscale" id="map" style={{ width: '364px', height: '246px' }} />
   
-        {loading ? (
-          <div className="loading-indicator">Loading...</div>
-        ) : (
-          <>
+        
+          
             <div className='mid-main-view'>
               <div className={`chaos ${activeButton === 'chaos' ? 'active' : ''}`} onClick={() => {
                 handleChaosClick();
@@ -1853,8 +1867,11 @@ function MainPage() {
                 <span className='mid_text_3'>미세먼지</span>
               </div>
             </div>
-            {renderDetailView()}
-          </>
+            {loading ? (
+          <div className="loading-indicator"><Dencity className='loading-logo'/></div>
+        ) : (
+            renderDetailView()
+          
         )}
       </div>
     </div>
