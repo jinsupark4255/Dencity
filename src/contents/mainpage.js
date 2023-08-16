@@ -258,7 +258,7 @@ function MainPage() {
   const place8 = "POI109";
   const place9 = "POI012";
   const place10 = "POI055";
-//ㄴㄴㄴ
+
   const url = `http://54.180.87.174/home?place=${encodeURIComponent(place)}`;
   const url2 = `http://54.180.87.174/home?place=${encodeURIComponent(place2)}`;
   const url3 = `http://54.180.87.174/home?place=${encodeURIComponent(place3)}`;

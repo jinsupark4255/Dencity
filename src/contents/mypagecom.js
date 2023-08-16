@@ -5,14 +5,16 @@ import { ReactComponent as Back } from './images/mypage_back.svg';
 import { ReactComponent as Logo } from './images/mypage_logo.svg';
 import { useNavigate } from 'react-router-dom';
 
+
 function Mypage() {
     const navigate = useNavigate();
+    
     const [user, setUser] = useContext(UserContext); //여기서 카카오 사용자 이름 가져옴
     console.log(user ? `Hello, ${user.name}` : 'You are not logged in'); //카카오 로그인 정보 가져오기  
     return (
         <div className='view2'>
             <header className='mypage_top'>
-                <div className='back_button' onClick={() => navigate('/main')}><Back/></div>
+                <div className='back_button' onClick={() => navigate(-1)}><Back/></div>
                 <div className='my'>MY</div>
             </header>
             <div className='mypage_view'>
