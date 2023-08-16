@@ -227,6 +227,26 @@ body {
   display: flex;
   flex-direction: row;
 }
+@keyframes blink {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.loading-indicator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 400px;
+  font-size: 24px;
+  animation: blink 3s infinite; /* 1s의 시간 동안 깜빡거리는 애니메이션을 무한 반복 */
+}
 
 .weather:hover {
   border: 1px solid #DC143C;
@@ -457,7 +477,7 @@ body {
 }
 
 .diz_text {
-  width: 280px;
+  width: 290px;
   height: 30px;
   margin-left: 40px;
   margin-top: -20px;
