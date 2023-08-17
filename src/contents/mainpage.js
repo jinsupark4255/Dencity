@@ -38,6 +38,11 @@ import { ReactComponent as AirMarker_Red } from './images/markerred.svg';
 import { ReactComponent as Dencity } from './images/Dencity.svg';
 
 import sunnyIcon1 from './images/맑음1.svg';
+import sunnyIcon2 from './images/맑음2.svg';
+import cloudyIcon1 from './images/구름많음1.svg';
+import cloudyIcon2 from './images/구름많음2.svg';
+import overcastIcon from './images/흐림.svg';
+
 
 import ForecastTable from './ForecastTable';
 //commit check
@@ -101,6 +106,12 @@ function MainPage() {
   const [littleDustNum1, setLittleNum1] = useState(null);
   const [tinyDust1, setTiny1] = useState(null);
   const [tinyDustNum1, setTinyNum1] = useState(null);
+
+  const [weather1, setweather1] = useState(["0", "0", "0", "0", "0", "0", "0", "0", "0", "0"]);
+  const [forecastData_min1, setforecastData_min1] = useState(null);
+  const [forecastData_max1, setforecastData_max1] = useState(null);
+  const [forecastData_top_temp1, setforecastData_top_temp1] = useState(null);
+
   //강남역
   const [areaCongest_2, setAreaCongest_2] = useState(null);
   const [areaCongestDetail_2, setAreaCongestDetail_2] = useState(null);
@@ -117,6 +128,12 @@ function MainPage() {
   const [littleDustNum2, setLittleNum2] = useState(null);
   const [tinyDust2, setTiny2] = useState(null);
   const [tinyDustNum2, setTinyNum2] = useState(null);
+
+  const [weather2, setweather2] = useState(["0", "0", "0", "0", "0", "0", "0", "0", "0", "0"]);
+  const [forecastData_min2, setforecastData_min2] = useState(null);
+  const [forecastData_max2, setforecastData_max2] = useState(null);
+  const [forecastData_top_temp2, setforecastData_top_temp2] = useState(null);
+
   //서울역
   const [areaCongest_3, setAreaCongest_3] = useState(null);
   const [areaCongestDetail_3, setAreaCongestDetail_3] = useState(null);
@@ -133,6 +150,12 @@ function MainPage() {
   const [littleDustNum3, setLittleNum3] = useState(null);
   const [tinyDust3, setTiny3] = useState(null);
   const [tinyDustNum3, setTinyNum3] = useState(null);
+
+  const [weather3, setweather3] = useState(["0", "0", "0", "0", "0", "0", "0", "0", "0", "0"]);
+  const [forecastData_min3, setforecastData_min3] = useState(null);
+  const [forecastData_max3, setforecastData_max3] = useState(null);
+  const [forecastData_top_temp3, setforecastData_top_temp3] = useState(null);
+
   // 성수카페거리
   const [areaCongest_4, setAreaCongest_4] = useState(null);
   const [areaCongestDetail_4, setAreaCongestDetail_4] = useState(null);
@@ -149,6 +172,12 @@ function MainPage() {
   const [littleDustNum4, setLittleNum4] = useState(null);
   const [tinyDust4, setTiny4] = useState(null);
   const [tinyDustNum4, setTinyNum4] = useState(null);
+
+  const [weather4, setweather4] = useState(["0", "0", "0", "0", "0", "0", "0", "0", "0", "0"]);
+  const [forecastData_min4, setforecastData_min4] = useState(null);
+  const [forecastData_max4, setforecastData_max4] = useState(null);
+  const [forecastData_top_temp4, setforecastData_top_temp4] = useState(null);
+
   // 시청광장
   const [areaCongest_5, setAreaCongest_5] = useState(null);
   const [areaCongestDetail_5, setAreaCongestDetail_5] = useState(null);
@@ -165,6 +194,12 @@ function MainPage() {
   const [littleDustNum5, setLittleNum5] = useState(null);
   const [tinyDust5, setTiny5] = useState(null);
   const [tinyDustNum5, setTinyNum5] = useState(null);
+
+  const [weather5, setweather5] = useState(["0", "0", "0", "0", "0", "0", "0", "0", "0", "0"]);
+  const [forecastData_min5, setforecastData_min5] = useState(null);
+  const [forecastData_max5, setforecastData_max5] = useState(null);
+  const [forecastData_top_temp5, setforecastData_top_temp5] = useState(null);
+
   // 신촌이대역              
   const [areaCongest_6, setAreaCongest_6] = useState(null);
   const [areaCongestDetail_6, setAreaCongestDetail_6] = useState(null);
@@ -181,6 +216,12 @@ function MainPage() {
   const [littleDustNum6, setLittleNum6] = useState(null);
   const [tinyDust6, setTiny6] = useState(null);
   const [tinyDustNum6, setTinyNum6] = useState(null);
+
+  const [weather6, setweather6] = useState(["0", "0", "0", "0", "0", "0", "0", "0", "0", "0"]);
+  const [forecastData_min6, setforecastData_min6] = useState(null);
+  const [forecastData_max6, setforecastData_max6] = useState(null);
+  const [forecastData_top_temp6, setforecastData_top_temp6] = useState(null);
+
   // 여의도  
   const [areaCongest_7, setAreaCongest_7] = useState(null);
   const [areaCongestDetail_7, setAreaCongestDetail_7] = useState(null);
@@ -197,6 +238,12 @@ function MainPage() {
   const [littleDustNum7, setLittleNum7] = useState(null);
   const [tinyDust7, setTiny7] = useState(null);
   const [tinyDustNum7, setTinyNum7] = useState(null);
+
+  const [weather7, setweather7] = useState(["0", "0", "0", "0", "0", "0", "0", "0", "0", "0"]);
+  const [forecastData_min7, setforecastData_min7] = useState(null);
+  const [forecastData_max7, setforecastData_max7] = useState(null);
+  const [forecastData_top_temp7, setforecastData_top_temp7] = useState(null);
+
   // 잠실종합운동장   
   const [areaCongest_8, setAreaCongest_8] = useState(null);
   const [areaCongestDetail_8, setAreaCongestDetail_8] = useState(null);
@@ -213,6 +260,12 @@ function MainPage() {
   const [littleDustNum8, setLittleNum8] = useState(null);
   const [tinyDust8, setTiny8] = useState(null);
   const [tinyDustNum8, setTinyNum8] = useState(null);
+
+  const [weather8, setweather8] = useState(["0", "0", "0", "0", "0", "0", "0", "0", "0", "0"]);
+  const [forecastData_min8, setforecastData_min8] = useState(null);
+  const [forecastData_max8, setforecastData_max8] = useState(null);
+  const [forecastData_top_temp8, setforecastData_top_temp8] = useState(null);
+
   // 창덕궁 종묘 
   const [areaCongest_9, setAreaCongest_9] = useState(null);
   const [areaCongestDetail_9, setAreaCongestDetail_9] = useState(null);
@@ -229,6 +282,12 @@ function MainPage() {
   const [littleDustNum9, setLittleNum9] = useState(null);
   const [tinyDust9, setTiny9] = useState(null);
   const [tinyDustNum9, setTinyNum9] = useState(null);
+
+  const [weather9, setweather9] = useState(["0", "0", "0", "0", "0", "0", "0", "0", "0", "0"]);
+  const [forecastData_min9, setforecastData_min9] = useState(null);
+  const [forecastData_max9, setforecastData_max9] = useState(null);
+  const [forecastData_top_temp9, setforecastData_top_temp9] = useState(null);
+  
   // 홍대입구역 9번출구     
   const [areaCongest_10, setAreaCongest_10] = useState(null);
   const [areaCongestDetail_10, setAreaCongestDetail_10] = useState(null);
@@ -245,6 +304,11 @@ function MainPage() {
   const [littleDustNum10, setLittleNum10] = useState(null);
   const [tinyDust10, setTiny10] = useState(null);
   const [tinyDustNum10, setTinyNum10] = useState(null);
+
+  const [weather10, setweather10] = useState(["0", "0", "0", "0", "0", "0", "0", "0", "0", "0"]);
+  const [forecastData_min10, setforecastData_min10] = useState(null);
+  const [forecastData_max10, setforecastData_max10] = useState(null);
+  const [forecastData_top_temp10, setforecastData_top_temp10] = useState(null);
 
   const navigate = useNavigate();
 
@@ -280,6 +344,7 @@ function MainPage() {
   // 잠실종합운동장            const place = "POI109";
   // 창덕궁 종묘               const place = "POI012";
   // 홍대입구역 9번출구        const place = "POI055";
+
   useEffect(() => {
     setLoading(true);
     fetch(url)
@@ -334,6 +399,7 @@ function MainPage() {
 
 
     fetch(url2)
+
       .then(response => response.json())
       .then(data => {
         // 받은 데이터 처리
@@ -361,6 +427,72 @@ function MainPage() {
         const tinydustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25_INDEX'];
         const littledustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10'];
         const tinydustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25'];
+
+        setFemalePopulationRate_1(rate);
+        setMalePopulationRate_1(rate2);
+        setAreaCongest_1(chaoSity);
+        setAreaCongestDetail_1(chaosityDetail);
+        setAgeCongest_1_10(age10);
+        setAgeCongest_1_20(age20);
+        setAgeCongest_1_30(age30);
+        setAgeCongest_1_40(age40);
+        setAgeCongest_1_50(age50);
+        setAgeCongest_1_60(age60);
+        setDustrate1(dustText);
+        setLittle1(littledustText);
+        setTiny1(tinydustText);
+        setLittleNum1(littledustNum);
+        setTinyNum1(tinydustNum);
+
+        // 날씨
+        const forecastData_min = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['MIN_TEMP'];
+        const forecastData_max = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['MAX_TEMP'];
+        const currentTime = new Date();
+        const forecastData_top_weather = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['FCST24HOURS']['FCST24HOURS'];
+        const forecastData_top_temp = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['TEMP'];
+
+        const weather = [];
+
+
+        forecastData_top_weather.forEach(item => {
+          const forecastTime = new Date(item['FCST_DT'].toString().replace(/(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})/, '$1-$2-$3T$4:$5:00'));
+
+          if (forecastTime > currentTime) {
+            const timeDifferenceHours = Math.floor((forecastTime - currentTime) / (1000 * 60 * 60));
+
+            if (timeDifferenceHours <= 10) {
+              const temperature = item['TEMP'];
+              const precipitation = item['PRECIPITATION'];
+              const skyStatus = item['SKY_STTS'];
+              const rainChance = item['RAIN_CHANCE'];
+              const forecastHour = forecastTime.getHours();
+
+              const forecastInfo = {
+                temp: temperature,
+                prec: precipitation,
+                sky: skyStatus,
+                rainChance: rainChance,
+                hour: forecastHour
+              };
+
+              weather.push(forecastInfo);
+            }
+          }
+        });
+        console.log(weather);
+        setweather1(weather);
+        setforecastData_min1(forecastData_min);
+        setforecastData_max1(forecastData_max);
+        setforecastData_top_temp1(forecastData_top_temp);
+
+      })
+      .catch(error => {
+        console.error('Error:', error);
+
+      });
+
+
+    fetch(url2)
 
         setFemalePopulationRate_2(rate);
         setMalePopulationRate_2(rate2);
@@ -558,6 +690,363 @@ function MainPage() {
         const littledustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10'];
         const tinydustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25'];
 
+        setFemalePopulationRate_2(rate);
+        setMalePopulationRate_2(rate2);
+        setAreaCongest_2(chaoSity);
+        setAreaCongestDetail_2(chaosityDetail);
+        setAgeCongest_2_10(age10);
+        setAgeCongest_2_20(age20);
+        setAgeCongest_2_30(age30);
+        setAgeCongest_2_40(age40);
+        setAgeCongest_2_50(age50);
+        setAgeCongest_2_60(age60);
+        setDustrate2(dustText);
+        setLittle2(littledustText);
+        setTiny2(tinydustText);
+        setLittleNum2(littledustNum);
+        setTinyNum2(tinydustNum);
+
+        // 날씨
+        const forecastData_min = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['MIN_TEMP'];
+        const forecastData_max = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['MAX_TEMP'];
+        const currentTime = new Date();
+        const forecastData_top_weather = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['FCST24HOURS']['FCST24HOURS'];
+        const forecastData_top_temp = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['TEMP'];
+        const weather = [];
+
+        forecastData_top_weather.forEach(item => {
+          const forecastTime = new Date(item['FCST_DT'].toString().replace(/(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})/, '$1-$2-$3T$4:$5:00'));
+
+          if (forecastTime > currentTime) {
+            const timeDifferenceHours = Math.floor((forecastTime - currentTime) / (1000 * 60 * 60));
+
+            if (timeDifferenceHours <= 10) {
+              const temperature = item['TEMP'];
+              const precipitation = item['PRECIPITATION'];
+              const skyStatus = item['SKY_STTS'];
+              const rainChance = item['RAIN_CHANCE'];
+              const forecastHour = forecastTime.getHours();
+
+              const forecastInfo = {
+                temp: temperature,
+                prec: precipitation,
+                sky: skyStatus,
+                rainChance: rainChance,
+                hour: forecastHour
+              };
+
+              weather.push(forecastInfo);
+            }
+          }
+        });
+        setweather2(weather);
+        setforecastData_min2(forecastData_min);
+        setforecastData_max2(forecastData_max);
+        setforecastData_top_temp2(forecastData_top_temp);
+
+
+
+
+
+
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+
+    fetch(url3)
+      .then(response => response.json())
+      .then(data => {
+        // 받은 데이터 처리
+        const parsedData = JSON.parse(data.jsonObject);
+        console.log(data);
+        //혼잡도 정도 및 설명
+        const chaoSity = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['AREA_CONGEST_LVL'];
+        const chaosityDetail = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['AREA_CONGEST_MSG'];
+
+        // 나이대
+        const age10 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_10'];
+        const age20 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_20'];
+        const age30 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_30'];
+        const age40 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_40'];
+        const age50 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_50'];
+        const age60 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_60'];
+
+        // 성별
+        const rate = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['FEMALE_PPLTN_RATE'];
+        const rate2 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['MALE_PPLTN_RATE'];
+
+        //통합대기환경지수
+        const dustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['AIR_IDX'];
+        const littledustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10_INDEX'];
+        const tinydustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25_INDEX'];
+        const littledustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10'];
+        const tinydustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25'];
+
+        setFemalePopulationRate_3(rate);
+        setMalePopulationRate_3(rate2);
+        setAreaCongest_3(chaoSity);
+        setAreaCongestDetail_3(chaosityDetail);
+        setAgeCongest_3_10(age10);
+        setAgeCongest_3_20(age20);
+        setAgeCongest_3_30(age30);
+        setAgeCongest_3_40(age40);
+        setAgeCongest_3_50(age50);
+        setAgeCongest_3_60(age60);
+        setDustrate3(dustText);
+        setLittle3(littledustText);
+        setTiny3(tinydustText);
+        setLittleNum3(littledustNum);
+        setTinyNum3(tinydustNum);
+
+        // 날씨
+        const forecastData_min = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['MIN_TEMP'];
+        const forecastData_max = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['MAX_TEMP'];
+        const currentTime = new Date();
+        const forecastData_top_weather = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['FCST24HOURS']['FCST24HOURS'];
+        const forecastData_top_temp = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['TEMP'];
+        const weather = [];
+
+        forecastData_top_weather.forEach(item => {
+          const forecastTime = new Date(item['FCST_DT'].toString().replace(/(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})/, '$1-$2-$3T$4:$5:00'));
+
+          if (forecastTime > currentTime) {
+            const timeDifferenceHours = Math.floor((forecastTime - currentTime) / (1000 * 60 * 60));
+
+            if (timeDifferenceHours <= 10) {
+              const temperature = item['TEMP'];
+              const precipitation = item['PRECIPITATION'];
+              const skyStatus = item['SKY_STTS'];
+              const rainChance = item['RAIN_CHANCE'];
+              const forecastHour = forecastTime.getHours();
+
+              const forecastInfo = {
+                temp: temperature,
+                prec: precipitation,
+                sky: skyStatus,
+                rainChance: rainChance,
+                hour: forecastHour
+              };
+
+              weather.push(forecastInfo);
+            }
+          }
+        });
+        setweather3(weather);
+        setforecastData_min3(forecastData_min);
+        setforecastData_max3(forecastData_max);
+        setforecastData_top_temp3(forecastData_top_temp);
+
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+
+    fetch(url4)
+      .then(response => response.json())
+      .then(data => {
+        // 받은 데이터 처리
+        const parsedData = JSON.parse(data.jsonObject);
+        console.log(data);
+        //혼잡도 정도 및 설명
+        const chaoSity = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['AREA_CONGEST_LVL'];
+        const chaosityDetail = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['AREA_CONGEST_MSG'];
+
+        // 나이대
+        const age10 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_10'];
+        const age20 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_20'];
+        const age30 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_30'];
+        const age40 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_40'];
+        const age50 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_50'];
+        const age60 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_60'];
+
+        // 성별
+        const rate = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['FEMALE_PPLTN_RATE'];
+        const rate2 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['MALE_PPLTN_RATE'];
+
+        //통합대기환경지수
+        const dustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['AIR_IDX'];
+        const littledustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10_INDEX'];
+        const tinydustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25_INDEX'];
+        const littledustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10'];
+        const tinydustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25'];
+
+        setFemalePopulationRate_4(rate);
+        setMalePopulationRate_4(rate2);
+        setAreaCongest_4(chaoSity);
+        setAreaCongestDetail_4(chaosityDetail);
+        setAgeCongest_4_10(age10);
+        setAgeCongest_4_20(age20);
+        setAgeCongest_4_30(age30);
+        setAgeCongest_4_40(age40);
+        setAgeCongest_4_50(age50);
+        setAgeCongest_4_60(age60);
+        setDustrate4(dustText);
+        setLittle4(littledustText);
+        setTiny4(tinydustText);
+        setLittleNum4(littledustNum);
+        setTinyNum4(tinydustNum);
+
+        // 날씨
+        const forecastData_min = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['MIN_TEMP'];
+        const forecastData_max = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['MAX_TEMP'];
+        const currentTime = new Date();
+        const forecastData_top_weather = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['FCST24HOURS']['FCST24HOURS'];
+        const forecastData_top_temp = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['TEMP'];
+        const weather = [];
+
+        forecastData_top_weather.forEach(item => {
+          const forecastTime = new Date(item['FCST_DT'].toString().replace(/(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})/, '$1-$2-$3T$4:$5:00'));
+
+          if (forecastTime > currentTime) {
+            const timeDifferenceHours = Math.floor((forecastTime - currentTime) / (1000 * 60 * 60));
+
+            if (timeDifferenceHours <= 10) {
+              const temperature = item['TEMP'];
+              const precipitation = item['PRECIPITATION'];
+              const skyStatus = item['SKY_STTS'];
+              const rainChance = item['RAIN_CHANCE'];
+              const forecastHour = forecastTime.getHours();
+
+              const forecastInfo = {
+                temp: temperature,
+                prec: precipitation,
+                sky: skyStatus,
+                rainChance: rainChance,
+                hour: forecastHour
+              };
+
+              weather.push(forecastInfo);
+            }
+          }
+        });
+        setweather4(weather);
+        setforecastData_min4(forecastData_min);
+        setforecastData_max4(forecastData_max);
+        setforecastData_top_temp4(forecastData_top_temp);
+
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+
+    fetch(url5)
+      .then(response => response.json())
+      .then(data => {
+        // 받은 데이터 처리
+        const parsedData = JSON.parse(data.jsonObject);
+        console.log(data);
+        //혼잡도 정도 및 설명
+        const chaoSity = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['AREA_CONGEST_LVL'];
+        const chaosityDetail = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['AREA_CONGEST_MSG'];
+
+        // 나이대
+        const age10 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_10'];
+        const age20 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_20'];
+        const age30 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_30'];
+        const age40 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_40'];
+        const age50 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_50'];
+        const age60 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_60'];
+
+        // 성별
+        const rate = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['FEMALE_PPLTN_RATE'];
+        const rate2 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['MALE_PPLTN_RATE'];
+
+        //통합대기환경지수
+        const dustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['AIR_IDX'];
+        const littledustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10_INDEX'];
+        const tinydustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25_INDEX'];
+        const littledustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10'];
+        const tinydustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25'];
+
+        setFemalePopulationRate_5(rate);
+        setMalePopulationRate_5(rate2);
+        setAreaCongest_5(chaoSity);
+        setAreaCongestDetail_5(chaosityDetail);
+        setAgeCongest_5_10(age10);
+        setAgeCongest_5_20(age20);
+        setAgeCongest_5_30(age30);
+        setAgeCongest_5_40(age40);
+        setAgeCongest_5_50(age50);
+        setAgeCongest_5_60(age60);
+        setDustrate5(dustText);
+        setLittle5(littledustText);
+        setTiny5(tinydustText);
+        setLittleNum5(littledustNum);
+        setTinyNum5(tinydustNum);
+
+        // 날씨
+        const forecastData_min = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['MIN_TEMP'];
+        const forecastData_max = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['MAX_TEMP'];
+        const currentTime = new Date();
+        const forecastData_top_weather = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['FCST24HOURS']['FCST24HOURS'];
+        const forecastData_top_temp = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['TEMP'];
+        const weather = [];
+
+        forecastData_top_weather.forEach(item => {
+          const forecastTime = new Date(item['FCST_DT'].toString().replace(/(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})/, '$1-$2-$3T$4:$5:00'));
+
+          if (forecastTime > currentTime) {
+            const timeDifferenceHours = Math.floor((forecastTime - currentTime) / (1000 * 60 * 60));
+
+            if (timeDifferenceHours <= 10) {
+              const temperature = item['TEMP'];
+              const precipitation = item['PRECIPITATION'];
+              const skyStatus = item['SKY_STTS'];
+              const rainChance = item['RAIN_CHANCE'];
+              const forecastHour = forecastTime.getHours();
+
+              const forecastInfo = {
+                temp: temperature,
+                prec: precipitation,
+                sky: skyStatus,
+                rainChance: rainChance,
+                hour: forecastHour
+              };
+
+              weather.push(forecastInfo);
+            }
+          }
+        });
+        setweather5(weather);
+        setforecastData_min5(forecastData_min);
+        setforecastData_max5(forecastData_max);
+        setforecastData_top_temp5(forecastData_top_temp);
+
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+
+    fetch(url6)
+      .then(response => response.json())
+      .then(data => {
+        // 받은 데이터 처리
+        const parsedData = JSON.parse(data.jsonObject);
+        console.log(data);
+        //혼잡도 정도 및 설명
+        const chaoSity = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['AREA_CONGEST_LVL'];
+        const chaosityDetail = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['AREA_CONGEST_MSG'];
+
+        // 나이대
+        const age10 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_10'];
+        const age20 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_20'];
+        const age30 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_30'];
+        const age40 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_40'];
+        const age50 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_50'];
+        const age60 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_60'];
+
+        // 성별
+        const rate = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['FEMALE_PPLTN_RATE'];
+        const rate2 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['MALE_PPLTN_RATE'];
+
+        //통합대기환경지수
+        const dustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['AIR_IDX'];
+        const littledustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10_INDEX'];
+        const tinydustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25_INDEX'];
+        const littledustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10'];
+        const tinydustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25'];
+
         setFemalePopulationRate_6(rate);
         setMalePopulationRate_6(rate2);
         setAreaCongest_6(chaoSity);
@@ -573,6 +1062,45 @@ function MainPage() {
         setTiny6(tinydustText);
         setLittleNum6(littledustNum);
         setTinyNum6(tinydustNum);
+
+        // 날씨
+        const forecastData_min = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['MIN_TEMP'];
+        const forecastData_max = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['MAX_TEMP'];
+        const currentTime = new Date();
+        const forecastData_top_weather = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['FCST24HOURS']['FCST24HOURS'];
+        const forecastData_top_temp = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['TEMP'];
+        const weather = [];
+
+        forecastData_top_weather.forEach(item => {
+          const forecastTime = new Date(item['FCST_DT'].toString().replace(/(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})/, '$1-$2-$3T$4:$5:00'));
+
+          if (forecastTime > currentTime) {
+            const timeDifferenceHours = Math.floor((forecastTime - currentTime) / (1000 * 60 * 60));
+
+            if (timeDifferenceHours <= 10) {
+              const temperature = item['TEMP'];
+              const precipitation = item['PRECIPITATION'];
+              const skyStatus = item['SKY_STTS'];
+              const rainChance = item['RAIN_CHANCE'];
+              const forecastHour = forecastTime.getHours();
+
+              const forecastInfo = {
+                temp: temperature,
+                prec: precipitation,
+                sky: skyStatus,
+                rainChance: rainChance,
+                hour: forecastHour
+              };
+
+              weather.push(forecastInfo);
+            }
+          }
+        });
+        setweather6(weather);
+        setforecastData_min6(forecastData_min);
+        setforecastData_max6(forecastData_max);
+        setforecastData_top_temp6(forecastData_top_temp);
+
       })
       .catch(error => {
         console.error('Error:', error);
@@ -622,6 +1150,45 @@ function MainPage() {
         setTiny7(tinydustText);
         setLittleNum7(littledustNum);
         setTinyNum7(tinydustNum);
+
+        // 날씨
+        const forecastData_min = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['MIN_TEMP'];
+        const forecastData_max = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['MAX_TEMP'];
+        const currentTime = new Date();
+        const forecastData_top_weather = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['FCST24HOURS']['FCST24HOURS'];
+        const forecastData_top_temp = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['TEMP'];
+        const weather = [];
+
+        forecastData_top_weather.forEach(item => {
+          const forecastTime = new Date(item['FCST_DT'].toString().replace(/(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})/, '$1-$2-$3T$4:$5:00'));
+
+          if (forecastTime > currentTime) {
+            const timeDifferenceHours = Math.floor((forecastTime - currentTime) / (1000 * 60 * 60));
+
+            if (timeDifferenceHours <= 10) {
+              const temperature = item['TEMP'];
+              const precipitation = item['PRECIPITATION'];
+              const skyStatus = item['SKY_STTS'];
+              const rainChance = item['RAIN_CHANCE'];
+              const forecastHour = forecastTime.getHours();
+
+              const forecastInfo = {
+                temp: temperature,
+                prec: precipitation,
+                sky: skyStatus,
+                rainChance: rainChance,
+                hour: forecastHour
+              };
+
+              weather.push(forecastInfo);
+            }
+          }
+        });
+        setweather7(weather);
+        setforecastData_min7(forecastData_min);
+        setforecastData_max7(forecastData_max);
+        setforecastData_top_temp7(forecastData_top_temp);
+
       })
       .catch(error => {
         console.error('Error:', error);
@@ -671,6 +1238,45 @@ function MainPage() {
         setTiny8(tinydustText);
         setLittleNum8(littledustNum);
         setTinyNum8(tinydustNum);
+
+        // 날씨
+        const forecastData_min = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['MIN_TEMP'];
+        const forecastData_max = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['MAX_TEMP'];
+        const currentTime = new Date();
+        const forecastData_top_weather = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['FCST24HOURS']['FCST24HOURS'];
+        const forecastData_top_temp = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['TEMP'];
+        const weather = [];
+
+        forecastData_top_weather.forEach(item => {
+          const forecastTime = new Date(item['FCST_DT'].toString().replace(/(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})/, '$1-$2-$3T$4:$5:00'));
+
+          if (forecastTime > currentTime) {
+            const timeDifferenceHours = Math.floor((forecastTime - currentTime) / (1000 * 60 * 60));
+
+            if (timeDifferenceHours <= 10) {
+              const temperature = item['TEMP'];
+              const precipitation = item['PRECIPITATION'];
+              const skyStatus = item['SKY_STTS'];
+              const rainChance = item['RAIN_CHANCE'];
+              const forecastHour = forecastTime.getHours();
+
+              const forecastInfo = {
+                temp: temperature,
+                prec: precipitation,
+                sky: skyStatus,
+                rainChance: rainChance,
+                hour: forecastHour
+              };
+
+              weather.push(forecastInfo);
+            }
+          }
+        });
+        setweather8(weather);
+        setforecastData_min8(forecastData_min);
+        setforecastData_max8(forecastData_max);
+        setforecastData_top_temp8(forecastData_top_temp);
+
       })
       .catch(error => {
         console.error('Error:', error);
@@ -720,6 +1326,45 @@ function MainPage() {
         setTiny9(tinydustText);
         setLittleNum9(littledustNum);
         setTinyNum9(tinydustNum);
+
+        // 날씨
+        const forecastData_min = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['MIN_TEMP'];
+        const forecastData_max = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['MAX_TEMP'];
+        const currentTime = new Date();
+        const forecastData_top_weather = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['FCST24HOURS']['FCST24HOURS'];
+        const forecastData_top_temp = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['TEMP'];
+        const weather = [];
+
+        forecastData_top_weather.forEach(item => {
+          const forecastTime = new Date(item['FCST_DT'].toString().replace(/(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})/, '$1-$2-$3T$4:$5:00'));
+
+          if (forecastTime > currentTime) {
+            const timeDifferenceHours = Math.floor((forecastTime - currentTime) / (1000 * 60 * 60));
+
+            if (timeDifferenceHours <= 10) {
+              const temperature = item['TEMP'];
+              const precipitation = item['PRECIPITATION'];
+              const skyStatus = item['SKY_STTS'];
+              const rainChance = item['RAIN_CHANCE'];
+              const forecastHour = forecastTime.getHours();
+
+              const forecastInfo = {
+                temp: temperature,
+                prec: precipitation,
+                sky: skyStatus,
+                rainChance: rainChance,
+                hour: forecastHour
+              };
+
+              weather.push(forecastInfo);
+            }
+          }
+        });
+        setweather9(weather);
+        setforecastData_min9(forecastData_min);
+        setforecastData_max9(forecastData_max);
+        setforecastData_top_temp9(forecastData_top_temp);
+
       })
       .catch(error => {
         console.error('Error:', error);
@@ -770,6 +1415,45 @@ function MainPage() {
         setLittleNum10(littledustNum);
         setTinyNum10(tinydustNum);
         setLoading(false);
+
+        // 날씨
+        const forecastData_min = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['MIN_TEMP'];
+        const forecastData_max = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['MAX_TEMP'];
+        const currentTime = new Date();
+        const forecastData_top_weather = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['FCST24HOURS']['FCST24HOURS'];
+        const forecastData_top_temp = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['TEMP'];
+        const weather = [];
+
+        forecastData_top_weather.forEach(item => {
+          const forecastTime = new Date(item['FCST_DT'].toString().replace(/(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})/, '$1-$2-$3T$4:$5:00'));
+
+          if (forecastTime > currentTime) {
+            const timeDifferenceHours = Math.floor((forecastTime - currentTime) / (1000 * 60 * 60));
+
+            if (timeDifferenceHours <= 10) {
+              const temperature = item['TEMP'];
+              const precipitation = item['PRECIPITATION'];
+              const skyStatus = item['SKY_STTS'];
+              const rainChance = item['RAIN_CHANCE'];
+              const forecastHour = forecastTime.getHours();
+
+              const forecastInfo = {
+                temp: temperature,
+                prec: precipitation,
+                sky: skyStatus,
+                rainChance: rainChance,
+                hour: forecastHour
+              };
+
+              weather.push(forecastInfo);
+            }
+          }
+        });
+        setweather10(weather);
+        setforecastData_min10(forecastData_min);
+        setforecastData_max10(forecastData_max);
+        setforecastData_top_temp10(forecastData_top_temp);
+
       })
       .catch(error => {
         console.error('Error:', error);
@@ -804,26 +1488,27 @@ function MainPage() {
       ],
       //2. 날씨 파트
       forecastData_top: [
-        { emogi: 'sunny', value: 'sunny' },
-        { temperature: '29.7', value: '29.7' },
+        { emogi: `${weather1[0].sky}`, value: `${weather1[0].sky}` },
+        { temperature: `${forecastData_top_temp1}`, value: `${forecastData_top_temp1}` },
       ],
 
       forecastData_minmax: [
-        { min: '25', value: '25' },
-        { max: '29', value: '29' },
+        { min: `${forecastData_min1}`, value: `${forecastData_min1}` },
+        { max: `${forecastData_max1}`, value: `${forecastData_max1}` },
       ],
 
+
       forecastData: [
-        { date: '16', weather: 'clo', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '17', weather: 'ㄹㄹㄹ', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '18', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '19', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '20', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '21', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '22', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '23', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '24', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '25', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' }
+        { date: `${weather1[0].hour}`, weather: `${weather1[0].sky}`, temperature: `${weather1[0].temp}`, precipitation: `${weather1[0].prec}`, probability: `${weather1[0].rainChance}` },
+        { date: `${weather1[1].hour}`, weather: `${weather1[1].sky}`, temperature: `${weather1[1].temp}`, precipitation: `${weather1[1].prec}`, probability: `${weather1[1].rainChance}` },
+        { date: `${weather1[2].hour}`, weather: `${weather1[2].sky}`, temperature: `${weather1[2].temp}`, precipitation: `${weather1[2].prec}`, probability: `${weather1[2].rainChance}` },
+        { date: `${weather1[3].hour}`, weather: `${weather1[3].sky}`, temperature: `${weather1[3].temp}`, precipitation: `${weather1[3].prec}`, probability: `${weather1[3].rainChance}` },
+        { date: `${weather1[4].hour}`, weather: `${weather1[4].sky}`, temperature: `${weather1[4].temp}`, precipitation: `${weather1[4].prec}`, probability: `${weather1[4].rainChance}` },
+        { date: `${weather1[5].hour}`, weather: `${weather1[5].sky}`, temperature: `${weather1[5].temp}`, precipitation: `${weather1[5].prec}`, probability: `${weather1[5].rainChance}` },
+        { date: `${weather1[6].hour}`, weather: `${weather1[6].sky}`, temperature: `${weather1[6].temp}`, precipitation: `${weather1[6].prec}`, probability: `${weather1[6].rainChance}` },
+        { date: `${weather1[7].hour}`, weather: `${weather1[7].sky}`, temperature: `${weather1[7].temp}`, precipitation: `${weather1[7].prec}`, probability: `${weather1[7].rainChance}` },
+        { date: `${weather1[8].hour}`, weather: `${weather1[8].sky}`, temperature: `${weather1[8].temp}`, precipitation: `${weather1[8].prec}`, probability: `${weather1[8].rainChance}` },
+        { date: `${weather1[9].hour}`, weather: `${weather1[9].sky}`, temperature: `${weather1[9].temp}`, precipitation: `${weather1[9].prec}`, probability: `${weather1[9].rainChance}` }
       ],
 
       //3. 미세먼지 파트
@@ -857,26 +1542,26 @@ function MainPage() {
       ],
       //2. 날씨 파트
       forecastData_top: [
-        { emogi: 'sunny', value: 'sunny' },
-        { temperature: '29.7', value: '29.7' },
+        { emogi: `${weather2[0].sky}`, value: `${weather2[0].sky}` },
+        { temperature: `${forecastData_top_temp2}`, value: `${forecastData_top_temp2}` },
       ],
 
       forecastData_minmax: [
-        { min: '25', value: '25' },
-        { max: '29', value: '29' },
+        { min: `${forecastData_min2}`, value: `${forecastData_min2}` },
+        { max: `${forecastData_max2}`, value: `${forecastData_max2}` },
       ],
 
       forecastData: [
-        { date: '16', weather: 'clo', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '17', weather: 'ㄹㄹㄹ', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '18', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '19', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '20', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '21', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '22', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '23', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '24', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '25', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' }
+        { date: `${weather2[0].hour}`, weather: `${weather2[0].sky}`, temperature: `${weather2[0].temp}`, precipitation: `${weather2[0].prec}`, probability: `${weather2[0].rainChance}` },
+        { date: `${weather2[1].hour}`, weather: `${weather2[1].sky}`, temperature: `${weather2[1].temp}`, precipitation: `${weather2[1].prec}`, probability: `${weather2[1].rainChance}` },
+        { date: `${weather2[2].hour}`, weather: `${weather2[2].sky}`, temperature: `${weather2[2].temp}`, precipitation: `${weather2[2].prec}`, probability: `${weather2[2].rainChance}` },
+        { date: `${weather2[3].hour}`, weather: `${weather2[3].sky}`, temperature: `${weather2[3].temp}`, precipitation: `${weather2[3].prec}`, probability: `${weather2[3].rainChance}` },
+        { date: `${weather2[4].hour}`, weather: `${weather2[4].sky}`, temperature: `${weather2[4].temp}`, precipitation: `${weather2[4].prec}`, probability: `${weather2[4].rainChance}` },
+        { date: `${weather2[5].hour}`, weather: `${weather2[5].sky}`, temperature: `${weather2[5].temp}`, precipitation: `${weather2[5].prec}`, probability: `${weather2[5].rainChance}` },
+        { date: `${weather2[6].hour}`, weather: `${weather2[6].sky}`, temperature: `${weather2[6].temp}`, precipitation: `${weather2[6].prec}`, probability: `${weather2[6].rainChance}` },
+        { date: `${weather2[7].hour}`, weather: `${weather2[7].sky}`, temperature: `${weather2[7].temp}`, precipitation: `${weather2[7].prec}`, probability: `${weather2[7].rainChance}` },
+        { date: `${weather2[8].hour}`, weather: `${weather2[8].sky}`, temperature: `${weather2[8].temp}`, precipitation: `${weather2[8].prec}`, probability: `${weather2[8].rainChance}` },
+        { date: `${weather2[9].hour}`, weather: `${weather2[9].sky}`, temperature: `${weather2[9].temp}`, precipitation: `${weather2[9].prec}`, probability: `${weather2[9].rainChance}` }
       ],
 
       //3. 미세먼지 파트
@@ -910,26 +1595,26 @@ function MainPage() {
       ],
       //2. 날씨 파트
       forecastData_top: [
-        { emogi: 'sunny', value: 'sunny' },
-        { temperature: '29.7', value: '29.7' },
+        { emogi: `${weather3[0].sky}`, value: `${weather3[0].sky}` },
+        { temperature: `${forecastData_top_temp3}`, value: `${forecastData_top_temp3}` },
       ],
 
       forecastData_minmax: [
-        { min: '25', value: '25' },
-        { max: '29', value: '29' },
+        { min: `${forecastData_min3}`, value: `${forecastData_min3}` },
+        { max: `${forecastData_max3}`, value: `${forecastData_max3}` },
       ],
 
       forecastData: [
-        { date: '16', weather: 'clo', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '17', weather: 'ㄹㄹㄹ', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '18', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '19', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '20', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '21', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '22', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '23', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '24', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '25', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' }
+        { date: `${weather3[0].hour}`, weather: `${weather3[0].sky}`, temperature: `${weather3[0].temp}`, precipitation: `${weather3[0].prec}`, probability: `${weather3[0].rainChance}` },
+        { date: `${weather3[1].hour}`, weather: `${weather3[1].sky}`, temperature: `${weather3[1].temp}`, precipitation: `${weather3[1].prec}`, probability: `${weather3[1].rainChance}` },
+        { date: `${weather3[2].hour}`, weather: `${weather3[2].sky}`, temperature: `${weather3[2].temp}`, precipitation: `${weather3[2].prec}`, probability: `${weather3[2].rainChance}` },
+        { date: `${weather3[3].hour}`, weather: `${weather3[3].sky}`, temperature: `${weather3[3].temp}`, precipitation: `${weather3[3].prec}`, probability: `${weather3[3].rainChance}` },
+        { date: `${weather3[4].hour}`, weather: `${weather3[4].sky}`, temperature: `${weather3[4].temp}`, precipitation: `${weather3[4].prec}`, probability: `${weather3[4].rainChance}` },
+        { date: `${weather3[5].hour}`, weather: `${weather3[5].sky}`, temperature: `${weather3[5].temp}`, precipitation: `${weather3[5].prec}`, probability: `${weather3[5].rainChance}` },
+        { date: `${weather3[6].hour}`, weather: `${weather3[6].sky}`, temperature: `${weather3[6].temp}`, precipitation: `${weather3[6].prec}`, probability: `${weather3[6].rainChance}` },
+        { date: `${weather3[7].hour}`, weather: `${weather3[7].sky}`, temperature: `${weather3[7].temp}`, precipitation: `${weather3[7].prec}`, probability: `${weather3[7].rainChance}` },
+        { date: `${weather3[8].hour}`, weather: `${weather3[8].sky}`, temperature: `${weather3[8].temp}`, precipitation: `${weather3[8].prec}`, probability: `${weather3[8].rainChance}` },
+        { date: `${weather3[9].hour}`, weather: `${weather3[9].sky}`, temperature: `${weather3[9].temp}`, precipitation: `${weather3[9].prec}`, probability: `${weather3[9].rainChance}` }
       ],
 
       //3. 미세먼지 파트
@@ -963,26 +1648,26 @@ function MainPage() {
       ],
       //2. 날씨 파트
       forecastData_top: [
-        { emogi: 'sunny', value: 'sunny' },
-        { temperature: '29.7', value: '29.7' },
+        { emogi: `${weather4[0].sky}`, value: `${weather4[0].sky}` },
+        { temperature: `${forecastData_top_temp4}`, value: `${forecastData_top_temp4}` },
       ],
 
       forecastData_minmax: [
-        { min: '25', value: '25' },
-        { max: '29', value: '29' },
+        { min: `${forecastData_min4}`, value: `${forecastData_min4}` },
+        { max: `${forecastData_max4}`, value: `${forecastData_max4}` },
       ],
 
       forecastData: [
-        { date: '16', weather: 'clo', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '17', weather: 'ㄹㄹㄹ', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '18', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '19', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '20', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '21', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '22', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '23', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '24', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '25', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' }
+        { date: `${weather4[0].hour}`, weather: `${weather4[0].sky}`, temperature: `${weather4[0].temp}`, precipitation: `${weather4[0].prec}`, probability: `${weather4[0].rainChance}` },
+        { date: `${weather4[1].hour}`, weather: `${weather4[1].sky}`, temperature: `${weather4[1].temp}`, precipitation: `${weather4[1].prec}`, probability: `${weather4[1].rainChance}` },
+        { date: `${weather4[2].hour}`, weather: `${weather4[2].sky}`, temperature: `${weather4[2].temp}`, precipitation: `${weather4[2].prec}`, probability: `${weather4[2].rainChance}` },
+        { date: `${weather4[3].hour}`, weather: `${weather4[3].sky}`, temperature: `${weather4[3].temp}`, precipitation: `${weather4[3].prec}`, probability: `${weather4[3].rainChance}` },
+        { date: `${weather4[4].hour}`, weather: `${weather4[4].sky}`, temperature: `${weather4[4].temp}`, precipitation: `${weather4[4].prec}`, probability: `${weather4[4].rainChance}` },
+        { date: `${weather4[5].hour}`, weather: `${weather4[5].sky}`, temperature: `${weather4[5].temp}`, precipitation: `${weather4[5].prec}`, probability: `${weather4[5].rainChance}` },
+        { date: `${weather4[6].hour}`, weather: `${weather4[6].sky}`, temperature: `${weather4[6].temp}`, precipitation: `${weather4[6].prec}`, probability: `${weather4[6].rainChance}` },
+        { date: `${weather4[7].hour}`, weather: `${weather4[7].sky}`, temperature: `${weather4[7].temp}`, precipitation: `${weather4[7].prec}`, probability: `${weather4[7].rainChance}` },
+        { date: `${weather4[8].hour}`, weather: `${weather4[8].sky}`, temperature: `${weather4[8].temp}`, precipitation: `${weather4[8].prec}`, probability: `${weather4[8].rainChance}` },
+        { date: `${weather4[9].hour}`, weather: `${weather4[9].sky}`, temperature: `${weather4[9].temp}`, precipitation: `${weather4[9].prec}`, probability: `${weather4[9].rainChance}` }
       ],
 
       //3. 미세먼지 파트
@@ -1016,26 +1701,26 @@ function MainPage() {
       ],
       //2. 날씨 파트
       forecastData_top: [
-        { emogi: 'sunny', value: 'sunny' },
-        { temperature: '29.7', value: '29.7' },
+        { emogi: `${weather5[0].sky}`, value: `${weather5[0].sky}` },
+        { temperature: `${forecastData_top_temp5}`, value: `${forecastData_top_temp5}` },
       ],
 
       forecastData_minmax: [
-        { min: '25', value: '25' },
-        { max: '29', value: '29' },
+        { min: `${forecastData_min5}`, value: `${forecastData_min5}` },
+        { max: `${forecastData_max5}`, value: `${forecastData_max5}` },
       ],
 
       forecastData: [
-        { date: '16', weather: 'clo', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '17', weather: 'ㄹㄹㄹ', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '18', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '19', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '20', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '21', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '22', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '23', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '24', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '25', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' }
+        { date: `${weather5[0].hour}`, weather: `${weather5[0].sky}`, temperature: `${weather5[0].temp}`, precipitation: `${weather5[0].prec}`, probability: `${weather5[0].rainChance}` },
+        { date: `${weather5[1].hour}`, weather: `${weather5[1].sky}`, temperature: `${weather5[1].temp}`, precipitation: `${weather5[1].prec}`, probability: `${weather5[1].rainChance}` },
+        { date: `${weather5[2].hour}`, weather: `${weather5[2].sky}`, temperature: `${weather5[2].temp}`, precipitation: `${weather5[2].prec}`, probability: `${weather5[2].rainChance}` },
+        { date: `${weather5[3].hour}`, weather: `${weather5[3].sky}`, temperature: `${weather5[3].temp}`, precipitation: `${weather5[3].prec}`, probability: `${weather5[3].rainChance}` },
+        { date: `${weather5[4].hour}`, weather: `${weather5[4].sky}`, temperature: `${weather5[4].temp}`, precipitation: `${weather5[4].prec}`, probability: `${weather5[4].rainChance}` },
+        { date: `${weather5[5].hour}`, weather: `${weather5[5].sky}`, temperature: `${weather5[5].temp}`, precipitation: `${weather5[5].prec}`, probability: `${weather5[5].rainChance}` },
+        { date: `${weather5[6].hour}`, weather: `${weather5[6].sky}`, temperature: `${weather5[6].temp}`, precipitation: `${weather5[6].prec}`, probability: `${weather5[6].rainChance}` },
+        { date: `${weather5[7].hour}`, weather: `${weather5[7].sky}`, temperature: `${weather5[7].temp}`, precipitation: `${weather5[7].prec}`, probability: `${weather5[7].rainChance}` },
+        { date: `${weather5[8].hour}`, weather: `${weather5[8].sky}`, temperature: `${weather5[8].temp}`, precipitation: `${weather5[8].prec}`, probability: `${weather5[8].rainChance}` },
+        { date: `${weather5[9].hour}`, weather: `${weather5[9].sky}`, temperature: `${weather5[9].temp}`, precipitation: `${weather5[9].prec}`, probability: `${weather5[9].rainChance}` }
       ],
 
       //3. 미세먼지 파트
@@ -1070,26 +1755,26 @@ function MainPage() {
       ],
       //2. 날씨 파트
       forecastData_top: [
-        { emogi: 'sunny', value: 'sunny' },
-        { temperature: '29.7', value: '29.7' },
+        { emogi: `${weather6[0].sky}`, value: `${weather6[0].sky}` },
+        { temperature: `${forecastData_top_temp6}`, value: `${forecastData_top_temp6}` },
       ],
 
       forecastData_minmax: [
-        { min: '25', value: '25' },
-        { max: '29', value: '29' },
+        { min: `${forecastData_min6}`, value: `${forecastData_min6}` },
+        { max: `${forecastData_max6}`, value: `${forecastData_max6}` },
       ],
 
       forecastData: [
-        { date: '16', weather: 'clo', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '17', weather: 'ㄹㄹㄹ', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '18', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '19', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '20', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '21', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '22', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '23', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '24', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '25', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' }
+        { date: `${weather6[0].hour}`, weather: `${weather6[0].sky}`, temperature: `${weather6[0].temp}`, precipitation: `${weather6[0].prec}`, probability: `${weather6[0].rainChance}` },
+        { date: `${weather6[1].hour}`, weather: `${weather6[1].sky}`, temperature: `${weather6[1].temp}`, precipitation: `${weather6[1].prec}`, probability: `${weather6[1].rainChance}` },
+        { date: `${weather6[2].hour}`, weather: `${weather6[2].sky}`, temperature: `${weather6[2].temp}`, precipitation: `${weather6[2].prec}`, probability: `${weather6[2].rainChance}` },
+        { date: `${weather6[3].hour}`, weather: `${weather6[3].sky}`, temperature: `${weather6[3].temp}`, precipitation: `${weather6[3].prec}`, probability: `${weather6[3].rainChance}` },
+        { date: `${weather6[4].hour}`, weather: `${weather6[4].sky}`, temperature: `${weather6[4].temp}`, precipitation: `${weather6[4].prec}`, probability: `${weather6[4].rainChance}` },
+        { date: `${weather6[5].hour}`, weather: `${weather6[5].sky}`, temperature: `${weather6[5].temp}`, precipitation: `${weather6[5].prec}`, probability: `${weather6[5].rainChance}` },
+        { date: `${weather6[6].hour}`, weather: `${weather6[6].sky}`, temperature: `${weather6[6].temp}`, precipitation: `${weather6[6].prec}`, probability: `${weather6[6].rainChance}` },
+        { date: `${weather6[7].hour}`, weather: `${weather6[7].sky}`, temperature: `${weather6[7].temp}`, precipitation: `${weather6[7].prec}`, probability: `${weather6[7].rainChance}` },
+        { date: `${weather6[8].hour}`, weather: `${weather6[8].sky}`, temperature: `${weather6[8].temp}`, precipitation: `${weather6[8].prec}`, probability: `${weather6[8].rainChance}` },
+        { date: `${weather6[9].hour}`, weather: `${weather6[9].sky}`, temperature: `${weather6[9].temp}`, precipitation: `${weather6[9].prec}`, probability: `${weather6[9].rainChance}` }
       ],
 
       //3. 미세먼지 파트
@@ -1124,26 +1809,26 @@ function MainPage() {
       ],
       //2. 날씨 파트
       forecastData_top: [
-        { emogi: 'sunny', value: 'sunny' },
-        { temperature: '29.7', value: '29.7' },
+        { emogi: `${weather7[0].sky}`, value: `${weather7[0].sky}` },
+        { temperature: `${forecastData_top_temp7}`, value: `${forecastData_top_temp7}` },
       ],
 
       forecastData_minmax: [
-        { min: '25', value: '25' },
-        { max: '29', value: '29' },
+        { min: `${forecastData_min7}`, value: `${forecastData_min7}` },
+        { max: `${forecastData_max7}`, value: `${forecastData_max7}` },
       ],
 
       forecastData: [
-        { date: '16', weather: 'clo', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '17', weather: 'ㄹㄹㄹ', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '18', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '19', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '20', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '21', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '22', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '23', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '24', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '25', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' }
+        { date: `${weather7[0].hour}`, weather: `${weather7[0].sky}`, temperature: `${weather7[0].temp}`, precipitation: `${weather7[0].prec}`, probability: `${weather7[0].rainChance}` },
+        { date: `${weather7[1].hour}`, weather: `${weather7[1].sky}`, temperature: `${weather7[1].temp}`, precipitation: `${weather7[1].prec}`, probability: `${weather7[1].rainChance}` },
+        { date: `${weather7[2].hour}`, weather: `${weather7[2].sky}`, temperature: `${weather7[2].temp}`, precipitation: `${weather7[2].prec}`, probability: `${weather7[2].rainChance}` },
+        { date: `${weather7[3].hour}`, weather: `${weather7[3].sky}`, temperature: `${weather7[3].temp}`, precipitation: `${weather7[3].prec}`, probability: `${weather7[3].rainChance}` },
+        { date: `${weather7[4].hour}`, weather: `${weather7[4].sky}`, temperature: `${weather7[4].temp}`, precipitation: `${weather7[4].prec}`, probability: `${weather7[4].rainChance}` },
+        { date: `${weather7[5].hour}`, weather: `${weather7[5].sky}`, temperature: `${weather7[5].temp}`, precipitation: `${weather7[5].prec}`, probability: `${weather7[5].rainChance}` },
+        { date: `${weather7[6].hour}`, weather: `${weather7[6].sky}`, temperature: `${weather7[6].temp}`, precipitation: `${weather7[6].prec}`, probability: `${weather7[6].rainChance}` },
+        { date: `${weather7[7].hour}`, weather: `${weather7[7].sky}`, temperature: `${weather7[7].temp}`, precipitation: `${weather7[7].prec}`, probability: `${weather7[7].rainChance}` },
+        { date: `${weather7[8].hour}`, weather: `${weather7[8].sky}`, temperature: `${weather7[8].temp}`, precipitation: `${weather7[8].prec}`, probability: `${weather7[8].rainChance}` },
+        { date: `${weather7[9].hour}`, weather: `${weather7[9].sky}`, temperature: `${weather7[9].temp}`, precipitation: `${weather7[9].prec}`, probability: `${weather7[9].rainChance}` }
       ],
 
       //3. 미세먼지 파트
@@ -1177,26 +1862,26 @@ function MainPage() {
       ],
       //2. 날씨 파트
       forecastData_top: [
-        { emogi: 'sunny', value: 'sunny' },
-        { temperature: '29.7', value: '29.7' },
+        { emogi: `${weather8[0].sky}`, value: `${weather8[0].sky}` },
+        { temperature: `${forecastData_top_temp8}`, value: `${forecastData_top_temp8}` },
       ],
 
       forecastData_minmax: [
-        { min: '25', value: '25' },
-        { max: '29', value: '29' },
+        { min: `${forecastData_min8}`, value: `${forecastData_min8}` },
+        { max: `${forecastData_max8}`, value: `${forecastData_max8}` },
       ],
 
       forecastData: [
-        { date: '16', weather: 'clo', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '17', weather: 'ㄹㄹㄹ', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '18', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '19', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '20', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '21', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '22', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '23', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '24', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '25', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' }
+        { date: `${weather8[0].hour}`, weather: `${weather8[0].sky}`, temperature: `${weather8[0].temp}`, precipitation: `${weather8[0].prec}`, probability: `${weather8[0].rainChance}` },
+        { date: `${weather8[1].hour}`, weather: `${weather8[1].sky}`, temperature: `${weather8[1].temp}`, precipitation: `${weather8[1].prec}`, probability: `${weather8[1].rainChance}` },
+        { date: `${weather8[2].hour}`, weather: `${weather8[2].sky}`, temperature: `${weather8[2].temp}`, precipitation: `${weather8[2].prec}`, probability: `${weather8[2].rainChance}` },
+        { date: `${weather8[3].hour}`, weather: `${weather8[3].sky}`, temperature: `${weather8[3].temp}`, precipitation: `${weather8[3].prec}`, probability: `${weather8[3].rainChance}` },
+        { date: `${weather8[4].hour}`, weather: `${weather8[4].sky}`, temperature: `${weather8[4].temp}`, precipitation: `${weather8[4].prec}`, probability: `${weather8[4].rainChance}` },
+        { date: `${weather8[5].hour}`, weather: `${weather8[5].sky}`, temperature: `${weather8[5].temp}`, precipitation: `${weather8[5].prec}`, probability: `${weather8[5].rainChance}` },
+        { date: `${weather8[6].hour}`, weather: `${weather8[6].sky}`, temperature: `${weather8[6].temp}`, precipitation: `${weather8[6].prec}`, probability: `${weather8[6].rainChance}` },
+        { date: `${weather8[7].hour}`, weather: `${weather8[7].sky}`, temperature: `${weather8[7].temp}`, precipitation: `${weather8[7].prec}`, probability: `${weather8[7].rainChance}` },
+        { date: `${weather8[8].hour}`, weather: `${weather8[8].sky}`, temperature: `${weather8[8].temp}`, precipitation: `${weather8[8].prec}`, probability: `${weather8[8].rainChance}` },
+        { date: `${weather8[9].hour}`, weather: `${weather8[9].sky}`, temperature: `${weather8[9].temp}`, precipitation: `${weather8[9].prec}`, probability: `${weather8[9].rainChance}` }
       ],
 
       //3. 미세먼지 파트
@@ -1229,24 +1914,24 @@ function MainPage() {
       ],
       //2. 날씨 파트
       forecastData_top: [
-        { emogi: 'sunny', value: 'sunny' },
-        { temperature: '29.7', value: '29.7' },
+        { emogi: `${weather9[0].sky}`, value: `${weather9[0].sky}` },
+        { temperature: `${forecastData_top_temp9}`, value: `${forecastData_top_temp9}` },
       ],
       forecastData_minmax: [
-        { min: '25', value: '25' },
-        { max: '29', value: '29' },
+        { min: `${forecastData_min9}`, value: `${forecastData_min9}` },
+        { max: `${forecastData_max9}`, value: `${forecastData_max9}` },
       ],
       forecastData: [
-        { date: '16', weather: 'clo', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '17', weather: 'ㄹㄹㄹ', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '18', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '19', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '20', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '21', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '22', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '23', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '24', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '25', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' }
+        { date: `${weather9[0].hour}`, weather: `${weather9[0].sky}`, temperature: `${weather9[0].temp}`, precipitation: `${weather9[0].prec}`, probability: `${weather9[0].rainChance}` },
+        { date: `${weather9[1].hour}`, weather: `${weather9[1].sky}`, temperature: `${weather9[1].temp}`, precipitation: `${weather9[1].prec}`, probability: `${weather9[1].rainChance}` },
+        { date: `${weather9[2].hour}`, weather: `${weather9[2].sky}`, temperature: `${weather9[2].temp}`, precipitation: `${weather9[2].prec}`, probability: `${weather9[2].rainChance}` },
+        { date: `${weather9[3].hour}`, weather: `${weather9[3].sky}`, temperature: `${weather9[3].temp}`, precipitation: `${weather9[3].prec}`, probability: `${weather9[3].rainChance}` },
+        { date: `${weather9[4].hour}`, weather: `${weather9[4].sky}`, temperature: `${weather9[4].temp}`, precipitation: `${weather9[4].prec}`, probability: `${weather9[4].rainChance}` },
+        { date: `${weather9[5].hour}`, weather: `${weather9[5].sky}`, temperature: `${weather9[5].temp}`, precipitation: `${weather9[5].prec}`, probability: `${weather9[5].rainChance}` },
+        { date: `${weather9[6].hour}`, weather: `${weather9[6].sky}`, temperature: `${weather9[6].temp}`, precipitation: `${weather9[6].prec}`, probability: `${weather9[6].rainChance}` },
+        { date: `${weather9[7].hour}`, weather: `${weather9[7].sky}`, temperature: `${weather9[7].temp}`, precipitation: `${weather9[7].prec}`, probability: `${weather9[7].rainChance}` },
+        { date: `${weather9[8].hour}`, weather: `${weather9[8].sky}`, temperature: `${weather9[8].temp}`, precipitation: `${weather9[8].prec}`, probability: `${weather9[8].rainChance}` },
+        { date: `${weather9[9].hour}`, weather: `${weather9[9].sky}`, temperature: `${weather9[9].temp}`, precipitation: `${weather9[9].prec}`, probability: `${weather9[9].rainChance}` }
       ],
       //3. 미세먼지 파트
       air_clearity: `${dustRate9}`,
@@ -1280,26 +1965,26 @@ function MainPage() {
       ],
       //2. 날씨 파트
       forecastData_top: [
-        { emogi: 'sunny', value: 'sunny' },
-        { temperature: '29.7', value: '29.7' },
+        { emogi: `${weather10[0].sky}`, value: `${weather10[0].sky}` },
+        { temperature: `${forecastData_top_temp10}`, value: `${forecastData_top_temp10}` },
       ],
 
       forecastData_minmax: [
-        { min: '99', value: '25' },
-        { max: '99', value: '29' },
+        { min: `${forecastData_min10}`, value: `${forecastData_min10}` },
+        { max: `${forecastData_max10}`, value: `${forecastData_max10}` },
       ],
 
       forecastData: [
-        { date: '16', weather: 'clo', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '17', weather: 'ㄹㄹㄹ', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '18', weather: 'ㄷㄷㄷ', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '19', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '20', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '21', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '22', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '23', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '24', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' },
-        { date: '25', weather: 'sun', temperature: '30', precipitation: '--', probability: '30%' }
+        { date: `${weather10[0].hour}`, weather: `${weather10[0].sky}`, temperature: `${weather10[0].temp}`, precipitation: `${weather10[0].prec}`, probability: `${weather10[0].rainChance}` },
+        { date: `${weather10[1].hour}`, weather: `${weather10[1].sky}`, temperature: `${weather10[1].temp}`, precipitation: `${weather10[1].prec}`, probability: `${weather10[1].rainChance}` },
+        { date: `${weather10[2].hour}`, weather: `${weather10[2].sky}`, temperature: `${weather10[2].temp}`, precipitation: `${weather10[2].prec}`, probability: `${weather10[2].rainChance}` },
+        { date: `${weather10[3].hour}`, weather: `${weather10[3].sky}`, temperature: `${weather10[3].temp}`, precipitation: `${weather10[3].prec}`, probability: `${weather10[3].rainChance}` },
+        { date: `${weather10[4].hour}`, weather: `${weather10[4].sky}`, temperature: `${weather10[4].temp}`, precipitation: `${weather10[4].prec}`, probability: `${weather10[4].rainChance}` },
+        { date: `${weather10[5].hour}`, weather: `${weather10[5].sky}`, temperature: `${weather10[5].temp}`, precipitation: `${weather10[5].prec}`, probability: `${weather10[5].rainChance}` },
+        { date: `${weather10[6].hour}`, weather: `${weather10[6].sky}`, temperature: `${weather10[6].temp}`, precipitation: `${weather10[6].prec}`, probability: `${weather10[6].rainChance}` },
+        { date: `${weather10[7].hour}`, weather: `${weather10[7].sky}`, temperature: `${weather10[7].temp}`, precipitation: `${weather10[7].prec}`, probability: `${weather10[7].rainChance}` },
+        { date: `${weather10[8].hour}`, weather: `${weather10[8].sky}`, temperature: `${weather10[8].temp}`, precipitation: `${weather10[8].prec}`, probability: `${weather10[8].rainChance}` },
+        { date: `${weather10[9].hour}`, weather: `${weather10[9].sky}`, temperature: `${weather10[9].temp}`, precipitation: `${weather10[9].prec}`, probability: `${weather10[9].rainChance}` }
       ],
 
       //3. 미세먼지 파트
@@ -1523,14 +2208,18 @@ function MainPage() {
                   <StyledChaos className='dizzyness' status={selectedData.populationStatus}>{selectedData.populationStatus}</StyledChaos>
                 </div>
                 <div>{(() => {
+
                 switch (selectedData.populationStatus) {
+
                     case '여유': return <div className='diz_text'>{selectedData.populationDescription}</div>;
                     case '보통': return <div className='diz_text2'>{selectedData.populationDescription}</div>;
                     case '약간 붐빔': return <div className='diz_text3'>{selectedData.populationDescription}</div>;
                     case '붐빔': return <div className='diz_text4'>{selectedData.populationDescription}</div>;
                     default: return null;
-                }
-            })()}</div>
+
+                  }
+                })()}</div>
+
               </div>
             </div>
             <div className='age'>
@@ -1576,6 +2265,45 @@ function MainPage() {
         return (
           <div className='detail-view' style={{ position: 'relative' }}>
 
+{selectedData.forecastData_top.map((data, index) => {
+  let iconSrc = '';
+  let iconStyle = {
+    position: 'absolute',
+    top: '80px',
+    left: '138px',
+    width: '88px',
+    height: '88px',
+    display: 'block'
+  };
+
+  if (data.value === '맑음' || data.value === '구름많음') {
+    let currentHour = weather10[0].hour;
+    let isDaytime = (currentHour >= 6 && currentHour <= 17);
+
+    if (data.value === '맑음') {
+      iconSrc = isDaytime ? sunnyIcon1 : sunnyIcon2;
+    } else if (data.value === '구름많음') {
+      iconSrc = isDaytime ? cloudyIcon1 : cloudyIcon2;
+    }
+  } else if (data.value === '흐림') {
+    iconSrc = overcastIcon;
+  }
+
+  return (
+    <img
+      key={index}
+      src={iconSrc}
+      style={iconStyle}
+      alt=""
+      onError={(e) => {
+        e.target.style.display = 'none'; // 이미지 로드 실패 시 아이콘 숨기기
+      }}
+    />
+  );
+})}
+
+
+
 
             <div
               style={{
@@ -1592,6 +2320,7 @@ function MainPage() {
                 ) : null
               )}
             </div>
+
 
             <div
               style={{
@@ -1637,7 +2366,7 @@ function MainPage() {
                 top: '251px',
                 left: '111px',
                 height: '17px',
-                width: '38px',
+                width: '45px',
                 textAlign: 'center',
                 color: '#000',
                 fontFamily: 'Inter',
@@ -1655,7 +2384,7 @@ function MainPage() {
                 top: '251px',
                 left: '293px',
                 height: '17px',
-                width: '38px',
+                width: '45px',
                 textAlign: 'center',
                 color: '#000',
                 fontFamily: 'Inter',
@@ -1780,6 +2509,7 @@ function MainPage() {
               </div>
               <div className='graph'>
                 <div className='marker'>
+
             {(() => {
                 switch (selectedData.air_clearity) {
                     case '좋음': return <AirMarker_Green className='marker1'/>;
@@ -1790,6 +2520,7 @@ function MainPage() {
                 }
             })()}
         </div>
+
                 <div className='air_graph'><Green /><Yellow /><Orange /><Red /></div>
               </div>
             </div>
@@ -1824,6 +2555,7 @@ function MainPage() {
               {dropdownOpen1 ? <DButton2 className="img-down" /> : <DButton className="img-down" />}
               {/* Dropdown menu code */}
               {dropdownOpen1 && (
+
                   <div className="dropdown-menu">
                     <div className="dropdown-item1" onClick={() => handleDropdown1Item("가산디지털단지역")}>가산디지털단지역</div>
                     <div className="dropdown-item1" onClick={() => handleDropdown1Item("강남역")}>강남역</div>
@@ -1837,13 +2569,12 @@ function MainPage() {
                     <div className="dropdown-item1" onClick={() => handleDropdown1Item("홍대입구역 9번 출구")}>홍대입구역 9번 출구</div>
                   </div>
                 )}
+
             </div>
           </div>
         </div>
-        <div className="mapscale" id="map" style={{ width: '364px', height: '246px' }} />
-  
-        
-          
+        <div className="mapscale" id="map" style={{ width: '364px', height: '246px' }} /> 
+            
             <div className='mid-main-view'>
               <div className={`chaos ${activeButton === 'chaos' ? 'active' : ''}`} onClick={() => {
                 handleChaosClick();
@@ -1871,12 +2602,12 @@ function MainPage() {
           <div className="loading-indicator"><Dencity className='loading-logo'/></div>
         ) : (
             renderDetailView()
-          
+
         )}
       </div>
     </div>
   );
-  
+
 }
 
 export default MainPage;
