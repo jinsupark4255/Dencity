@@ -348,7 +348,7 @@ function MainPage() {
   useEffect(() => {
     setLoading(true);
     setTimeout(() => {
-      fetch(url,{ mode: 'no-cors' })
+      fetch(url)
         .then(response => response.json())
         .then(data => {
           // 받은 데이터 처리
@@ -441,7 +441,7 @@ function MainPage() {
 
 
     setTimeout(() => {
-      fetch(url2,{ mode: 'no-cors' })
+      fetch(url2)
 
         .then(response => response.json())
         .then(data => {
@@ -536,7 +536,7 @@ function MainPage() {
     }, 1000);
 
     setTimeout(() => {
-      fetch(url3,{ mode: 'no-cors' })
+      fetch(url3)
         .then(response => response.json())
         .then(data => {
           // 받은 데이터 처리
@@ -626,7 +626,7 @@ function MainPage() {
     }, 1000);
 
     setTimeout(() => {
-      fetch(url4,{ mode: 'no-cors' })
+      fetch(url4)
         .then(response => response.json())
         .then(data => {
           // 받은 데이터 처리
@@ -716,7 +716,7 @@ function MainPage() {
     }, 1000);
 
     setTimeout(() => {
-      fetch(url5,{ mode: 'no-cors' })
+      fetch(url5)
         .then(response => response.json())
         .then(data => {
           // 받은 데이터 처리
@@ -806,7 +806,7 @@ function MainPage() {
     }, 1000);
 
     setTimeout(() => {
-      fetch(url6,{ mode: 'no-cors' })
+      fetch(url6)
         .then(response => response.json())
         .then(data => {
           // 받은 데이터 처리
@@ -896,7 +896,7 @@ function MainPage() {
     }, 1000);
 
     setTimeout(() => {
-      fetch(url7,{ mode: 'no-cors' })
+      fetch(url7)
         .then(response => response.json())
         .then(data => {
           // 받은 데이터 처리
@@ -986,7 +986,7 @@ function MainPage() {
     }, 1000);
 
     setTimeout(() => {
-      fetch(url8,{ mode: 'no-cors' })
+      fetch(url8)
         .then(response => response.json())
         .then(data => {
           // 받은 데이터 처리
@@ -1076,7 +1076,7 @@ function MainPage() {
     }, 1000);
 
     setTimeout(() => {
-      fetch(url9,{ mode: 'no-cors' })
+      fetch(url9)
         .then(response => response.json())
         .then(data => {
           // 받은 데이터 처리
@@ -1166,7 +1166,7 @@ function MainPage() {
     }, 1000);
 
     setTimeout(() => {
-      fetch(url10,{ mode: 'no-cors' })
+      fetch(url10)
         .then(response => response.json())
         .then(data => {
           // 받은 데이터 처리
