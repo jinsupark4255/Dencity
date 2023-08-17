@@ -391,60 +391,7 @@ function MainPage() {
         setTiny1(tinydustText);
         setLittleNum1(littledustNum);
         setTinyNum1(tinydustNum);
-      })
-      .catch(error => {
-        console.error('Error:', error);
 
-      });
-
-
-    fetch(url2)
-
-      .then(response => response.json())
-      .then(data => {
-        // 받은 데이터 처리
-        const parsedData = JSON.parse(data.jsonObject);
-        console.log(data);
-        //혼잡도 정도 및 설명
-        const chaoSity = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['AREA_CONGEST_LVL'];
-        const chaosityDetail = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['AREA_CONGEST_MSG'];
-
-        // 나이대
-        const age10 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_10'];
-        const age20 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_20'];
-        const age30 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_30'];
-        const age40 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_40'];
-        const age50 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_50'];
-        const age60 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_60'];
-
-        // 성별
-        const rate = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['FEMALE_PPLTN_RATE'];
-        const rate2 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['MALE_PPLTN_RATE'];
-
-        //통합대기환경지수
-        const dustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['AIR_IDX'];
-        const littledustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10_INDEX'];
-        const tinydustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25_INDEX'];
-        const littledustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10'];
-        const tinydustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25'];
-
-        setFemalePopulationRate_1(rate);
-        setMalePopulationRate_1(rate2);
-        setAreaCongest_1(chaoSity);
-        setAreaCongestDetail_1(chaosityDetail);
-        setAgeCongest_1_10(age10);
-        setAgeCongest_1_20(age20);
-        setAgeCongest_1_30(age30);
-        setAgeCongest_1_40(age40);
-        setAgeCongest_1_50(age50);
-        setAgeCongest_1_60(age60);
-        setDustrate1(dustText);
-        setLittle1(littledustText);
-        setTiny1(tinydustText);
-        setLittleNum1(littledustNum);
-        setTinyNum1(tinydustNum);
-
-        // 날씨
         const forecastData_min = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['MIN_TEMP'];
         const forecastData_max = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['MAX_TEMP'];
         const currentTime = new Date();
@@ -484,7 +431,6 @@ function MainPage() {
         setforecastData_min1(forecastData_min);
         setforecastData_max1(forecastData_max);
         setforecastData_top_temp1(forecastData_top_temp);
-
       })
       .catch(error => {
         console.error('Error:', error);
@@ -494,174 +440,6 @@ function MainPage() {
 
     fetch(url2)
 
-        setFemalePopulationRate_2(rate);
-        setMalePopulationRate_2(rate2);
-        setAreaCongest_2(chaoSity);
-        setAreaCongestDetail_2(chaosityDetail);
-        setAgeCongest_2_10(age10);
-        setAgeCongest_2_20(age20);
-        setAgeCongest_2_30(age30);
-        setAgeCongest_2_40(age40);
-        setAgeCongest_2_50(age50);
-        setAgeCongest_2_60(age60);
-        setDustrate2(dustText);
-        setLittle2(littledustText);
-        setTiny2(tinydustText);
-        setLittleNum2(littledustNum);
-        setTinyNum2(tinydustNum);
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
-
-    fetch(url3)
-      .then(response => response.json())
-      .then(data => {
-        // 받은 데이터 처리
-        const parsedData = JSON.parse(data.jsonObject);
-        console.log(data);
-        //혼잡도 정도 및 설명
-        const chaoSity = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['AREA_CONGEST_LVL'];
-        const chaosityDetail = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['AREA_CONGEST_MSG'];
-
-        // 나이대
-        const age10 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_10'];
-        const age20 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_20'];
-        const age30 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_30'];
-        const age40 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_40'];
-        const age50 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_50'];
-        const age60 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_60'];
-
-        // 성별
-        const rate = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['FEMALE_PPLTN_RATE'];
-        const rate2 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['MALE_PPLTN_RATE'];
-
-        //통합대기환경지수
-        const dustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['AIR_IDX'];
-        const littledustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10_INDEX'];
-        const tinydustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25_INDEX'];
-        const littledustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10'];
-        const tinydustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25'];
-
-        setFemalePopulationRate_3(rate);
-        setMalePopulationRate_3(rate2);
-        setAreaCongest_3(chaoSity);
-        setAreaCongestDetail_3(chaosityDetail);
-        setAgeCongest_3_10(age10);
-        setAgeCongest_3_20(age20);
-        setAgeCongest_3_30(age30);
-        setAgeCongest_3_40(age40);
-        setAgeCongest_3_50(age50);
-        setAgeCongest_3_60(age60);
-        setDustrate3(dustText);
-        setLittle3(littledustText);
-        setTiny3(tinydustText);
-        setLittleNum3(littledustNum);
-        setTinyNum3(tinydustNum);
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
-
-    fetch(url4)
-      .then(response => response.json())
-      .then(data => {
-        // 받은 데이터 처리
-        const parsedData = JSON.parse(data.jsonObject);
-        console.log(data);
-        //혼잡도 정도 및 설명
-        const chaoSity = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['AREA_CONGEST_LVL'];
-        const chaosityDetail = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['AREA_CONGEST_MSG'];
-
-        // 나이대
-        const age10 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_10'];
-        const age20 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_20'];
-        const age30 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_30'];
-        const age40 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_40'];
-        const age50 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_50'];
-        const age60 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_60'];
-
-        // 성별
-        const rate = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['FEMALE_PPLTN_RATE'];
-        const rate2 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['MALE_PPLTN_RATE'];
-
-        //통합대기환경지수
-        const dustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['AIR_IDX'];
-        const littledustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10_INDEX'];
-        const tinydustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25_INDEX'];
-        const littledustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10'];
-        const tinydustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25'];
-
-        setFemalePopulationRate_4(rate);
-        setMalePopulationRate_4(rate2);
-        setAreaCongest_4(chaoSity);
-        setAreaCongestDetail_4(chaosityDetail);
-        setAgeCongest_4_10(age10);
-        setAgeCongest_4_20(age20);
-        setAgeCongest_4_30(age30);
-        setAgeCongest_4_40(age40);
-        setAgeCongest_4_50(age50);
-        setAgeCongest_4_60(age60);
-        setDustrate4(dustText);
-        setLittle4(littledustText);
-        setTiny4(tinydustText);
-        setLittleNum4(littledustNum);
-        setTinyNum4(tinydustNum);
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
-
-    fetch(url5)
-      .then(response => response.json())
-      .then(data => {
-        // 받은 데이터 처리
-        const parsedData = JSON.parse(data.jsonObject);
-        console.log(data);
-        //혼잡도 정도 및 설명
-        const chaoSity = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['AREA_CONGEST_LVL'];
-        const chaosityDetail = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['AREA_CONGEST_MSG'];
-
-        // 나이대
-        const age10 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_10'];
-        const age20 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_20'];
-        const age30 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_30'];
-        const age40 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_40'];
-        const age50 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_50'];
-        const age60 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_60'];
-
-        // 성별
-        const rate = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['FEMALE_PPLTN_RATE'];
-        const rate2 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['MALE_PPLTN_RATE'];
-
-        //통합대기환경지수
-        const dustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['AIR_IDX'];
-        const littledustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10_INDEX'];
-        const tinydustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25_INDEX'];
-        const littledustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10'];
-        const tinydustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25'];
-
-        setFemalePopulationRate_5(rate);
-        setMalePopulationRate_5(rate2);
-        setAreaCongest_5(chaoSity);
-        setAreaCongestDetail_5(chaosityDetail);
-        setAgeCongest_5_10(age10);
-        setAgeCongest_5_20(age20);
-        setAgeCongest_5_30(age30);
-        setAgeCongest_5_40(age40);
-        setAgeCongest_5_50(age50);
-        setAgeCongest_5_60(age60);
-        setDustrate5(dustText);
-        setLittle5(littledustText);
-        setTiny5(tinydustText);
-        setLittleNum5(littledustNum);
-        setTinyNum5(tinydustNum);
-      })
-      .catch(error => {
-        console.error('Error:', error);
-      });
-
-    fetch(url6)
       .then(response => response.json())
       .then(data => {
         // 받은 데이터 처리
@@ -712,7 +490,9 @@ function MainPage() {
         const currentTime = new Date();
         const forecastData_top_weather = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['FCST24HOURS']['FCST24HOURS'];
         const forecastData_top_temp = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['TEMP'];
+
         const weather = [];
+
 
         forecastData_top_weather.forEach(item => {
           const forecastTime = new Date(item['FCST_DT'].toString().replace(/(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})/, '$1-$2-$3T$4:$5:00'));
@@ -739,19 +519,16 @@ function MainPage() {
             }
           }
         });
+        console.log(weather);
         setweather2(weather);
         setforecastData_min2(forecastData_min);
         setforecastData_max2(forecastData_max);
         setforecastData_top_temp2(forecastData_top_temp);
 
-
-
-
-
-
       })
       .catch(error => {
         console.error('Error:', error);
+
       });
 
     fetch(url3)
@@ -1399,23 +1176,6 @@ function MainPage() {
         const littledustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10'];
         const tinydustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25'];
 
-        setFemalePopulationRate_10(rate);
-        setMalePopulationRate_10(rate2);
-        setAreaCongest_10(chaoSity);
-        setAreaCongestDetail_10(chaosityDetail);
-        setAgeCongest_10_10(age10);
-        setAgeCongest_10_20(age20);
-        setAgeCongest_10_30(age30);
-        setAgeCongest_10_40(age40);
-        setAgeCongest_10_50(age50);
-        setAgeCongest_10_60(age60);
-        setDustrate10(dustText);
-        setLittle10(littledustText);
-        setTiny10(tinydustText);
-        setLittleNum10(littledustNum);
-        setTinyNum10(tinydustNum);
-        setLoading(false);
-
         // 날씨
         const forecastData_min = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['MIN_TEMP'];
         const forecastData_max = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['MAX_TEMP'];
@@ -1449,17 +1209,35 @@ function MainPage() {
             }
           }
         });
+
+        setFemalePopulationRate_10(rate);
+        setMalePopulationRate_10(rate2);
+        setAreaCongest_10(chaoSity);
+        setAreaCongestDetail_10(chaosityDetail);
+        setAgeCongest_10_10(age10);
+        setAgeCongest_10_20(age20);
+        setAgeCongest_10_30(age30);
+        setAgeCongest_10_40(age40);
+        setAgeCongest_10_50(age50);
+        setAgeCongest_10_60(age60);
+        setDustrate10(dustText);
+        setLittle10(littledustText);
+        setTiny10(tinydustText);
+        setLittleNum10(littledustNum);
+        setTinyNum10(tinydustNum);
+        setLoading(false);
         setweather10(weather);
         setforecastData_min10(forecastData_min);
         setforecastData_max10(forecastData_max);
         setforecastData_top_temp10(forecastData_top_temp);
-
+        setLoading(false);
       })
       .catch(error => {
         console.error('Error:', error);
         setLoading(false);
       });
   }, []);
+
 
 
 
