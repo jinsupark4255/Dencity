@@ -323,16 +323,16 @@ function MainPage() {
   const place9 = "POI012";
   const place10 = "POI055";
 
-  const url = `http://54.180.87.174/home?place=${encodeURIComponent(place)}`;
-  const url2 = `http://54.180.87.174/home?place=${encodeURIComponent(place2)}`;
-  const url3 = `http://54.180.87.174/home?place=${encodeURIComponent(place3)}`;
-  const url4 = `http://54.180.87.174/home?place=${encodeURIComponent(place4)}`;
-  const url5 = `http://54.180.87.174/home?place=${encodeURIComponent(place5)}`;
-  const url6 = `http://54.180.87.174/home?place=${encodeURIComponent(place6)}`;
-  const url7 = `http://54.180.87.174/home?place=${encodeURIComponent(place7)}`;
-  const url8 = `http://54.180.87.174/home?place=${encodeURIComponent(place8)}`;
-  const url9 = `http://54.180.87.174/home?place=${encodeURIComponent(place9)}`;
-  const url10 = `http://54.180.87.174/home?place=${encodeURIComponent(place10)}`;
+  const url = `https://dencity.store/home?place=${encodeURIComponent(place)}`;
+  const url2 = `https://dencity.store/home?place=${encodeURIComponent(place2)}`;
+  const url3 = `https://dencity.store/home?place=${encodeURIComponent(place3)}`;
+  const url4 = `https://dencity.store/home?place=${encodeURIComponent(place4)}`;
+  const url5 = `https://dencity.store/home?place=${encodeURIComponent(place5)}`;
+  const url6 = `https://dencity.store/home?place=${encodeURIComponent(place6)}`;
+  const url7 = `https://dencity.store/home?place=${encodeURIComponent(place7)}`;
+  const url8 = `https://dencity.store/home?place=${encodeURIComponent(place8)}`;
+  const url9 = `https://dencity.store/home?place=${encodeURIComponent(place9)}`;
+  const url10 = `https://dencity.store/home?place=${encodeURIComponent(place10)}`;
 
   // 가산디지털단지            const place = "POI013";
   // 강남역                    const place = "POI014";
