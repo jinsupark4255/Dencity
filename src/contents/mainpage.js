@@ -106,6 +106,7 @@ function MainPage() {
   const [littleDustNum1, setLittleNum1] = useState(null);
   const [tinyDust1, setTiny1] = useState(null);
   const [tinyDustNum1, setTinyNum1] = useState(null);
+
   const [weather1, setweather1] = useState(["0", "0", "0", "0", "0", "0", "0", "0", "0", "0"]);
   const [forecastData_min1, setforecastData_min1] = useState(null);
   const [forecastData_max1, setforecastData_max1] = useState(null);
@@ -127,6 +128,7 @@ function MainPage() {
   const [littleDustNum2, setLittleNum2] = useState(null);
   const [tinyDust2, setTiny2] = useState(null);
   const [tinyDustNum2, setTinyNum2] = useState(null);
+
   const [weather2, setweather2] = useState(["0", "0", "0", "0", "0", "0", "0", "0", "0", "0"]);
   const [forecastData_min2, setforecastData_min2] = useState(null);
   const [forecastData_max2, setforecastData_max2] = useState(null);
@@ -148,6 +150,7 @@ function MainPage() {
   const [littleDustNum3, setLittleNum3] = useState(null);
   const [tinyDust3, setTiny3] = useState(null);
   const [tinyDustNum3, setTinyNum3] = useState(null);
+
   const [weather3, setweather3] = useState(["0", "0", "0", "0", "0", "0", "0", "0", "0", "0"]);
   const [forecastData_min3, setforecastData_min3] = useState(null);
   const [forecastData_max3, setforecastData_max3] = useState(null);
@@ -169,6 +172,7 @@ function MainPage() {
   const [littleDustNum4, setLittleNum4] = useState(null);
   const [tinyDust4, setTiny4] = useState(null);
   const [tinyDustNum4, setTinyNum4] = useState(null);
+
   const [weather4, setweather4] = useState(["0", "0", "0", "0", "0", "0", "0", "0", "0", "0"]);
   const [forecastData_min4, setforecastData_min4] = useState(null);
   const [forecastData_max4, setforecastData_max4] = useState(null);
@@ -190,6 +194,7 @@ function MainPage() {
   const [littleDustNum5, setLittleNum5] = useState(null);
   const [tinyDust5, setTiny5] = useState(null);
   const [tinyDustNum5, setTinyNum5] = useState(null);
+
   const [weather5, setweather5] = useState(["0", "0", "0", "0", "0", "0", "0", "0", "0", "0"]);
   const [forecastData_min5, setforecastData_min5] = useState(null);
   const [forecastData_max5, setforecastData_max5] = useState(null);
@@ -211,6 +216,7 @@ function MainPage() {
   const [littleDustNum6, setLittleNum6] = useState(null);
   const [tinyDust6, setTiny6] = useState(null);
   const [tinyDustNum6, setTinyNum6] = useState(null);
+
   const [weather6, setweather6] = useState(["0", "0", "0", "0", "0", "0", "0", "0", "0", "0"]);
   const [forecastData_min6, setforecastData_min6] = useState(null);
   const [forecastData_max6, setforecastData_max6] = useState(null);
@@ -232,6 +238,7 @@ function MainPage() {
   const [littleDustNum7, setLittleNum7] = useState(null);
   const [tinyDust7, setTiny7] = useState(null);
   const [tinyDustNum7, setTinyNum7] = useState(null);
+
   const [weather7, setweather7] = useState(["0", "0", "0", "0", "0", "0", "0", "0", "0", "0"]);
   const [forecastData_min7, setforecastData_min7] = useState(null);
   const [forecastData_max7, setforecastData_max7] = useState(null);
@@ -253,6 +260,7 @@ function MainPage() {
   const [littleDustNum8, setLittleNum8] = useState(null);
   const [tinyDust8, setTiny8] = useState(null);
   const [tinyDustNum8, setTinyNum8] = useState(null);
+
   const [weather8, setweather8] = useState(["0", "0", "0", "0", "0", "0", "0", "0", "0", "0"]);
   const [forecastData_min8, setforecastData_min8] = useState(null);
   const [forecastData_max8, setforecastData_max8] = useState(null);
@@ -274,11 +282,12 @@ function MainPage() {
   const [littleDustNum9, setLittleNum9] = useState(null);
   const [tinyDust9, setTiny9] = useState(null);
   const [tinyDustNum9, setTinyNum9] = useState(null);
+
   const [weather9, setweather9] = useState(["0", "0", "0", "0", "0", "0", "0", "0", "0", "0"]);
   const [forecastData_min9, setforecastData_min9] = useState(null);
   const [forecastData_max9, setforecastData_max9] = useState(null);
   const [forecastData_top_temp9, setforecastData_top_temp9] = useState(null);
-
+  
   // 홍대입구역 9번출구     
   const [areaCongest_10, setAreaCongest_10] = useState(null);
   const [areaCongestDetail_10, setAreaCongestDetail_10] = useState(null);
@@ -295,15 +304,15 @@ function MainPage() {
   const [littleDustNum10, setLittleNum10] = useState(null);
   const [tinyDust10, setTiny10] = useState(null);
   const [tinyDustNum10, setTinyNum10] = useState(null);
+
   const [weather10, setweather10] = useState(["0", "0", "0", "0", "0", "0", "0", "0", "0", "0"]);
   const [forecastData_min10, setforecastData_min10] = useState(null);
   const [forecastData_max10, setforecastData_max10] = useState(null);
   const [forecastData_top_temp10, setforecastData_top_temp10] = useState(null);
 
-
   const navigate = useNavigate();
 
-  const place = "POI013";
+  const place = "POI012";
   const place2 = "POI014";
   const place3 = "POI033";
   const place4 = "POI068";
@@ -313,7 +322,7 @@ function MainPage() {
   const place8 = "POI109";
   const place9 = "POI012";
   const place10 = "POI055";
-  //ㄴㄴㄴ
+
   const url = `http://54.180.87.174/home?place=${encodeURIComponent(place)}`;
   const url2 = `http://54.180.87.174/home?place=${encodeURIComponent(place2)}`;
   const url3 = `http://54.180.87.174/home?place=${encodeURIComponent(place3)}`;
@@ -336,11 +345,61 @@ function MainPage() {
   // 창덕궁 종묘               const place = "POI012";
   // 홍대입구역 9번출구        const place = "POI055";
 
-
-
   useEffect(() => {
     setLoading(true);
     fetch(url)
+      .then(response => response.json())
+      .then(data => {
+        // 받은 데이터 처리
+        const parsedData = JSON.parse(data.jsonObject);
+        console.log(data);
+        //혼잡도 정도 및 설명
+        const chaoSity = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['AREA_CONGEST_LVL'];
+        const chaosityDetail = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['AREA_CONGEST_MSG'];
+
+        // 나이대
+        const age10 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_10'];
+        const age20 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_20'];
+        const age30 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_30'];
+        const age40 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_40'];
+        const age50 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_50'];
+        const age60 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_60'];
+
+        // 성별
+        const rate = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['FEMALE_PPLTN_RATE'];
+        const rate2 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['MALE_PPLTN_RATE'];
+
+        //통합대기환경지수
+        const dustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['AIR_IDX'];
+        const littledustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10_INDEX'];
+        const tinydustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25_INDEX'];
+        const littledustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10'];
+        const tinydustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25'];
+        
+        setFemalePopulationRate_1(rate);
+        setMalePopulationRate_1(rate2);
+        setAreaCongest_1(chaoSity);
+        setAreaCongestDetail_1(chaosityDetail);
+        setAgeCongest_1_10(age10);
+        setAgeCongest_1_20(age20);
+        setAgeCongest_1_30(age30);
+        setAgeCongest_1_40(age40);
+        setAgeCongest_1_50(age50);
+        setAgeCongest_1_60(age60);
+        setDustrate1(dustText);
+        setLittle1(littledustText);
+        setTiny1(tinydustText);
+        setLittleNum1(littledustNum);
+        setTinyNum1(tinydustNum);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+
+      });
+
+
+    fetch(url2)
+
       .then(response => response.json())
       .then(data => {
         // 받은 데이터 처리
@@ -434,6 +493,175 @@ function MainPage() {
 
 
     fetch(url2)
+
+        setFemalePopulationRate_2(rate);
+        setMalePopulationRate_2(rate2);
+        setAreaCongest_2(chaoSity);
+        setAreaCongestDetail_2(chaosityDetail);
+        setAgeCongest_2_10(age10);
+        setAgeCongest_2_20(age20);
+        setAgeCongest_2_30(age30);
+        setAgeCongest_2_40(age40);
+        setAgeCongest_2_50(age50);
+        setAgeCongest_2_60(age60);
+        setDustrate2(dustText);
+        setLittle2(littledustText);
+        setTiny2(tinydustText);
+        setLittleNum2(littledustNum);
+        setTinyNum2(tinydustNum);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+
+    fetch(url3)
+      .then(response => response.json())
+      .then(data => {
+        // 받은 데이터 처리
+        const parsedData = JSON.parse(data.jsonObject);
+        console.log(data);
+        //혼잡도 정도 및 설명
+        const chaoSity = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['AREA_CONGEST_LVL'];
+        const chaosityDetail = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['AREA_CONGEST_MSG'];
+
+        // 나이대
+        const age10 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_10'];
+        const age20 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_20'];
+        const age30 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_30'];
+        const age40 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_40'];
+        const age50 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_50'];
+        const age60 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_60'];
+
+        // 성별
+        const rate = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['FEMALE_PPLTN_RATE'];
+        const rate2 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['MALE_PPLTN_RATE'];
+
+        //통합대기환경지수
+        const dustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['AIR_IDX'];
+        const littledustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10_INDEX'];
+        const tinydustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25_INDEX'];
+        const littledustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10'];
+        const tinydustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25'];
+
+        setFemalePopulationRate_3(rate);
+        setMalePopulationRate_3(rate2);
+        setAreaCongest_3(chaoSity);
+        setAreaCongestDetail_3(chaosityDetail);
+        setAgeCongest_3_10(age10);
+        setAgeCongest_3_20(age20);
+        setAgeCongest_3_30(age30);
+        setAgeCongest_3_40(age40);
+        setAgeCongest_3_50(age50);
+        setAgeCongest_3_60(age60);
+        setDustrate3(dustText);
+        setLittle3(littledustText);
+        setTiny3(tinydustText);
+        setLittleNum3(littledustNum);
+        setTinyNum3(tinydustNum);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+
+    fetch(url4)
+      .then(response => response.json())
+      .then(data => {
+        // 받은 데이터 처리
+        const parsedData = JSON.parse(data.jsonObject);
+        console.log(data);
+        //혼잡도 정도 및 설명
+        const chaoSity = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['AREA_CONGEST_LVL'];
+        const chaosityDetail = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['AREA_CONGEST_MSG'];
+
+        // 나이대
+        const age10 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_10'];
+        const age20 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_20'];
+        const age30 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_30'];
+        const age40 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_40'];
+        const age50 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_50'];
+        const age60 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_60'];
+
+        // 성별
+        const rate = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['FEMALE_PPLTN_RATE'];
+        const rate2 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['MALE_PPLTN_RATE'];
+
+        //통합대기환경지수
+        const dustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['AIR_IDX'];
+        const littledustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10_INDEX'];
+        const tinydustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25_INDEX'];
+        const littledustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10'];
+        const tinydustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25'];
+
+        setFemalePopulationRate_4(rate);
+        setMalePopulationRate_4(rate2);
+        setAreaCongest_4(chaoSity);
+        setAreaCongestDetail_4(chaosityDetail);
+        setAgeCongest_4_10(age10);
+        setAgeCongest_4_20(age20);
+        setAgeCongest_4_30(age30);
+        setAgeCongest_4_40(age40);
+        setAgeCongest_4_50(age50);
+        setAgeCongest_4_60(age60);
+        setDustrate4(dustText);
+        setLittle4(littledustText);
+        setTiny4(tinydustText);
+        setLittleNum4(littledustNum);
+        setTinyNum4(tinydustNum);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+
+    fetch(url5)
+      .then(response => response.json())
+      .then(data => {
+        // 받은 데이터 처리
+        const parsedData = JSON.parse(data.jsonObject);
+        console.log(data);
+        //혼잡도 정도 및 설명
+        const chaoSity = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['AREA_CONGEST_LVL'];
+        const chaosityDetail = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['AREA_CONGEST_MSG'];
+
+        // 나이대
+        const age10 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_10'];
+        const age20 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_20'];
+        const age30 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_30'];
+        const age40 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_40'];
+        const age50 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_50'];
+        const age60 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['PPLTN_RATE_60'];
+
+        // 성별
+        const rate = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['FEMALE_PPLTN_RATE'];
+        const rate2 = parsedData['SeoulRtd.citydata']['CITYDATA']['LIVE_PPLTN_STTS']['LIVE_PPLTN_STTS']['MALE_PPLTN_RATE'];
+
+        //통합대기환경지수
+        const dustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['AIR_IDX'];
+        const littledustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10_INDEX'];
+        const tinydustText = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25_INDEX'];
+        const littledustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM10'];
+        const tinydustNum = parsedData['SeoulRtd.citydata']['CITYDATA']['WEATHER_STTS']['WEATHER_STTS']['PM25'];
+
+        setFemalePopulationRate_5(rate);
+        setMalePopulationRate_5(rate2);
+        setAreaCongest_5(chaoSity);
+        setAreaCongestDetail_5(chaosityDetail);
+        setAgeCongest_5_10(age10);
+        setAgeCongest_5_20(age20);
+        setAgeCongest_5_30(age30);
+        setAgeCongest_5_40(age40);
+        setAgeCongest_5_50(age50);
+        setAgeCongest_5_60(age60);
+        setDustrate5(dustText);
+        setLittle5(littledustText);
+        setTiny5(tinydustText);
+        setLittleNum5(littledustNum);
+        setTinyNum5(tinydustNum);
+      })
+      .catch(error => {
+        console.error('Error:', error);
+      });
+
+    fetch(url6)
       .then(response => response.json())
       .then(data => {
         // 받은 데이터 처리
@@ -1980,14 +2208,18 @@ function MainPage() {
                   <StyledChaos className='dizzyness' status={selectedData.populationStatus}>{selectedData.populationStatus}</StyledChaos>
                 </div>
                 <div>{(() => {
-                  switch (selectedData.populationStatus) {
+
+                switch (selectedData.populationStatus) {
+
                     case '여유': return <div className='diz_text'>{selectedData.populationDescription}</div>;
                     case '보통': return <div className='diz_text2'>{selectedData.populationDescription}</div>;
                     case '약간 붐빔': return <div className='diz_text3'>{selectedData.populationDescription}</div>;
                     case '붐빔': return <div className='diz_text4'>{selectedData.populationDescription}</div>;
                     default: return null;
+
                   }
                 })()}</div>
+
               </div>
             </div>
             <div className='age'>
@@ -2072,6 +2304,22 @@ function MainPage() {
 
 
 
+
+            <div
+              style={{
+                position: 'absolute',
+                top: '65px',
+                left: '138px',
+                height: '88px',
+                weight: '88px',
+              }}
+            >
+              {selectedData.forecastData_top.map((data) =>
+                data.value === 'sunny' ? (
+                  <img src={sunnyIcon1} alt="sunny" width="88px" height="88px" />
+                ) : null
+              )}
+            </div>
 
 
             <div
@@ -2261,16 +2509,18 @@ function MainPage() {
               </div>
               <div className='graph'>
                 <div className='marker'>
-                  {(() => {
-                    switch (selectedData.air_clearity) {
-                      case '좋음': return <AirMarker_Green className='marker1' />;
-                      case '보통': return <AirMarker_Yellow className='marker2' />;
-                      case '나쁨': return <AirMarker_Orange className='marker3' />;
-                      case '매우나쁨': return <AirMarker_Red className='marker4' />;
-                      default: return null;
-                    }
-                  })()}
-                </div>
+
+            {(() => {
+                switch (selectedData.air_clearity) {
+                    case '좋음': return <AirMarker_Green className='marker1'/>;
+                    case '보통': return <AirMarker_Yellow className='marker2'/>;
+                    case '나쁨': return <AirMarker_Orange className='marker3'/>;
+                    case '매우나쁨': return <AirMarker_Red className='marker4'/>;
+                    default: return null;
+                }
+            })()}
+        </div>
+
                 <div className='air_graph'><Green /><Yellow /><Orange /><Red /></div>
               </div>
             </div>
@@ -2305,53 +2555,53 @@ function MainPage() {
               {dropdownOpen1 ? <DButton2 className="img-down" /> : <DButton className="img-down" />}
               {/* Dropdown menu code */}
               {dropdownOpen1 && (
-                <div className="dropdown-menu">
-                  <div className="dropdown-item1" onClick={() => handleDropdown1Item("가산디지털단지역")}>가산디지털단지역</div>
-                  <div className="dropdown-item1" onClick={() => handleDropdown1Item("강남역")}>강남역</div>
-                  <div className="dropdown-item1" onClick={() => handleDropdown1Item("서울역")}>서울역</div>
-                  <div className="dropdown-item1" onClick={() => handleDropdown1Item("성수 카페거리")}>성수 카페거리</div>
-                  <div className="dropdown-item1" onClick={() => handleDropdown1Item("시청광장")}>시청광장</div>
-                  <div className="dropdown-item1" onClick={() => handleDropdown1Item("신촌 이대역")}>신촌 이대역</div>
-                  <div className="dropdown-item1" onClick={() => handleDropdown1Item("여의도")}>여의도</div>
-                  <div className="dropdown-item1" onClick={() => handleDropdown1Item("잠실종합운동장")}>잠실종합운동장</div>
-                  <div className="dropdown-item1" onClick={() => handleDropdown1Item("창덕궁 종묘")}>창덕궁 종묘</div>
-                  <div className="dropdown-item1" onClick={() => handleDropdown1Item("홍대입구역 9번 출구")}>홍대입구역 9번 출구</div>
-                </div>
-              )}
+
+                  <div className="dropdown-menu">
+                    <div className="dropdown-item1" onClick={() => handleDropdown1Item("가산디지털단지역")}>가산디지털단지역</div>
+                    <div className="dropdown-item1" onClick={() => handleDropdown1Item("강남역")}>강남역</div>
+                    <div className="dropdown-item1" onClick={() => handleDropdown1Item("서울역")}>서울역</div>
+                    <div className="dropdown-item1" onClick={() => handleDropdown1Item("성수 카페거리")}>성수 카페거리</div>
+                    <div className="dropdown-item1" onClick={() => handleDropdown1Item("시청광장")}>시청광장</div>
+                    <div className="dropdown-item1" onClick={() => handleDropdown1Item("신촌 이대역")}>신촌 이대역</div>
+                    <div className="dropdown-item1" onClick={() => handleDropdown1Item("여의도")}>여의도</div>
+                    <div className="dropdown-item1" onClick={() => handleDropdown1Item("잠실종합운동장")}>잠실종합운동장</div>
+                    <div className="dropdown-item1" onClick={() => handleDropdown1Item("창덕궁 종묘")}>창덕궁 종묘</div>
+                    <div className="dropdown-item1" onClick={() => handleDropdown1Item("홍대입구역 9번 출구")}>홍대입구역 9번 출구</div>
+                  </div>
+                )}
+
             </div>
           </div>
         </div>
-        <div className="mapscale" id="map" style={{ width: '364px', height: '246px' }} />
-
-
-
-        <div className='mid-main-view'>
-          <div className={`chaos ${activeButton === 'chaos' ? 'active' : ''}`} onClick={() => {
-            handleChaosClick();
-            setSelected('chaos');
-          }}>
-            <buttons.chaos className="chaos_icon" />
-            <span className='mid_text_1'>혼잡도</span>
-          </div>
-          <div className={`weather ${activeButton === 'weather' ? 'active' : ''}`} onClick={() => {
-            handleWeatherClick();
-            setSelected('weather');
-          }}>
-            <buttons.weather className="weather_icon" />
-            <span className='mid_text_2'>날씨</span>
-          </div>
-          <div className={`dust ${activeButton === 'dust' ? 'active' : ''}`} onClick={() => {
-            handleDustClick();
-            setSelected('dust');
-          }}>
-            <buttons.dust className="dust_icon" />
-            <span className='mid_text_3'>미세먼지</span>
-          </div>
-        </div>
-        {loading ? (
-          <div className="loading-indicator"><Dencity className='loading-logo' /></div>
+        <div className="mapscale" id="map" style={{ width: '364px', height: '246px' }} /> 
+            
+            <div className='mid-main-view'>
+              <div className={`chaos ${activeButton === 'chaos' ? 'active' : ''}`} onClick={() => {
+                handleChaosClick();
+                setSelected('chaos');
+              }}>
+                <buttons.chaos className="chaos_icon" />
+                <span className='mid_text_1'>혼잡도</span>
+              </div>
+              <div className={`weather ${activeButton === 'weather' ? 'active' : ''}`} onClick={() => {
+                handleWeatherClick();
+                setSelected('weather');
+              }}>
+                <buttons.weather className="weather_icon" />
+                <span className='mid_text_2'>날씨</span>
+              </div>
+              <div className={`dust ${activeButton === 'dust' ? 'active' : ''}`} onClick={() => {
+                handleDustClick();
+                setSelected('dust');
+              }}>
+                <buttons.dust className="dust_icon" />
+                <span className='mid_text_3'>미세먼지</span>
+              </div>
+            </div>
+            {loading ? (
+          <div className="loading-indicator"><Dencity className='loading-logo'/></div>
         ) : (
-          renderDetailView()
+            renderDetailView()
 
         )}
       </div>
