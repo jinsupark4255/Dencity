@@ -436,7 +436,7 @@ function MainPage() {
           console.error('Error:', error);
 
         });
-    }, 9000);
+    }, 7000);
 
 
     setTimeout(() => {
@@ -532,7 +532,7 @@ function MainPage() {
           console.error('Error:', error);
 
         });
-    }, 9000);
+    }, 7000);
 
     setTimeout(() => {
       fetch(url3)
@@ -622,7 +622,7 @@ function MainPage() {
         .catch(error => {
           console.error('Error:', error);
         });
-    }, 9000);
+    }, 7000);
 
     setTimeout(() => {
       fetch(url4)
@@ -712,7 +712,7 @@ function MainPage() {
         .catch(error => {
           console.error('Error:', error);
         });
-    }, 9000);
+    }, 7000);
 
     setTimeout(() => {
       fetch(url5)
@@ -802,7 +802,7 @@ function MainPage() {
         .catch(error => {
           console.error('Error:', error);
         });
-    }, 9000);
+    }, 7000);
 
     setTimeout(() => {
       fetch(url6)
@@ -892,7 +892,7 @@ function MainPage() {
         .catch(error => {
           console.error('Error:', error);
         });
-    }, 9000);
+    }, 7000);
 
     setTimeout(() => {
       fetch(url7)
@@ -982,7 +982,7 @@ function MainPage() {
         .catch(error => {
           console.error('Error:', error);
         });
-    }, 9000);
+    }, 7000);
 
     setTimeout(() => {
       fetch(url8)
@@ -1072,7 +1072,7 @@ function MainPage() {
         .catch(error => {
           console.error('Error:', error);
         });
-    }, 9000);
+    }, 7000);
 
     setTimeout(() => {
       fetch(url9)
@@ -1162,7 +1162,7 @@ function MainPage() {
         .catch(error => {
           console.error('Error:', error);
         });
-    }, 9000);
+    }, 7000);
 
     setTimeout(() => {
       fetch(url10)
@@ -1254,7 +1254,7 @@ function MainPage() {
           console.error('Error:', error);
           setLoading(false);
         });
-    }, 9000);
+    }, 7000);
 
   }, []);
 
