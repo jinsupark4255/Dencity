@@ -545,7 +545,7 @@ body {
 .floating-help-box {
   position: fixed;
   top: 200px;
-  right: 100px;
+  right: 10px;
   z-index: 9999;
   border-radius: 3px;
   background: rgba(0, 0, 0, 0.60);
@@ -554,7 +554,6 @@ body {
   padding-bottom: 1px;
   text-align: center;
   
-
 }
 
 .text-box {
@@ -679,7 +678,7 @@ body {
   width: 122px;
   height: 42px;
   padding-top: 3px;
-  padding-left: 5px;
+  padding-left: 0px;
   padding-bottom: 1px;
 
 }
@@ -688,7 +687,7 @@ body {
   width: 112px;
   height: 32px;
   color: #FFF;
-  font-size: 7px;
+  font-size: 9px;
   font-weight: 400;
   white-space: nowrap;
   text-align: center;
