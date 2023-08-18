@@ -56,7 +56,7 @@ const ForecastTable = ({ forecastData }) => { // forecastData를 prop으로 받�
             <th>강수량</th>
             {forecastData.map((data) => (
               <td key={data.date}>
-                {data.precipitation === '-' ? '-' : `${data.precipitation} mm`}
+                {data.precipitation === '-' ? '-' : data.precipitation === '빗방울' ? '빗방울' : `${data.precipitation} mm`}
               </td>
             ))}
           </tr>
