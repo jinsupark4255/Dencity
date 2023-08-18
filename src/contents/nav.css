@@ -550,7 +550,7 @@ body {
   border-radius: 3px;
   background: rgba(0, 0, 0, 0.60);
   width: 180px;
-  height: 50px;
+  height: 55px;
   margin-top: 2px;
   margin-right: 25px;
   padding-bottom: 1px;
@@ -720,7 +720,7 @@ body {
     text-align: center;
   }
   .diz_text3 {
-    width: 290px;
+    width: 285px;
     height: 30px;
     margin-left: 40px;
     margin-top: -20px;
