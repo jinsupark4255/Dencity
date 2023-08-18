@@ -549,14 +549,14 @@ body {
   z-index: 9999;
   border-radius: 3px;
   background: rgba(0, 0, 0, 0.60);
-  width: 190px;
+  width: 180px;
   height: 55px;
-  margin-top: 2px;
   padding-bottom: 1px;
 
 }
 
 .text-box {
+  margin-left: 14px;
   width: 112px;
   height: 32px;
   color: #FFF;
