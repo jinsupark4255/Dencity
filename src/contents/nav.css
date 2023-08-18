@@ -545,7 +545,7 @@ body {
 .floating-help-box {
   position: fixed;
   top: 200px;
-  right: 10px;
+  right: 100px;
   z-index: 9999;
   border-radius: 3px;
   background: rgba(0, 0, 0, 0.60);
@@ -553,10 +553,7 @@ body {
   height: 55px;
   padding-bottom: 1px;
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  
 
 }
 
