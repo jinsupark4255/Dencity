@@ -544,8 +544,8 @@ body {
 
 .floating-help-box {
   position: fixed;
-  top: 400px;
-  right: 800px;
+  top: 200px;
+  right: 900px;
   z-index: 9999;
   border-radius: 3px;
   background: rgba(0, 0, 0, 0.60);
@@ -556,7 +556,7 @@ body {
 }
 
 .text-box {
-  margin-left: 14px;
+  margin-left: 5px;
   width: 112px;
   height: 32px;
   color: #FFF;
