@@ -344,7 +344,7 @@ function MainPage() {
   // 잠실종합운동장            const place = "POI109";
   // 창덕궁 종묘               const place = "POI012";
   // 홍대입구역 9번출구        const place = "POI055";
-
+//ㄴ
   useEffect(() => {
     setLoading(true);
     setTimeout(() => {
