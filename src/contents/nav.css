@@ -494,20 +494,20 @@ body {
   margin-top: -20px;
   color: #000;
   font-family: Inter;
-  font-size: 12px;
+  font-size: 9px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
   text-align: center;
 }
 .diz_text2 {
-  width: 200px;
+  width: 250px;
   height: 30px;
   margin-left: 80px;
   margin-top: -20px;
   color: #000;
   font-family: Inter;
-  font-size: 12px;
+  font-size: 9px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -520,7 +520,7 @@ body {
   margin-top: -20px;
   color: #000;
   font-family: Inter;
-  font-size: 12px;
+  font-size: 9px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -533,7 +533,7 @@ body {
   margin-top: -20px;
   color: #000;
   font-family: Inter;
-  font-size: 12px;
+  font-size: 9px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
@@ -667,7 +667,59 @@ body {
   height: 46px;
 }
 
-@media (max-width: 844px) {
+@media (max-width: 481px) {
+  .diz_text {
+    width: 250px;
+    height: 30px;
+    margin-left: 60px;
+    margin-top: -20px;
+    color: #000;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+  }
+  .diz_text2 {
+    width: 200px;
+    height: 30px;
+    margin-left: 80px;
+    margin-top: -20px;
+    color: #000;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+  }
+  .diz_text3 {
+    width: 290px;
+    height: 30px;
+    margin-left: 40px;
+    margin-top: -20px;
+    color: #000;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+  }
+  .diz_text4 {
+    width: 290px;
+    height: 30px;
+    margin-left: 40px;
+    margin-top: -20px;
+    color: #000;
+    font-family: Inter;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    text-align: center;
+  }
   .community-float {
     position: fixed;
     /* 상대적인 위치를 지정하고 싶을 경우 'absolute'를 사용 */
