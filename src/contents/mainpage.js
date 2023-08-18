@@ -401,7 +401,6 @@ function MainPage() {
 
           const weather = [];
 
-
           forecastData_top_weather.forEach(item => {
             const forecastTime = new Date(item['FCST_DT'].toString().replace(/(\d{4})(\d{2})(\d{2})(\d{2})(\d{2})/, '$1-$2-$3T$4:$5:00'));
 
@@ -437,7 +436,7 @@ function MainPage() {
           console.error('Error:', error);
 
         });
-    }, 1000);
+    }, 9000);
 
 
     setTimeout(() => {
@@ -533,7 +532,7 @@ function MainPage() {
           console.error('Error:', error);
 
         });
-    }, 1000);
+    }, 9000);
 
     setTimeout(() => {
       fetch(url3)
@@ -623,7 +622,7 @@ function MainPage() {
         .catch(error => {
           console.error('Error:', error);
         });
-    }, 1000);
+    }, 9000);
 
     setTimeout(() => {
       fetch(url4)
@@ -713,7 +712,7 @@ function MainPage() {
         .catch(error => {
           console.error('Error:', error);
         });
-    }, 1000);
+    }, 9000);
 
     setTimeout(() => {
       fetch(url5)
@@ -803,7 +802,7 @@ function MainPage() {
         .catch(error => {
           console.error('Error:', error);
         });
-    }, 1000);
+    }, 9000);
 
     setTimeout(() => {
       fetch(url6)
@@ -893,7 +892,7 @@ function MainPage() {
         .catch(error => {
           console.error('Error:', error);
         });
-    }, 1000);
+    }, 9000);
 
     setTimeout(() => {
       fetch(url7)
@@ -983,7 +982,7 @@ function MainPage() {
         .catch(error => {
           console.error('Error:', error);
         });
-    }, 1000);
+    }, 9000);
 
     setTimeout(() => {
       fetch(url8)
@@ -1073,7 +1072,7 @@ function MainPage() {
         .catch(error => {
           console.error('Error:', error);
         });
-    }, 1000);
+    }, 9000);
 
     setTimeout(() => {
       fetch(url9)
@@ -1163,7 +1162,7 @@ function MainPage() {
         .catch(error => {
           console.error('Error:', error);
         });
-    }, 1000);
+    }, 9000);
 
     setTimeout(() => {
       fetch(url10)
@@ -1255,7 +1254,7 @@ function MainPage() {
           console.error('Error:', error);
           setLoading(false);
         });
-    }, 1000);
+    }, 9000);
 
   }, []);
 
