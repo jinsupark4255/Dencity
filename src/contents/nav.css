@@ -545,18 +545,19 @@ body {
 .floating-help-box {
   position: fixed;
   top: 200px;
-  right: 500px;
+  right: 50px;
   z-index: 9999;
   border-radius: 3px;
   background: rgba(0, 0, 0, 0.60);
   width: 180px;
   height: 55px;
   padding-bottom: 1px;
+  text-align: center;
 
 }
 
 .text-box {
-  margin-left: 7px;
+  margin-left: 6px;
   width: 112px;
   height: 32px;
   color: #FFF;
