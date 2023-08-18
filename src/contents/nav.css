@@ -544,13 +544,14 @@ body {
 
 .floating-help-box {
   position: fixed;
-  margin-top: 40px;
-  margin-left: -20px;
+  margin-top: 60px;
+  margin-left: -25px;
   z-index: 9999;
   border-radius: 3px;
   background: rgba(0, 0, 0, 0.60);
-  width: 200px;
+  width: 180px;
   height: 60px;
+  padding-top: 1px;
   padding-bottom: 1px;
   text-align: center;
   
